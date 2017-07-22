@@ -1,0 +1,7 @@
+//Einstiegsmethode zur Steuereung des NPC
+tree("PlayNPC")
+	tree("Stroll")
+
+tree("Stroll")
+    while IsStroll
+        Stroll()
