@@ -1,10 +1,10 @@
 # DemoMidgardScenes
 Bei mir heißt es DemoWorker. Ist aber das Hauptprojekt für Unity-Szenen für Midgard. Daneben umfasst es folgende wesentliche Komponenten:
 
-Steuerung von Characteren (inkl. Tutorials)
-* UMA-TUTORIAL (Secret Anorak Tutorial: https://www.youtube.com/watch?v=-4j-mtS7R_k&t=150s)
+* Steuerung von Charakteren 
+* UMA-Charaktere (Secret Anorak Tutorial: https://www.youtube.com/watch?v=-4j-mtS7R_k&t=150s)
 * PhotonNetwork (Tutorial https://www.youtube.com/watch?v=8St-bqfmufA&t=116s)
-* AI für NPCs mittels Panda BT und dem Tutorial von Renaissance Coders (https://www.youtube.com/watch?v=8St-bqfmufA&t=116s)
+* AI für NPCs mittels Panda BT (Renaissance Coders-Tutorial: https://www.youtube.com/watch?v=8St-bqfmufA&t=116s)
 
 ## Wiki
 Das Wiki dient dazu die Grundkonzepte und Ideen beim Design zu erläutern. Dazu werden die oben genannten Elemente weiter erläutert:
