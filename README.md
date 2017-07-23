@@ -1,5 +1,5 @@
 # DemoMidgardScenes
-Bei mir heißt es DemoWorker. Ist aber das Hauptprojekt für Unity-Szenen für Midgard. Daneben umfasst es folgende wesentliche Komponenten:
+Bei mir heißt es DemoWorker. Ist aber das Hauptprojekt für Unity-Szenen für Midgard. Es beinhaltet folgende Komponenten:
 
 * Steuerung von Charakteren 
 * UMA-Charaktere (Secret Anorak Tutorial: https://www.youtube.com/watch?v=-4j-mtS7R_k&t=150s)
