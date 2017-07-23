@@ -1,0 +1,13 @@
+//Einstiegsmethode zur Steuereung des NPC
+tree("PlayCitizenHome")
+	fallback
+		tree("HomeStroll")
+		tree("Break")
+
+tree("HomeStroll")
+    while IsHomeStroll
+        CitizenHomeStroll()
+
+tree("Break")
+    while IsBreak
+        CitizenBreakSit()
