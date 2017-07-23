@@ -24,8 +24,9 @@ public class BasicAICitizen : BasicAINPC {
 	// Use Initialization from BaseClass
 	public override void Start () {
 		base.Start ();
-		IsBreak = true;
+		IsBreak = false;
 		IsStroll = false;
+		IsHomeStroll = true;
 	}
 
 	/// <summary>
