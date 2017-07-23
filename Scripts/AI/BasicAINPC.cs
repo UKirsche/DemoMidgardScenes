@@ -15,7 +15,6 @@ public class BasicAINPC : MonoBehaviour {
 	public float reachedMinDistance = 2.0f;
 	public string wayPointString;
 
-	private int internalCounter=0;
 
 	protected int wayPointIndex;
 	protected GameObject[] waypoints;
@@ -93,15 +92,6 @@ public class BasicAINPC : MonoBehaviour {
 	[Task]
 	public void Stroll ()
 	{
-		strollSpeed -= 0.0011f;
-		if (strollSpeed <= 0.0f) {
-			if (internalCounter < 130) {
-				internalCounter++;
-			} else {
-				internalCounter = 0;
-				strollSpeed = 2.0f;
-			}
-		}
 		agent.speed = strollSpeed;
 		if (!isDestinationReached()) {
 			MoveToDestination (waypoints [wayPointIndex].transform.position);
