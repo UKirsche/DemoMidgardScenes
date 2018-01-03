@@ -28,7 +28,7 @@ public class BasicAINPC : MonoBehaviour {
 	// Use this for initialization
 	public virtual void Start () {
 		// get the components on the object we need ( should not be null due to require component so no need to check )
-		agent = GetComponentInChildren<UnityEngine.AI.NavMeshAgent> ();
+		agent = GetComponent<UnityEngine.AI.NavMeshAgent> ();
 		character = GetComponent<ThirdPersonNPCCharacter> ();
 		waypoints = GameObject.FindGameObjectsWithTag(wayPointString);
 		RandomizeWayPointIndex ();
