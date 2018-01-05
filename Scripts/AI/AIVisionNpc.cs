@@ -8,7 +8,7 @@ using System.Collections.Generic;
  * AI Vision handles GameObjects that are visible and keeps the in a list of visible Gameobjects
  * 
  */
-public class AIVision : MonoBehaviour
+public class AIVisionNpc: MonoBehaviour
 {
 	public float fieldOfView = 90.0f; // Object within this angle are seen.
 	public float closeFieldDistance = 1.0f; // Objects below this distance is always seen.
@@ -94,9 +94,9 @@ public class AIVision : MonoBehaviour
 		var hits = Physics.RaycastAll(ray, minDistance);
 
 
-		foreach( var h in hits)
+		foreach( var hit in hits)
 		{
-			SetClosestGameObject (h, out minDistance, out closestGameObject);
+			SetClosestGameObject (hit, ref minDistance, ref closestGameObject);
 		}
 
 		has = closestGameObject == target;
@@ -110,7 +110,7 @@ public class AIVision : MonoBehaviour
 	/// <param name="hit">Hit.</param>
 	/// <param name="minDistance">Minimum distance.</param>
 	/// <param name="closest">Closest.</param>
-	private void SetClosestGameObject (RaycastHit hit, out float minDistance, out GameObject closestGO)
+	private void SetClosestGameObject (RaycastHit hit, ref float minDistance, ref GameObject closestGO)
 	{
 		float distance = Vector3.Distance (hit.point, this.transform.position);
 		var gObject = hit.collider.attachedRigidbody != null ? hit.collider.attachedRigidbody.gameObject : hit.collider.gameObject;
@@ -142,8 +142,5 @@ public class AIVision : MonoBehaviour
 			colliders.RemoveAll((c) => c == null);
 		}
 	}
-
-
-
 
 }
