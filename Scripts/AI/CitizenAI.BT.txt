@@ -1,0 +1,29 @@
+tree("BeAlive")
+	//This unit attacks when possible,
+	//otherwise it patrols a predefined path.
+	fallback
+		tree("Talk")
+		tree("Sit")
+		tree("Work")
+		tree("Stroll")
+
+
+tree("Stroll")
+    repeat
+    	random 
+        	//CitizenGlobalStroll()
+        	CitizenHomeStroll()
+        	Wait(30)
+
+tree("Sit")
+    while IsBreak
+        CitizenBreakSit()
+
+tree("Work")
+    while IsBreak
+        CitizenBreakSit()
+
+tree("Talk")
+    while IsBreak
+        CitizenBreakSit()
+		
