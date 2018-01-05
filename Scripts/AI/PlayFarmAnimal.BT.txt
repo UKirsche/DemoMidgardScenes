@@ -1,7 +1,0 @@
-//Einstiegsmethode zur Steuereung des NPC
-tree("PlayFarmAnimal")
-	tree("Stroll")
-
-tree("Stroll")
-    while IsStroll
-        FarmStroll()

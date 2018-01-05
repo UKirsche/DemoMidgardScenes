@@ -1,7 +1,7 @@
 //Einstiegsmethode zur Steuereung des NPC
-tree("PlayNPC")
+tree("BeAlive")
 	tree("Stroll")
 
 tree("Stroll")
-    while IsStroll
+    repeat
         Stroll()

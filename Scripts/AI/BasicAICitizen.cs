@@ -12,8 +12,6 @@ public class BasicAICitizen : BasicAINPC {
 
 	#region FSM-Variablen
 	[Task]
-	public bool IsHomeStroll=false;
-	[Task]
 	public bool IsBreak=false;
 	[Task]
 	public bool IsSitting=false;
@@ -24,9 +22,8 @@ public class BasicAICitizen : BasicAINPC {
 	// Use Initialization from BaseClass
 	public override void Start () {
 		base.Start ();
-		IsBreak = false;
+		IsBreak = true;
 		IsStroll = false;
-		IsHomeStroll = true;
 	}
 
 	/// <summary>
