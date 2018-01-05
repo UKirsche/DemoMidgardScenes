@@ -6,7 +6,6 @@ using System.Collections.Generic;
 /**
  * 
  * AI Vision handles GameObjects that are visible and keeps the in a list of visible Gameobjects
- * Depends other GameObjects trigger Type, which must block visibility
  * 
  */
 public class AIVision : MonoBehaviour

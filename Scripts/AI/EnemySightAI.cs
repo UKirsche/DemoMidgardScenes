@@ -37,7 +37,7 @@ public class EnemySightAI : MonoBehaviour
 	public float investigateWait=10.0f;
 
 	//Variables for Sight
-	public float heigtMultiplier;
+	public float heightMultiplier;
 	public float sightDist = 20.0f;
 
 
@@ -49,7 +49,7 @@ public class EnemySightAI : MonoBehaviour
 		waypoints = GameObject.FindGameObjectsWithTag("waypoint");
 		RandomizeWayPointIndex ();
 
-		heigtMultiplier = 1.36f;
+		heightMultiplier = 1.36f;
 
 		AgentInitialization ();
 		FSMIntitialization ();
@@ -180,11 +180,11 @@ public class EnemySightAI : MonoBehaviour
 	void FixedUpdate(){
 		RaycastHit hit = new RaycastHit ();;
 		timer += Time.deltaTime;
-		Ray LOSCenter 	= new Ray (transform.position + Vector3.up * heigtMultiplier, transform.forward * sightDist);
-		Ray LOSLeft		= new Ray (transform.position + Vector3.up * heigtMultiplier, (transform.forward - transform.right).normalized * sightDist);
-		Ray LOSRight 	= new Ray (transform.position + Vector3.up * heigtMultiplier, (transform.forward + transform.right).normalized * sightDist);
-		Ray LOSUp		= new Ray (transform.position + Vector3.up * heigtMultiplier, (transform.forward + transform.up).normalized * sightDist);
-		Ray LOSDown 	= new Ray (transform.position + Vector3.up * heigtMultiplier, (transform.forward - transform.up).normalized * sightDist);
+		Ray LOSCenter 	= new Ray (transform.position + Vector3.up * heightMultiplier, transform.forward * sightDist);
+		Ray LOSLeft		= new Ray (transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right).normalized * sightDist);
+		Ray LOSRight 	= new Ray (transform.position + Vector3.up * heightMultiplier, (transform.forward + transform.right).normalized * sightDist);
+		Ray LOSUp		= new Ray (transform.position + Vector3.up * heightMultiplier, (transform.forward + transform.up).normalized * sightDist);
+		Ray LOSDown 	= new Ray (transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.up).normalized * sightDist);
 
 		List<Ray> losList = new List<Ray> ();
 		losList.Add (LOSCenter);
