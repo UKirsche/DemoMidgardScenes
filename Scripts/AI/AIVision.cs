@@ -23,7 +23,6 @@ public class AIVision : MonoBehaviour
 	/// </summary>
 	void Start()
 	{
-		heightMultiplier = 1.36f;
 	}
 
 
