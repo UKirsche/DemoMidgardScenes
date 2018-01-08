@@ -13,7 +13,6 @@ tree("Stroll")
     	random 
         	//CitizenGlobalStroll()
         	CitizenHomeStroll()
-        	Wait(30)
 
 tree("Sit")
     while IsBreak

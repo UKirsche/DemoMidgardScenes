@@ -2,6 +2,12 @@
 tree("BeAlive")
 	tree("Stroll")
 
+tree ("Talk")
+	random
+		sequence
+			Talk()
+			Wait(30)
+		Wait(0.5)
 tree("Stroll")
     repeat
         Stroll()

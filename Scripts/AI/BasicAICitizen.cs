@@ -26,11 +26,20 @@ public class BasicAICitizen : BasicAINPC {
 		IsStroll = false;
 	}
 
+
+	/// <summary>
+	/// Citizen approaches visible target if it is also an NPC and starts talk animation
+	/// </summary>
+	[Task]
+	public void Talk(){
+	}
+
+
 	/// <summary>
 	/// Citizens walks global points in scene, usually city or village
 	/// </summary>
 	[Task]
-	public void CitizenGlobalStroll ()
+	public void GlobalStroll ()
 	{
 		waypoints = GameObject.FindGameObjectsWithTag(wayPointString);
 		base.Stroll ();
@@ -40,18 +49,17 @@ public class BasicAICitizen : BasicAINPC {
 	/// Citizen walks around his homebase.
 	/// </summary>
 	[Task]
-	public void CitizenHomeStroll()
+	public void HomeStroll()
 	{
 		waypoints = GameObject.FindGameObjectsWithTag(wayPointStringHome);
 		base.Stroll ();
 	}
 
-
 	/// <summary>
 	/// Moves the citizen to the break-point
 	/// </summary>
 	[Task]
-	public void CitizenBreakSit()
+	public void BreakSit()
 	{
 		agent.speed = strollSpeed;
 		waypoints = GameObject.FindGameObjectsWithTag(wayPointStringBreakSit);

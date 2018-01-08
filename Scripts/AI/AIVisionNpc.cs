@@ -36,7 +36,7 @@ public class AIVisionNpc: MonoBehaviour
 
 
 	/// <summary>
-	/// Draws ViewBox for NPC
+	/// Draws ViewBox for NPCs
 	/// </summary>
 	void LOSDrawDebug ()
 	{
@@ -85,7 +85,7 @@ public class AIVisionNpc: MonoBehaviour
 
 				if (isVisible && !visibles.Contains(attachedGameObject))
 				{
-					Debug.Log (attachedGameObject.name);
+					//Debug.Log (attachedGameObject.name);
 					visibles.Add(attachedGameObject);
 				}
 			}
