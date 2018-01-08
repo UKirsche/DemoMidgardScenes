@@ -12,9 +12,11 @@ public class AIVisionNpc: MonoBehaviour
 {
 	public float fieldOfView = 90.0f; // Object within this angle are seen.
 	public float closeFieldDistance = 1.0f; // Objects below this distance is always seen.
+	public float losDistDebug = 60.0f; //Need to draw LOS in Debug
 
 	public List<Collider> colliders = new List<Collider>();
 	public List<GameObject> visibles = new List<GameObject>();
+
 
 
 	/// <summary>
@@ -24,6 +26,37 @@ public class AIVisionNpc: MonoBehaviour
 	{
 	}
 
+
+	/// <summary>
+	/// Inherited
+	/// </summary>
+	void FixedUpdate(){
+		LOSDrawDebug ();
+	}
+
+
+	/// <summary>
+	/// Draws ViewBox for NPC
+	/// </summary>
+	void LOSDrawDebug ()
+	{
+		Ray LOSCenter = new Ray (transform.position , transform.forward *  losDistDebug);
+		Ray LOSLeft = new Ray (transform.position , (transform.forward - transform.right).normalized * losDistDebug);
+		Ray LOSRight = new Ray (transform.position , (transform.forward + transform.right).normalized * losDistDebug);
+		Ray LOSUp = new Ray (transform.position  , (transform.forward + transform.up).normalized * losDistDebug);
+		Ray LOSDown = new Ray (transform.position , (transform.forward - transform.up).normalized * losDistDebug);
+		List<Ray> losList = new List<Ray> ();
+		losList.Add (LOSLeft);
+		losList.Add (LOSRight);
+		losList.Add (LOSUp);
+		losList.Add (LOSDown);
+		for (int i = 0; i < losList.Count; i++) {
+			Ray ray = losList [i];
+			Debug.DrawRay (ray.origin, ray.direction * 10, Color.green);
+		}
+		Debug.DrawRay (LOSCenter.origin, LOSCenter.direction * 10, Color.blue);
+
+	}
 
 	/// <summary>
 	/// Inherited
@@ -52,6 +85,7 @@ public class AIVisionNpc: MonoBehaviour
 
 				if (isVisible && !visibles.Contains(attachedGameObject))
 				{
+					Debug.Log (attachedGameObject.name);
 					visibles.Add(attachedGameObject);
 				}
 			}
