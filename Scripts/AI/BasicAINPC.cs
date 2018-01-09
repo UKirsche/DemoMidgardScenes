@@ -15,7 +15,6 @@ public class BasicAINPC : MonoBehaviour {
 	public float reachedMinDistance = 2.0f;
 	public string wayPointString;
 
-
 	protected int wayPointIndex;
 	protected GameObject[] waypoints;
 
@@ -30,6 +29,7 @@ public class BasicAINPC : MonoBehaviour {
 		// get the components on the object we need ( should not be null due to require component so no need to check )
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent> ();
 		character = GetComponent<ThirdPersonNPCCharacter> ();
+
 		waypoints = GameObject.FindGameObjectsWithTag(wayPointString);
 		RandomizeWayPointIndex ();
 

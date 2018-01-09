@@ -10,6 +10,9 @@ public class BasicAICitizen : BasicAINPC {
 	public string wayPointStringBreakStand;
 	public string wayPointSingleTarget;
 
+	protected AIVisionNpc vision;
+
+
 	#region FSM-Variablen
 	[Task]
 	public bool IsBreak=false;
@@ -22,6 +25,8 @@ public class BasicAICitizen : BasicAINPC {
 	// Use Initialization from BaseClass
 	public override void Start () {
 		base.Start ();
+
+		vision = GetComponentInChildren<AIVisionNpc> ();
 		IsBreak = true;
 		IsStroll = false;
 	}
@@ -32,6 +37,7 @@ public class BasicAICitizen : BasicAINPC {
 	/// </summary>
 	[Task]
 	public void Talk(){
+		//Hole Visibles ab
 	}
 
 
