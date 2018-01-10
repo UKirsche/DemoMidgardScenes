@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 
 [RequireComponent (typeof(UnityEngine.AI.NavMeshAgent))]
-[RequireComponent (typeof(ThirdPersonNPCCharacter))]
+[RequireComponent (typeof(ThirdPersonNPCNormal))]
 public class EnemySightAI : MonoBehaviour
 {
 	public UnityEngine.AI.NavMeshAgent agent { get; private set; }
-	public ThirdPersonNPCCharacter character { get; private set; }
+	public ThirdPersonNPCNormal character { get; private set; }
 
 	public enum State
 	{
@@ -45,7 +45,7 @@ public class EnemySightAI : MonoBehaviour
 	{
 		// get the components on the object we need ( should not be null due to require component so no need to check )
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent> ();
-		character = GetComponent<ThirdPersonNPCCharacter> ();
+		character = GetComponent<ThirdPersonNPCNormal> ();
 		waypoints = GameObject.FindGameObjectsWithTag("waypoint");
 		RandomizeWayPointIndex ();
 

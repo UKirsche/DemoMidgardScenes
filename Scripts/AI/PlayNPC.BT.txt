@@ -1,13 +1,10 @@
 //Einstiegsmethode zur Steuereung des NPC
 tree("BeAlive")
-	tree("Stroll")
+	fallback
+		tree("Talk")
+		tree("Stroll")
 
 tree ("Talk")
-	random
-		sequence
-			Talk()
-			Wait(30)
-		Wait(0.5)
+	Talk()
 tree("Stroll")
-    repeat
-        Stroll()
+    Stroll()

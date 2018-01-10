@@ -64,6 +64,7 @@ public class AIVisionNpc: MonoBehaviour
 	void Update()
 	{
 		UpdateVisibility();
+		Debug.Log (this.transform.parent.transform.parent.name + ": " + visibles.Count);
 	}
 
 	/// <summary>
@@ -85,7 +86,8 @@ public class AIVisionNpc: MonoBehaviour
 
 				if (isVisible && !visibles.Contains(attachedGameObject))
 				{
-					//Debug.Log (attachedGameObject.name);
+					Debug.Log ("Seer " + this.transform.parent.transform.parent.name);
+					Debug.Log ("Seen " + attachedGameObject.name);
 					visibles.Add(attachedGameObject);
 				}
 			}
@@ -152,6 +154,26 @@ public class AIVisionNpc: MonoBehaviour
 			minDistance = distance;
 			closestGO = gObject;
 		}
+	}
+
+	/// <summary>
+	/// Gets the closest visible GameObject and returns
+	/// </summary>
+	/// <returns>The closest visible G.</returns>
+	public GameObject GetClosestVisibleGO(){
+		float minDistance = float.PositiveInfinity;
+		GameObject retObject = null;
+		if (visibles.Count > 0) {
+			foreach (var gObject in visibles) {
+				float distance = Vector3.Distance (gObject.transform.position, this.transform.position);
+				if (distance < minDistance) {
+					minDistance = distance;
+					retObject = gObject;
+				}
+			}
+		}
+
+		return retObject;
 	}
 
 

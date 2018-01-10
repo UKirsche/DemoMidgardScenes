@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.ThirdPerson;
 using Panda;
 
-public class BasicAICitizen : BasicAINPC {
+public class AICitizen : AINPC {
 
 	public string wayPointStringHome;
 	public string wayPointStringBreakSit;
@@ -32,12 +33,46 @@ public class BasicAICitizen : BasicAINPC {
 	}
 
 
+	private bool isTalkPartnerReached(Vector3 talkPartnerPosition){
+		bool isReached = true;
+		if (Vector3.Distance (transform.position, talkPartnerPosition) >= reachedMinDistance) {
+			isReached = false;
+		}
+		return isReached;
+	}
+
 	/// <summary>
-	/// Citizen approaches visible target if it is also an NPC and starts talk animation
+	/// Citizen approaches visible target; if it is also a Citizen NPC and starts talk animation
 	/// </summary>
 	[Task]
-	public void Talk(){
-		//Hole Visibles ab
+	public bool Talk(){
+
+		bool retVal = false;
+
+		if (vision != null) {
+			GameObject closestCitizen = vision.GetClosestVisibleGO ();
+
+			if (closestCitizen != null) {
+				AICitizen closestCitAI = closestCitizen.GetComponent<AICitizen> ();
+				if (closestCitAI != null) {
+					closestCitAI.StandStill ();
+					retVal = true;
+				}
+
+			}
+		}
+
+
+		return retVal;
+
+	}
+
+
+	[Task]
+	public bool Testtalk(){
+		int randInt = UnityEngine.Random.Range (1, 101);
+		bool retVal = (randInt > 50) ? true : false;
+		return retVal;
 	}
 
 
@@ -71,9 +106,9 @@ public class BasicAICitizen : BasicAINPC {
 		waypoints = GameObject.FindGameObjectsWithTag(wayPointStringBreakSit);
 		RandomizeWayPointIndex ();
 		GameObject singleBreakPoint = waypoints [wayPointIndex];
-		if (!isDestinationReached ()) {
+		if (!isWayPointReached ()) {
 			base.MoveToDestination (singleBreakPoint.transform.position);
-		} else if(isDestinationReached()){
+		} else if(isWayPointReached()){
 			agent.speed = 0;
 			character.gameObject.transform.Rotate(0,-90,0);
 			character.Move (Vector3.zero);

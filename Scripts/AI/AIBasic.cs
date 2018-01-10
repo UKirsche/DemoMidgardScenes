@@ -3,12 +3,12 @@ using System.Collections;
 using UnityStandardAssets.Characters.ThirdPerson;
 
 [RequireComponent (typeof(UnityEngine.AI.NavMeshAgent))]
-[RequireComponent (typeof(ThirdPersonNPCCharacter))]
-public class BasicAI : MonoBehaviour
+[RequireComponent (typeof(ThirdPersonNPCNormal))]
+public class AIBasic : MonoBehaviour
 {
 	public UnityEngine.AI.NavMeshAgent agent { get; private set; }
 
-	public ThirdPersonNPCCharacter character { get; private set; }
+	public ThirdPersonNPCNormal character { get; private set; }
 
 	public enum State
 	{
@@ -35,7 +35,7 @@ public class BasicAI : MonoBehaviour
 	{
 		// get the components on the object we need ( should not be null due to require component so no need to check )
 		agent = GetComponentInChildren<UnityEngine.AI.NavMeshAgent> ();
-		character = GetComponent<ThirdPersonNPCCharacter> ();
+		character = GetComponent<ThirdPersonNPCNormal> ();
 		waypoints = GameObject.FindGameObjectsWithTag("waypoint");
 		RandomizeWayPointIndex ();
 

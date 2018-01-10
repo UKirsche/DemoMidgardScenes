@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Panda;
 
-public class BasicAIFarmAnimal : BasicAINPC {
+public class AIFarmAnimal : AINPC {
 
 	// Use Initialization from BaseClass
 	public override void Start () {
