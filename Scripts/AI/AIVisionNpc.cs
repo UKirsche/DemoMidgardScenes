@@ -113,6 +113,7 @@ public class AIVisionNpc: MonoBehaviour
 		return isVisible;
 	}
 
+
 	/// <summary>
 	/// Determines whether this instance has a line of sight to the specified target gameobject.
 	/// </summary>
@@ -178,6 +179,22 @@ public class AIVisionNpc: MonoBehaviour
 
 
 	/// <summary>
+	/// Removes visible NPCs from Collider. Must remove both: vision-Sphere and Capsule-Collider, because both make object visible
+	/// </summary>
+	/// <param name="gameObject">Game object.</param>
+	public bool RemoveNPCFromColliders(GameObject goNPC){
+		Collider otherCollider = goNPC.GetComponent<Collider> ();
+		RemoveFromCollider (otherCollider);
+
+		AIVisionNpc vision = goNPC.GetComponentInChildren<AIVisionNpc> ();
+		Collider visionCollider = vision.gameObject.GetComponent<Collider> ();
+		RemoveFromCollider (visionCollider);
+
+		return true;
+	}
+
+
+	/// <summary>
 	/// Raises the trigger enter event. Only valid for Gameobjects with Rigidbody and that include a trigger type.
 	/// </summary>
 	/// <param name="other">Other.</param>
@@ -192,10 +209,18 @@ public class AIVisionNpc: MonoBehaviour
 
 	void OnTriggerExit(Collider other)
 	{
-		if (colliders.Contains(other))
-		{
-			colliders.Remove(other);
-			colliders.RemoveAll((c) => c == null);
+		RemoveFromCollider (other);
+	}
+
+
+	/// <summary>
+	/// Wrapper to Remove from Collider
+	/// </summary>
+	/// <param name="otherCollider">Other collider.</param>
+	private void RemoveFromCollider(Collider otherCollider){
+		if (colliders.Contains (otherCollider)) {
+			colliders.Remove (otherCollider);
+			colliders.RemoveAll ((c) => c == null);
 		}
 	}
 

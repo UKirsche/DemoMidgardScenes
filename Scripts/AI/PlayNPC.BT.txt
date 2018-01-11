@@ -5,6 +5,25 @@ tree("BeAlive")
 		tree("Stroll")
 
 tree ("Talk")
-	Talk()
+	sequence 
+		IsTalkPartnerVisible
+		not tree("ApproachFinished")
+		StopMove
+		Random
+			Wait(30)
+			Wait(10)
+			Wait(40)
+			Wait(1)
+		Talk
+		Wait(100)
+		RemovePartnerFromSight
+		StopTalk
+		Fail
+	
+tree("ApproachFinished")
+	while 
+		sequence not IsTalkPartnerReached
+		ApproachTalkPartner
+
 tree("Stroll")
     Stroll()
