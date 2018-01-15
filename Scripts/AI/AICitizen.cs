@@ -110,8 +110,6 @@ public class AICitizen : AINPC {
 	public bool RotatePartner(){
 		bool retVal = false;
 		if (talkPartner != null) {
-//			Vector3 newDirTarget = Vector3.RotateTowards (talkPartner.transform.position, transform.position, 3.0f, 1.0f);
-//			talkPartner.transform.rotation = Quaternion.LookRotation(newDirTarget);
 			talkPartner.transform.LookAt(this.transform.position);
 			retVal = true;
 		}
