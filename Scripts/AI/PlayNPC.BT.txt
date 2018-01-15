@@ -9,6 +9,8 @@ tree ("Talk")
 		IsTalkPartnerVisible
 		tree("Approach")
 		StopMove
+		RotatePartner
+		Wait(300)
 		Random
 			Wait(5)
 			Wait(10)

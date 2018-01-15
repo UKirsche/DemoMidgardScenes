@@ -107,6 +107,22 @@ public class AICitizen : AINPC {
 	/// Stops the talk partner move.
 	/// </summary>
 	[Task]
+	public bool RotatePartner(){
+		bool retVal = false;
+		if (talkPartner != null) {
+//			Vector3 newDirTarget = Vector3.RotateTowards (talkPartner.transform.position, transform.position, 3.0f, 1.0f);
+//			talkPartner.transform.rotation = Quaternion.LookRotation(newDirTarget);
+			talkPartner.transform.LookAt(this.transform.position);
+			retVal = true;
+		}
+		Debug.DrawRay(transform.position, talkPartner.transform.position, Color.red);
+		return retVal;
+	} 
+
+	/// <summary>
+	/// Stops the talk partner move.
+	/// </summary>
+	[Task]
 	public bool RemovePartnerFromSight(){
 		bool retVal = false;
 		if (talkPartner != null) {
