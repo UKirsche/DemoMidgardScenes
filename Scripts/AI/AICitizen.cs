@@ -8,11 +8,11 @@ public class AICitizen : AINPC {
 
 	public string wayPointStringHome;
 	public string wayPointStringBreakSit;
-	public string wayPointStringBreakStand;
-	public string wayPointSingleTarget;
 
 	protected AIVisionNpc vision;
 	protected GameObject talkPartner;
+	protected GameObject sitOpportunity;
+
 
 	#region FSM-Variablen
 	[Task]
@@ -32,6 +32,79 @@ public class AICitizen : AINPC {
 		IsStroll = false;
 		talkPartner = null;
 	}
+
+
+
+	#region Sit/Break Tasks
+
+	/// <summary>
+	/// Determines whether this instance sees a possibility to make a little break
+	/// </summary>
+	/// <returns><c>true</c> if this instance is break visible; otherwise, <c>false</c>.</returns>
+	[Task]
+	public bool IsSitVisible(){
+		bool retVal = false;
+
+		if (vision != null) {
+			GameObject closestBreakGO = vision.GetClosestVisibleGO ();
+			if (closestBreakGO != null) {
+				if (closestBreakGO.tag.Equals(wayPointStringBreakSit)) {
+					sitOpportunity = closestBreakGO;
+					retVal= true;
+				} 
+			}
+		}
+
+		return retVal;
+	}
+
+	/// Approachs the talk partner.
+	/// </summary>
+	/// <returns><c>true</c>, if talk partner was approached, <c>false</c> otherwise.</returns>
+	[Task]
+	public bool ApproachOpportunity(){
+		bool retVal = false;
+		if (sitOpportunity != null) {
+			ApproachDestination (sitOpportunity);
+			retVal = true;
+		}
+		return retVal;
+	}
+
+	/// <summary>
+	/// Ises the talk partner reached.
+	/// </summary>
+	/// <returns><c>true</c>, if talk partner reached was ised, <c>false</c> otherwise.</returns>
+	/// <param name="talkPartnerPosition">Talk partner position.</param>
+	[Task]
+	public bool IsSitReached(){
+		bool isReached = true;
+		if (sitOpportunity != null) {
+			isReached = IsDestinationReached (sitOpportunity);
+		}
+
+		return isReached;
+	}
+
+	/// <summary>
+	/// Rotates the NPC so in sit direction
+	/// </summary>
+	/// <returns><c>true</c>, if sit was rotated, <c>false</c> otherwise.</returns>
+	[Task]
+	public bool RotateSit(){
+		bool retVal = false;
+		if (sitOpportunity != null) {
+			var sitDirection = Quaternion.LookRotation(sitOpportunity.transform.right);
+			this.transform.rotation = sitDirection;
+			retVal = true;
+		}
+		return retVal;
+	}
+
+	#endregion
+
+
+	#region Talk Tasks
 
 
 
@@ -60,6 +133,20 @@ public class AICitizen : AINPC {
 
 
 	/// <summary>
+	/// Approachs the talk partner.
+	/// </summary>
+	/// <returns><c>true</c>, if talk partner was approached, <c>false</c> otherwise.</returns>
+	[Task]
+	public bool ApproachTalkPartner(){
+		bool retVal = false;
+		if (talkPartner != null) {
+			ApproachDestination (talkPartner);
+			retVal = true;
+		}
+		return retVal;
+	}
+
+	/// <summary>
 	/// Ises the talk partner reached.
 	/// </summary>
 	/// <returns><c>true</c>, if talk partner reached was ised, <c>false</c> otherwise.</returns>
@@ -68,40 +155,32 @@ public class AICitizen : AINPC {
 	public bool IsTalkPartnerReached(){
 		bool isReached = true;
 		if (talkPartner != null) {
-			Vector3 talkPartnerPosition = talkPartner.transform.position;
-			if (Vector3.Distance (transform.position, talkPartnerPosition) > reachedMinDistance) {
-				isReached = false;
-			}
+			isReached = IsDestinationReached (talkPartner);
 		}
-
 		return isReached;
 	}
 
+
 	/// <summary>
-	/// Approachs the talk partner.
+	/// Citizen approaches visible target; if it is also a Citizen NPC and starts talk animation
 	/// </summary>
-	/// <returns><c>true</c>, if talk partner was approached, <c>false</c> otherwise.</returns>
 	[Task]
-	public bool ApproachTalkPartner(){
-		bool retVal = false;
-		if (talkPartner != null) {
-			this.MoveToDestination (talkPartner.transform.position);
-			retVal = true;
-		}
-		return retVal;
+	public bool Talk(){
+		ThirdPersonNPCNormal meThird = GetComponent<ThirdPersonNPCNormal> ();
+		meThird.Talk ();
+		return true;
 	}
 
 	/// <summary>
-	/// Stops the talk partner move.
+	/// Citizen approaches visible target; if it is also a Citizen NPC and starts talk animation
 	/// </summary>
 	[Task]
-	public bool StopTalkPartnerMove(){
-		if (talkPartner != null) {
-			AICitizen talkPartnerAI = talkPartner.GetComponent<AICitizen> ();
-			talkPartnerAI.StandStill ();
-		}
+	public bool StopTalk(){
+		ThirdPersonNPCNormal meThird = GetComponent<ThirdPersonNPCNormal> ();
+		meThird.StopTalk ();
 		return true;
 	}
+
 
 	/// <summary>
 	/// Stops the talk partner move.
@@ -129,6 +208,33 @@ public class AICitizen : AINPC {
 		}
 		return retVal;
 	} 
+	#endregion
+
+	#region Helpers
+	/// <summary>
+	/// Approachs the destination of gameobject
+	/// </summary>
+	/// <param name="go">Go.</param>
+	private void ApproachDestination(GameObject go){
+		this.MoveToDestination (go.transform.position);
+	}
+
+	/// <summary>
+	/// Determines whether this instance is destination reached the specified go.
+	/// </summary>
+	/// <returns><c>true</c> if this instance is destination reached the specified go; otherwise, <c>false</c>.</returns>
+	/// <param name="go">Go.</param>
+	private bool IsDestinationReached (GameObject go)
+	{
+		bool isReached=true;
+		Vector3 goPosition = go.transform.position;
+		if (Vector3.Distance (transform.position, goPosition) > reachedMinDistance) {
+			isReached = false;
+		}
+		return isReached;
+	}
+	#endregion
+
 
 	/// <summary>
 	/// Stops the myself move.
@@ -140,33 +246,6 @@ public class AICitizen : AINPC {
 	}
 
 
-	/// <summary>
-	/// Rotates the talk partner.
-	/// </summary>
-	[Task]
-	public void RotateTalkPartner(){
-	}
-
-	/// <summary>
-	/// Citizen approaches visible target; if it is also a Citizen NPC and starts talk animation
-	/// </summary>
-	[Task]
-	public bool Talk(){
-		ThirdPersonNPCNormal meThird = GetComponent<ThirdPersonNPCNormal> ();
-		meThird.Talk ();
-		return true;
-	}
-
-
-	/// <summary>
-	/// Citizen approaches visible target; if it is also a Citizen NPC and starts talk animation
-	/// </summary>
-	[Task]
-	public bool StopTalk(){
-		ThirdPersonNPCNormal meThird = GetComponent<ThirdPersonNPCNormal> ();
-		meThird.StopTalk ();
-		return true;
-	}
 
 
 	/// <summary>

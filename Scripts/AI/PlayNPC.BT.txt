@@ -2,15 +2,16 @@
 tree("BeAlive")
 	fallback
 		tree("Talk")
+		tree("Sit")
 		tree("Stroll")
 
 tree ("Talk")
 	sequence 
 		IsTalkPartnerVisible
-		tree("Approach")
+		tree("ApproachPartner")
 		StopMove
 		RotatePartner
-		Wait(300)
+		Wait(60)
 		Random
 			Wait(5)
 			Wait(10)
@@ -21,13 +22,30 @@ tree ("Talk")
 		RemovePartnerFromSight
 		StopTalk
 		Fail
-	
-tree("Approach")
+
+tree("Sit")
+	sequence
+		IsSitVisible
+		tree("ApproachSitOpportunity")
+		StopMove
+		RotateSit
+		Wait(100)
+
+
+tree("ApproachPartner")
 	fallback
 		repeat
 			while not IsTalkPartnerReached
 				ApproachTalkPartner
 		Succeed
+
+tree("ApproachSitOpportunity")
+	fallback
+		repeat
+			while not IsSitReached
+				ApproachOpportunity
+		Succeed
+
 
 tree("Stroll")
     Stroll()

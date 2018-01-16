@@ -86,8 +86,6 @@ public class AIVisionNpc: MonoBehaviour
 
 				if (isVisible && !visibles.Contains(attachedGameObject))
 				{
-					Debug.Log ("Seer " + this.transform.parent.transform.parent.name);
-					Debug.Log ("Seen " + attachedGameObject.name);
 					visibles.Add(attachedGameObject);
 				}
 			}
