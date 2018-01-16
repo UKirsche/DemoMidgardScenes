@@ -101,6 +101,28 @@ public class AICitizen : AINPC {
 		return retVal;
 	}
 
+
+	[Task]
+	public bool Sit(){
+		ThirdPersonNPCNormal meThird = GetComponent<ThirdPersonNPCNormal> ();
+		meThird.Sit ();
+		return true;
+	}
+
+
+	[Task]
+	public bool StopSit(){
+		ThirdPersonNPCNormal meThird = GetComponent<ThirdPersonNPCNormal> ();
+		meThird.StopSit ();
+		return true;
+	}
+
+	[Task]
+	public bool StepBack(){
+		ThirdPersonNPCNormal meThird = GetComponent<ThirdPersonNPCNormal> ();
+		this.transform.position = sitOpportunity.transform.position;
+		return true;
+	}
 	#endregion
 
 

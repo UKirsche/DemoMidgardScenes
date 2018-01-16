@@ -30,6 +30,14 @@ tree("Sit")
 		StopMove
 		RotateSit
 		Wait(100)
+		StepBack
+		Wait(100)
+		Sit
+		Wait(300)
+		StopSit
+		Wait(300)
+		Fail
+
 
 
 tree("ApproachPartner")
