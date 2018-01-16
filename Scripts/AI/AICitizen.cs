@@ -117,12 +117,6 @@ public class AICitizen : AINPC {
 		return true;
 	}
 
-	[Task]
-	public bool StepBack(){
-		ThirdPersonNPCNormal meThird = GetComponent<ThirdPersonNPCNormal> ();
-		this.transform.position = sitOpportunity.transform.position;
-		return true;
-	}
 	#endregion
 
 
