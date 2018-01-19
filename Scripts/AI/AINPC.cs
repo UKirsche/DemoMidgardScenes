@@ -150,9 +150,7 @@ public class AINPC : MonoBehaviour {
 			}
 		}
 
-
 		return retVal;
-
 	}
 
 	/// <summary>
@@ -175,8 +173,8 @@ public class AINPC : MonoBehaviour {
 				} 
 			}
 		}
-		return retVal;
 
+		return retVal;
 	}
 
 

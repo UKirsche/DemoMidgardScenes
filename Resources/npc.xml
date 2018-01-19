@@ -1,0 +1,32 @@
+<NPCS>
+	<NPC name="UweK">
+		<Infopaket>
+			<Info>Hallo, ich bin Uwe!</Info>
+			<Info>Bin Psychologe und rede gerne</Info>
+		</Infopaket>
+	</NPC>
+	<NPC name="FrankK">
+		<Infopaket>
+			<Info>Hallo, ich bin Frank</Info>
+			<Info>Bin Finanzi und helfe bei Steuer</Info>
+		</Infopaket>
+	</NPC>
+	<NPC name="MartinA">
+		<Infopaket>
+			<Info>Hallo, ich bin Martin</Info>
+			<Info>Tennisfan und Rollenspieler</Info>
+		</Infopaket>
+	</NPC>
+	<NPC name="MarioW">
+		<Infopaket>
+			<Info>Hallo, ich bin Mario</Info>
+			<Info>Noch ganz neu in der Gruppe</Info>
+		</Infopaket>
+	</NPC>
+	<NPC name="ReinerG">
+		<Infopaket>
+			<Info>Hallo, ich bin Reiner</Info>
+			<Info>Gerade etwas in Pause</Info>
+		</Infopaket>
+	</NPC>
+</NPCS>
