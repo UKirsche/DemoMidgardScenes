@@ -9,7 +9,6 @@ public class AICitizen : AINPC {
 	public string wayPointStringHome;
 	public string wayPointStringBreakSit;
 
-	protected AIVisionNpc vision;
 	protected GameObject talkPartner;
 	protected GameObject sitOpportunity;
 
@@ -27,7 +26,6 @@ public class AICitizen : AINPC {
 	public override void Start () {
 		base.Start ();
 
-		vision = GetComponentInChildren<AIVisionNpc> ();
 		IsBreak = true;
 		IsStroll = false;
 		talkPartner = null;

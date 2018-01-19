@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PopulateVertical : MonoBehaviour {
 
 	public GameObject prefabDialogText;
-	private string test="blalbalbal, ist ja wunder bar\n was hier so alles abgeht,\n ihr arschwichser";
+	private string test="blalbalbal, ist ja wunder bar\n was hier so alles abgeht,\n ihr kiddies ";
 	public int numCount;
 
 	// Use this for initialization
