@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class NPCDialogLoader : MonoBehaviour {
 
-	NPCS npcDialogs;
+	NPCS npcDialogs=null;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		npcDialogs = SceneResourceReader.GetMidgardResource<NPCS> (SceneResourceReader.MidgardNPC);
 	}
 
