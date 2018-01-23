@@ -8,9 +8,11 @@ public class PopulateVertical : MonoBehaviour {
 	public GameObject prefabDialogText;
 	private string test="blalbalbal, ist ja wunderbar was hier so alles abgeht,\n ihr kiddies ";
 	public int numCount;
+	private List<GameObject> dialogTextElements;
 
 	// Use this for initialization
 	void Start () {
+		dialogTextElements = new List<GameObject> ();
 		Populate ();
 	}
 	
@@ -27,11 +29,23 @@ public class PopulateVertical : MonoBehaviour {
 	}
 
 	/// <summary>
+	/// Clears the dialg text.
+	/// </summary>
+	public void ClearDialogBox(){
+		if (dialogTextElements.Count > 0) {
+			foreach (var item in dialogTextElements) {
+				Destroy (item);
+			}
+		}
+	}
+
+	/// <summary>
 	/// Adds the dialog text to the Vertical Layout Group
 	/// </summary>
 	public void addDialogText(string dialogString){
 		GameObject newDialog;
 		newDialog = Instantiate (prefabDialogText, transform); //ensures that
 		newDialog.GetComponent<Text> ().text = dialogString;
+		dialogTextElements.Add (newDialog);
 	}
 }

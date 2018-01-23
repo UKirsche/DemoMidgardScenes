@@ -19,7 +19,8 @@ public class PlayerDialogManager : MonoBehaviour {
 	void Start () {
 		dialogView = GameObject.Find (DialogName);
 		populateDialog = dialogView.GetComponentsInChildren<PopulateVertical> ()[0];
-		SetActiveDialogView (false);
+		populateDialog.ClearDialogBox ();
+		//SetActiveDialogView (false);
 
 	}
 
