@@ -6,17 +6,28 @@ public class NPCDialogManager : MonoBehaviour {
 
 	//npcName isGO name
 	public string npcName;
-	private NPC npcDialogs;
+	private List<Infopaket> npcDialogs;
+
 
 	// Use this for initialization
 	void Start () {
 		npcName = gameObject.name;
 		GameObject scripts = GameObject.Find ("Scripts");
 		NPCDialogLoader dialogLoader = scripts.GetComponent<NPCDialogLoader> ();
-		npcDialogs = dialogLoader.GetDialogByNPC (npcName);
+		npcDialogs = dialogLoader.GetDialogByNPC (npcName).infopakete;
 	}
 		
 
-	public void GetNPCDialogs(){
+	/// <summary>
+	/// Gets the next info package from Dialogpack for NPC and removes it from the list
+	/// </summary>
+	public Infopaket GetNextInfoPackage(){
+		Infopaket infPackage=null;
+		//get first element of the list
+		if (npcDialogs!=null && npcDialogs.Count > 0) {
+			infPackage = npcDialogs [0];
+		}
+
+		return infPackage;
 	}
 }
