@@ -185,6 +185,19 @@ public class AINPC : MonoBehaviour {
 		return true;
 	}
 
+	/// <summary>
+	/// Sets the dialog partner for the hit PC (Player) as this NPC!
+	/// </summary>
+	/// <returns><c>true</c>, if dialog partner P was set, <c>false</c> otherwise.</returns>
+	[Task]
+	public bool SetDialogPartnerPC()
+	{
+		var dialogManager = pcTalkChosen.GetComponent<PlayerDialogManager> ();
+		if (dialogManager != null) {
+			dialogManager.SetDialogPartner (gameObject);
+		}
+		return true;
+	}
 
 	#endregion
 		

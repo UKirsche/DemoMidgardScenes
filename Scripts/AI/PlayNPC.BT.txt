@@ -12,7 +12,7 @@ tree("TalkPC")
 		 ISPCInTalkDist
 		 StopMove
 		 RotateToPC
-
+		 SetDialogPartnerPC
 
 
 tree ("Talk")
