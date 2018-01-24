@@ -1,0 +1,7 @@
+tree("BeAlive")
+	fallback
+		tree("TalkNPC")
+
+tree("TalkNPC")
+	sequence
+		HasDialogPartner
