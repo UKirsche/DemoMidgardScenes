@@ -21,8 +21,6 @@ public class PlayerDialogManager : MonoBehaviour {
 		dialogView = GameObject.Find (DialogName);
 		populateDialog = dialogView.GetComponentsInChildren<PopulateVertical> ()[0];
 		dialogView.SetActive (false);
-
-
 	}
 
 
@@ -34,8 +32,44 @@ public class PlayerDialogManager : MonoBehaviour {
 		npcTalkPartner = talkPartner;
 	}
 
+//	/// Holt nächstes Infopaket vom NPC
+//	/// </summary>
+//	[Task]
+//	public void GetNextDialogPackageFromNPC(){
+//		if (npcTalkPartner != null) {
+//			var npcDialogManager = npcTalkPartner.GetComponent<NPCDialogManager> ();
+//			var infopaket = npcDialogManager.GetNextInfoPackage ();
+//			DisplayInfoPackage (infopaket);
+//		}
+//	}
 
+//	/// <summary>
+//	/// Displays the info package on the dialog
+//	/// </summary>
+//	/// <param name="infos">Infos.</param>
+//	public void DisplayInfoPackage(Infopaket infoPaket){
+//		populateDialog.ClearDialogBox ();
+//		if (infoPaket.infos != null && infoPaket.infos.Count > 0) {
+//			foreach (var info in infoPaket.infos) {
+//				populateDialog.addDialogText (info.content);
+//			}
+//		} else {
+//			SetInActiveDialogView ();	
+//		}
+//	}
+//
 
+	/// <summary>
+	/// Holt nächstes Infopaket vom NPC
+	/// </summary>
+	[Task]
+	public void GetNextDialogPackageFromNPC(){
+		if (npcTalkPartner != null) {
+
+		}
+	}
+
+	#region tasks
 
 	/// <summary>
 	/// Activates the dialog window in GameScene
@@ -58,16 +92,6 @@ public class PlayerDialogManager : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// Holt nächstes Infopaket vom NPC
-	/// </summary>
-	[Task]
-	public void GetNextDialogPackageFromNPC(){
-		if (npcTalkPartner != null) {
-			
-		}
-	}
-
-	/// <summary>
 	/// Determines whether this instance sees a possibility to make a little break
 	/// </summary>
 	/// <returns><c>true</c> if this instance is break visible; otherwise, <c>false</c>.</returns>
@@ -80,4 +104,7 @@ public class PlayerDialogManager : MonoBehaviour {
 
 		return retVal;
 	}
+
+	#endregion
+
 }
