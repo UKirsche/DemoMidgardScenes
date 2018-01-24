@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +20,8 @@ public class PlayerDialogManager : MonoBehaviour {
 	void Start () {
 		dialogView = GameObject.Find (DialogName);
 		populateDialog = dialogView.GetComponentsInChildren<PopulateVertical> ()[0];
+		dialogView.SetActive (false);
+
 
 	}
 
@@ -38,10 +41,21 @@ public class PlayerDialogManager : MonoBehaviour {
 	/// Activates the dialog window in GameScene
 	/// </summary>
 	/// <param name="activate">If set to <c>true</c> activate.</param>
-	public void SetActiveDialogView(bool activate){
-		dialogView.SetActive (activate);
+	[Task]
+	public bool SetActiveDialogView(){
+		dialogView.SetActive (true);
+		return true;
 	}
 
+	/// <summary>
+	/// Activates the dialog window in GameScene
+	/// </summary>
+	/// <param name="activate">If set to <c>true</c> activate.</param>
+	[Task]
+	public bool SetInActiveDialogView(){
+		dialogView.SetActive (false);
+		return true;
+	}
 
 	/// <summary>
 	/// Holt nächstes Infopaket vom NPC

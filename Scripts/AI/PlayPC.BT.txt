@@ -1,7 +1,12 @@
 tree("BeAlive")
 	fallback
 		tree("TalkNPC")
+		tree("Clean")
 
 tree("TalkNPC")
 	sequence
 		HasDialogPartner
+		SetActiveDialogView
+
+tree("Clean")
+	SetInActiveDialogView

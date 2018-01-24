@@ -195,7 +195,24 @@ public class AINPC : MonoBehaviour {
 		var dialogManager = pcTalkChosen.GetComponent<PlayerDialogManager> ();
 		if (dialogManager != null) {
 			dialogManager.SetDialogPartner (gameObject);
+		} 
+		return true;
+	}
+
+	/// <summary>
+	/// Remoes this NPC as TalkPartner for PC
+	/// </summary>
+	/// <returns><c>true</c>, if dialog partner P was set, <c>false</c> otherwise.</returns>
+	[Task]
+	public bool UnsetDialogPartnerPC()
+	{
+		if (pcTalkChosen != null) {
+			var dialogManager = pcTalkChosen.GetComponent<PlayerDialogManager> ();
+			if (dialogManager != null) {
+				dialogManager.SetDialogPartner (null);
+			} 
 		}
+
 		return true;
 	}
 
