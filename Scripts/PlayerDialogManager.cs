@@ -12,12 +12,14 @@ public class PlayerDialogManager : MonoBehaviour {
 	private GameObject dialogView;
 	private GameObject npcTalkPartner;
 	private Infopaket dialogPackage;
+	private PopulateVertical populateDialog;
 
 
 
 	// Use this for initialization
 	void Start () {
 		dialogView = GameObject.Find (DialogName);
+		populateDialog = dialogView.GetComponentsInChildren<PopulateVertical> ()[0];
 		dialogView.SetActive (false);
 	}
 
@@ -47,12 +49,19 @@ public class PlayerDialogManager : MonoBehaviour {
 	#region tasks
 
 	/// <summary>
-	/// Activates the dialog window in GameScene
+	/// Activates the dialog window in GameScene with Standardinfo
 	/// </summary>
 	/// <param name="activate">If set to <c>true</c> activate.</param>
 	[Task]
 	public bool SetActiveDialogView(){
-		dialogView.SetActive (true);
+		if (dialogView.activeSelf==false) {
+			dialogView.SetActive (true);
+			var npcDialogManager = npcTalkPartner.GetComponent<NPCDialogManager> ();
+
+			Infopaket standardPaket = npcDialogManager.GetStandardInfo ();
+			DialogButtonWrapper.DisplayInfoPackage (populateDialog, standardPaket);
+		}
+
 		return true;
 	}
 

@@ -27,7 +27,7 @@ public class DialogButtonWrapper : MonoBehaviour {
 		PlayerDialogManager playerDialogManager = playerObject.GetComponent<PlayerDialogManager> ();
 		Infopaket infopaket = playerDialogManager.GetNextDialogPackageFromNPC ();
 		if (infopaket != null) {
-			DisplayInfoPackage (infopaket);
+			DisplayInfoPackage (populateDialog, infopaket);
 		}
 	}
 
@@ -35,16 +35,13 @@ public class DialogButtonWrapper : MonoBehaviour {
 	/// Displays the info package on the dialog
 	/// </summary>
 	/// <param name="infos">Infos.</param>
-	public void DisplayInfoPackage(Infopaket infoPaket){
-		populateDialog.ClearDialogBox ();
+	public static void DisplayInfoPackage(PopulateVertical popDialog, Infopaket infoPaket){
+		popDialog.ClearDialogBox ();
 		if (infoPaket.infos != null && infoPaket.infos.Count > 0) {
 			foreach (var info in infoPaket.infos) {
-				populateDialog.addDialogText (info.content);
+				popDialog.addDialogText (info.content);
 			}
-		} else {
-			dialogView.SetActive (false);	
-		}
+		} 
 	}
-
 
 }
