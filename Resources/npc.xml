@@ -14,6 +14,12 @@
 			<Info>Hallo, ich bin Frank</Info>
 			<Info>Bin Finanzi und helfe bei Steuer</Info>
 		</Infopaket>
+		<Infopaket>
+			<Info>Aber manchmal habe ich da auch richtig miese Laune</Info>
+			<Info>Sonst mag ich halt meine Familie</Info>
+			<Info>Jan zum Beispiel macht immer gute Gags</Info>
+			<Info>Inna brüllt immer</Info>
+		</Infopaket>
 	</NPC>
 	<NPC name="MartinA">
 		<Infopaket>

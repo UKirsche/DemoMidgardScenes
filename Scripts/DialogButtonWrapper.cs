@@ -26,7 +26,9 @@ public class DialogButtonWrapper : MonoBehaviour {
 		GameObject playerObject = GameObject.FindGameObjectWithTag (DemoRPGMovement.PLAYER_NAME);
 		PlayerDialogManager playerDialogManager = playerObject.GetComponent<PlayerDialogManager> ();
 		Infopaket infopaket = playerDialogManager.GetNextDialogPackageFromNPC ();
-		DisplayInfoPackage (infopaket);
+		if (infopaket != null) {
+			DisplayInfoPackage (infopaket);
+		}
 	}
 
 	/// <summary>
