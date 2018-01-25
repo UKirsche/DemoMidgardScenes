@@ -11,7 +11,6 @@ public class PlayerDialogManager : MonoBehaviour {
 	const string DialogName = "DialogView";
 	private GameObject dialogView;
 	private GameObject npcTalkPartner;
-	private PopulateVertical populateDialog;
 	private Infopaket dialogPackage;
 
 
@@ -19,7 +18,6 @@ public class PlayerDialogManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		dialogView = GameObject.Find (DialogName);
-		populateDialog = dialogView.GetComponentsInChildren<PopulateVertical> ()[0];
 		dialogView.SetActive (false);
 	}
 
@@ -32,42 +30,19 @@ public class PlayerDialogManager : MonoBehaviour {
 		npcTalkPartner = talkPartner;
 	}
 
-//	/// Holt nächstes Infopaket vom NPC
-//	/// </summary>
-//	[Task]
-//	public void GetNextDialogPackageFromNPC(){
-//		if (npcTalkPartner != null) {
-//			var npcDialogManager = npcTalkPartner.GetComponent<NPCDialogManager> ();
-//			var infopaket = npcDialogManager.GetNextInfoPackage ();
-//			DisplayInfoPackage (infopaket);
-//		}
-//	}
-
-//	/// <summary>
-//	/// Displays the info package on the dialog
-//	/// </summary>
-//	/// <param name="infos">Infos.</param>
-//	public void DisplayInfoPackage(Infopaket infoPaket){
-//		populateDialog.ClearDialogBox ();
-//		if (infoPaket.infos != null && infoPaket.infos.Count > 0) {
-//			foreach (var info in infoPaket.infos) {
-//				populateDialog.addDialogText (info.content);
-//			}
-//		} else {
-//			SetInActiveDialogView ();	
-//		}
-//	}
-//
-
-	/// <summary>
 	/// Holt nächstes Infopaket vom NPC
 	/// </summary>
-	[Task]
-	public void GetNextDialogPackageFromNPC(){
+	public Infopaket GetNextDialogPackageFromNPC(){
+		Infopaket infopaket = null;;
 		if (npcTalkPartner != null) {
+			var npcDialogManager = npcTalkPartner.GetComponent<NPCDialogManager> ();
+			infopaket = npcDialogManager.GetNextInfoPackage ();
 
 		}
+
+		return infopaket;
 	}
+		
 
 	#region tasks
 

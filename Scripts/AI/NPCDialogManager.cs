@@ -26,6 +26,7 @@ public class NPCDialogManager : MonoBehaviour {
 		//get first element of the list
 		if (npcDialogs!=null && npcDialogs.Count > 0) {
 			infPackage = npcDialogs [0];
+			npcDialogs.Remove (infPackage);
 		}
 
 		return infPackage;

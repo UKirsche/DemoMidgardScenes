@@ -4,6 +4,10 @@
 			<Info>Hallo, ich bin Uwe!</Info>
 			<Info>Bin Psychologe und rede gerne</Info>
 		</Infopaket>
+		<Infopaket>
+			<Info>Wenn du wissen willst, was hier so abgeht,</Info>
+			<Info>dann folge mir einfach mal</Info>
+		</Infopaket>
 	</NPC>
 	<NPC name="FrankK">
 		<Infopaket>
