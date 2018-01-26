@@ -34,8 +34,9 @@ Wird die hohe Schule der nützlichen Wissenschaften</Info>
 	</NPC>
 	<NPC name="Frewyn">
 		<Infopaket>
-			<Info>Hallo, ich bin Frank</Info>
-			<Info>Bin Finanzi und helfe bei Steuer</Info>
+			<Info>Ich bin nämlich Ratsherr und im Stadtrat</Info>
+			<Info>Dabei kümmere ich mich um die Einnahmen der Finanzen.
+Was ich sagen kann: unsere Stadt floriert.</Info>
 		</Infopaket>
 		<Infopaket>
 			<Info>Aber manchmal habe ich da auch richtig miese Laune</Info>
