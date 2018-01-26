@@ -84,10 +84,21 @@ Gerade jetzt zur Zeit des Fayre.</Info>
 Drogen schmuggeln. </Info>
 		</Infopaket>
 	</NPC>
-	<NPC name="ReinerG">
+	<NPC name="Emrys">
 		<Infopaket>
-			<Info>Hallo, ich bin Reiner</Info>
-			<Info>Gerade etwas in Pause</Info>
+			<Info>Ja, ich weiß was du Fragen willst...</Info>
+			<Info>Aber meine Mädchen sind gerade alle belegt...</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>Achso, du willst wer meine Mädchen nimmt...</Info>
+			<Info>Na, gegen Bezahlung sage ich es dir...</Info>
+			<Info>Los, gib das Geld und sage niemandem davon...</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>Natürlich sind hier hohe Tiere...</Info>
+			<Info>Egal ob Magier, Magister und Magistrat....</Info>
+			<Info>Sie kommen alle...
+Und auch mancher arme Schlucker</Info>
 		</Infopaket>
 	</NPC>
 </NPCS>
