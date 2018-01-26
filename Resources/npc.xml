@@ -36,13 +36,29 @@ Wird die hohe Schule der nützlichen Wissenschaften</Info>
 		<Infopaket>
 			<Info>Ich bin nämlich Ratsherr und im Stadtrat</Info>
 			<Info>Dabei kümmere ich mich um die Einnahmen der Finanzen.
-Was ich sagen kann: unsere Stadt floriert.</Info>
+Was ich sagen kann: unsere Stadt floriert. 
+Nicht zuletzt, weil wir, unter uns gesagt,
+auch Zuschüsse bekommen</Info>
+			<Info>Na sicher tun sich auch die Klöster hervor. 
+Die Bruderschaft z.B. hat uns von anfang an unterstützt.</Info>
+			<Info>Unter uns gesagt: hier gibt es einige Bürger,
+die verdienen 100x so viel wie billigen Arbeiter hier</Info>
 		</Infopaket>
 		<Infopaket>
-			<Info>Aber manchmal habe ich da auch richtig miese Laune</Info>
-			<Info>Sonst mag ich halt meine Familie</Info>
-			<Info>Jan zum Beispiel macht immer gute Gags</Info>
-			<Info>Inna brüllt immer</Info>
+			<Info>Und ja, das mit Bruder Dunstan...
+Schrecklich...Ich habe es gehört</Info>
+			<Info>Man mag es kaum glauben!</Info>
+			<Info>Mit einer Axt ermordert sagt man</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>Dabei war Dunstan so tüchtig.
+Ein wunderbarer Cellerar. 
+Der hatte seinen Finanzen im Griff!</Info>
+			<Info>Prior Lugan dagegen...</Info>
+			<Info>Der gibt das Geld lieber aus</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>Fragen sie mal nach im Freudenviertel am Hafen</Info>
 		</Infopaket>
 	</NPC>
 	<NPC name="MartinA">
@@ -51,10 +67,21 @@ Was ich sagen kann: unsere Stadt floriert.</Info>
 			<Info>Tennisfan und Rollenspieler</Info>
 		</Infopaket>
 	</NPC>
-	<NPC name="MarioW">
+	<NPC name="Donlan">
 		<Infopaket>
-			<Info>Hallo, ich bin Mario</Info>
-			<Info>Noch ganz neu in der Gruppe</Info>
+			<Info>Ich betreibe das Gasthaus zum Goldenen Fuchs</Info>
+			<Info>Natürlich lerne ich viele Menschen kennen.
+Gerade jetzt zur Zeit des Fayre.</Info>
+			<Info>Ehrlich gesagt: auch allerhand Gesindel!</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>Aber solange die zahlen...</Info>
+			<Info>Bringen weningsten schöne Geschichten mit...</Info>
+			<Info>Zum Teil wenigstens...</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>Erzählt doch glatt einer, dass die in die Klöster
+Drogen schmuggeln. </Info>
 		</Infopaket>
 	</NPC>
 	<NPC name="ReinerG">
