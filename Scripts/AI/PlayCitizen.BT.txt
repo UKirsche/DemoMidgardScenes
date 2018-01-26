@@ -1,0 +1,67 @@
+//Einstiegsmethode zur Steuereung des NPC
+tree("BeAlive")
+	fallback
+		tree("Talk")
+		tree("Sit")
+		tree("Stroll")
+
+tree("TalkPC")
+	sequence
+		 UnsetDialogPartnerPC
+		 IsPCInColliders
+		 ISPCInTalkDist
+		 StopMove
+		 RotateToPC
+		 SetDialogPartnerPC
+
+
+tree ("Talk")
+	sequence 
+		IsTalkPartnerVisible
+		tree("ApproachPartner")
+		StopMove
+		RotatePartner
+		Wait(60)
+		Random
+			Wait(5)
+			Wait(10)
+			Wait(40)
+			Wait(1)
+		Talk
+		Wait(100)
+		RemovePartnerFromSight
+		StopTalk
+		Fail
+
+tree("Sit")
+	sequence
+		IsSitVisible
+		tree("ApproachSitOpportunity")
+		StopMove
+		RotateSit
+		Wait(100)
+		Sit
+		Wait(300)
+		StopSit
+		Wait(300)
+		Fail
+
+
+
+tree("ApproachPartner")
+	fallback
+		repeat
+			while not IsTalkPartnerReached
+				ApproachTalkPartner
+		Succeed
+
+tree("ApproachSitOpportunity")
+	fallback
+		repeat
+			while not IsSitReached
+				ApproachOpportunity
+		Succeed
+
+
+tree("Stroll")
+    Stroll()

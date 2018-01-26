@@ -1,29 +1,4 @@
-tree("BeAlive")
-	//This unit attacks when possible,
-	//otherwise it patrols a predefined path.
-	fallback
-		tree("Talk")
-		tree("Sit")
-		tree("Work")
-		tree("Stroll")
-
-
-tree("Stroll")
-    repeat
-    	random 
-        	//CitizenGlobalStroll()
-        	CitizenHomeStroll()
-
-tree("Sit")
-    while IsBreak
-        CitizenBreakSit()
-
-tree("Work")
-    while IsBreak
-        CitizenBreakSit()
-
-
-tree("Talk")
-    while IsBreak
-        CitizenBreakSit()
-		
+tree("Root")
+	parallel
+		repeat mute tree("BeAlive")
+		repeat mute tree("TalkPC")
