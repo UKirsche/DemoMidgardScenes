@@ -6,7 +6,7 @@ public class NPCDialogManager : MonoBehaviour {
 
 
 	const string INFO_NAME = "Hallo, mein Name ist ";
-	const string INFO_TALKER = "Ich würde gerne reden!";
+	const string INFO_TALKER = "Ich kann dir so manches erzählen, mein Freund ";
 	const string INFO_FINISH = "Ich habe alles gesagt";
 
 

@@ -1,15 +1,38 @@
 <NPCS>
-	<NPC name="UweK">
+	<NPC name="Kennard">
 		<Infopaket>
-			<Info>Hallo, ich bin Uwe!</Info>
-			<Info>Bin Psychologe und rede gerne</Info>
+			<Info>Zum Beispiel über mich.
+Ich bin nämlich der Zunftmeister der Bauleute.</Info>
+			<Info>Die beste Zunft in Cambrygg.
+Wenn Du dich umsiehst, erkennst du es.
+Es gibt viele Baustellen.</Info>
+			<Info></Info>
+			<Info>Aber das schönste Gebäude ist immer noch die große Akademie</Info>
 		</Infopaket>
 		<Infopaket>
-			<Info>Wenn du wissen willst, was hier so abgeht,</Info>
-			<Info>dann folge mir einfach mal</Info>
+			<Info>Die könglich-albische Akademie.
+Seit diese errichtet wurde, 
+blüht die Stadt regelrecht auf.</Info>
+			<Info>Natürlich war ich maßgeblich
+am Bau beteiligt. Ich habe nämlich in
+Chryseia studiert, musst du wissen.</Info>
+			<Info>Andere Zünfte haben sich anschließend niedergelassesn. 
+Und damit auch Händler, Weber usw.</Info>
+			<Info></Info>
+			<Info>In Alba genießen wir im Stadtrecht einen besonderen Status.</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>Neben der großen Akademie im Süden der Stadt
+gibt es noch eine kleinere am Hafen:
+Das Kolleg des Träumers mit offener Bibliothek</Info>
+			<Info>Der letzte Bau war der Turm der Lichtsuchergild</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>Die große Baustelle im Zentrum:
+Wird die hohe Schule der nützlichen Wissenschaften</Info>
 		</Infopaket>
 	</NPC>
-	<NPC name="FrankK">
+	<NPC name="Frewyn">
 		<Infopaket>
 			<Info>Hallo, ich bin Frank</Info>
 			<Info>Bin Finanzi und helfe bei Steuer</Info>

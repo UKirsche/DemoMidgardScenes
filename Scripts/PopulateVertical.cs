@@ -6,14 +6,12 @@ using UnityEngine.UI;
 public class PopulateVertical : MonoBehaviour {
 
 	public GameObject prefabDialogText;
-	private string test="Ich möchte gerade nicht reden";
 	public int numCount;
 	private List<GameObject> dialogTextElements;
 
 	// Use this for initialization
 	void Start () {
 		dialogTextElements = new List<GameObject> ();
-		Populate ();
 	}
 	
 	// Update is called once per frame
@@ -24,7 +22,7 @@ public class PopulateVertical : MonoBehaviour {
 
 	public void Populate(){
 		for (int i = 0; i < numCount; i++) {
-			addDialogText (test);
+			addDialogText ("tst");
 		}
 	}
 
