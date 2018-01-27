@@ -100,5 +100,22 @@ Drogen schmuggeln. </Info>
 			<Info>Sie kommen alle...
 Und auch mancher arme Schlucker</Info>
 		</Infopaket>
+		<Infopaket>
+			<Info>Zum Beispiel kommt ein hoher Prior...</Info>
+			<Info>Ebenso wie ein kleiner Bruder....</Info>
+			<Info>Wenn du weißt,was ich meine!</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>Dabei ist mir der Prior lieber!</Info>
+			<Info>Er nimmt zwar nur die hübschesten Mädchen</Info>
+			<Info>Verliebt sich aber nicht sofort in sie...</Info>
+		</Infopaket>
+	</NPC>
+	<NPC name="Dolvin">
+		<Infopaket>
+			<Info>Ich habe da was hinter den Äckern entdeckt...</Info>
+			<Info>Wenn du magst führe ich dich hin...</Info>
+			<Info>Folge mir einfach...</Info>
+		</Infopaket>
 	</NPC>
 </NPCS>
