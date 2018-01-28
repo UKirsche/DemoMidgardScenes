@@ -8,7 +8,7 @@ using Panda;
 public class PlayerDialogManager : MonoBehaviour {
 
 	//Name of DialogView
-	const string DialogName = "DialogView";
+	public const string DialogName = "DialogView";
 	private GameObject dialogView;
 	private GameObject npcTalkPartner;
 	private Infopaket dialogPackage;

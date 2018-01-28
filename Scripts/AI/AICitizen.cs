@@ -232,32 +232,8 @@ public class AICitizen : AINPC {
 	private void ApproachDestination(GameObject go){
 		this.MoveToDestination (go.transform.position);
 	}
-
-	/// <summary>
-	/// Determines whether this instance is destination reached the specified go.
-	/// </summary>
-	/// <returns><c>true</c> if this instance is destination reached the specified go; otherwise, <c>false</c>.</returns>
-	/// <param name="go">Go.</param>
-	private bool IsDestinationReached (GameObject go)
-	{
-		bool isReached=true;
-		Vector3 goPosition = go.transform.position;
-		if (Vector3.Distance (transform.position, goPosition) > reachedMinDistance) {
-			isReached = false;
-		}
-		return isReached;
-	}
+		
 	#endregion
-
-
-	/// <summary>
-	/// Stops the myself move.
-	/// </summary>
-	[Task]
-	public bool StopMove(){
-		this.StandStill ();
-		return true;
-	}
 
 
 

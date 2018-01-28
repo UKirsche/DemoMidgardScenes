@@ -1,0 +1,23 @@
+//Einstiegsmethode zur Steuereung des NPC
+tree("BeAlive")
+	fallback
+		MoveToInfoPoint
+		not tree("TalkPC")
+		not SetGoalPointActive
+		not Wait(150)
+		UnsetDialogPartnerPC
+
+tree("TalkPC")
+	sequence
+		 UnsetDialogPartnerPC
+		 IsPCInColliders
+		 ISPCInTalkDist
+		 StopMove
+		 RotateToPC
+		 SetDialogPartnerPC
+
+tree("Clean")
+	SetInActiveDialogView
+
+tree("Stroll")
+    Stroll()

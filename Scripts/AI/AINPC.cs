@@ -91,6 +91,7 @@ public class AINPC : MonoBehaviour {
 	/// <param name="position">Position.</param>
 	protected void MoveToDestination (Vector3 position)
 	{
+		agent.speed = strollSpeed;
 		agent.SetDestination (position);
 		character.Move (agent.desiredVelocity);
 	}
@@ -126,6 +127,16 @@ public class AINPC : MonoBehaviour {
 		character.Move (Vector3.zero);
 		return true;
 
+	}
+
+
+	/// <summary>
+	/// Stops the myself move.
+	/// </summary>
+	[Task]
+	public bool StopMove(){
+		this.StandStill ();
+		return true;
 	}
 	#endregion
 
@@ -217,6 +228,22 @@ public class AINPC : MonoBehaviour {
 		return true;
 	}
 
+	#endregion
+	#region helpers
+	/// <summary>
+	/// Determines whether this instance is destination reached the specified go.
+	/// </summary>
+	/// <returns><c>true</c> if this instance is destination reached the specified go; otherwise, <c>false</c>.</returns>
+	/// <param name="go">Go.</param>
+	protected bool IsDestinationReached (GameObject go)
+	{
+		bool isReached=true;
+		Vector3 goPosition = go.transform.position;
+		if (Vector3.Distance (transform.position, goPosition) > reachedMinDistance) {
+			isReached = false;
+		}
+		return isReached;
+	}
 	#endregion
 		
 }
