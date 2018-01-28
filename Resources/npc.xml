@@ -118,4 +118,11 @@ Und auch mancher arme Schlucker</Info>
 			<Info>Folge mir einfach...</Info>
 		</Infopaket>
 	</NPC>
+		<NPC name="Rodrick">
+		<Infopaket>
+			<Info>Ich habe da was hinter den Äckern entdeckt...</Info>
+			<Info>Wenn du magst führe ich dich hin...</Info>
+			<Info>Folge mir einfach...</Info>
+		</Infopaket>
+	</NPC>
 </NPCS>

@@ -1,0 +1,10 @@
+//For static npcs, not walking
+tree("BeAlive")
+	tree("TalkPC")
+
+tree("TalkPC")
+	sequence
+		 UnsetDialogPartnerPC
+		 IsPCInColliders
+		 ISPCInTalkDist
+		 SetDialogPartnerPC
