@@ -118,11 +118,28 @@ Und auch mancher arme Schlucker</Info>
 			<Info>Folge mir einfach...</Info>
 		</Infopaket>
 	</NPC>
-		<NPC name="Rodrick">
+	<NPC name="Rodrick">
 		<Infopaket>
-			<Info>Ich habe da was hinter den Äckern entdeckt...</Info>
-			<Info>Wenn du magst führe ich dich hin...</Info>
-			<Info>Folge mir einfach...</Info>
+			<Info>Da ich Jäger bin, weiß ich, das draußen abgeht...</Info>
+			<Info>Da passieren in letzter Zeit komische Dinge. Wilde Tiere</Info>
+			<Info>...</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>Irgendein komisches Vieh geht da um. Unglaublich brutal...</Info>
+			<Info>Es reißt, was es zwischen die Tatzen bekommt</Info>
+			<Info>...</Info>
+		</Infopaket>
+	</NPC>
+	<NPC name="Wächter">
+		<Infopaket>
+			<Info>Das ist könglich albische Akademie</Info>
+			<Info>Solange du keine Scheiße baust...kannst rein.</Info>
+		</Infopaket>
+	</NPC>
+	<NPC name="SchmiedTom">
+		<Infopaket>
+			<Info>Ich repariere die Waffen für die Jäger hier</Info>
+			<Info>Vielleicht kannst du mit dem einem oder anderen reden</Info>
 		</Infopaket>
 	</NPC>
 </NPCS>
