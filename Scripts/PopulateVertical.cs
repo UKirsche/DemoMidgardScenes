@@ -10,7 +10,7 @@ public class PopulateVertical : MonoBehaviour {
 	private List<GameObject> dialogTextElements;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		dialogTextElements = new List<GameObject> ();
 	}
 	

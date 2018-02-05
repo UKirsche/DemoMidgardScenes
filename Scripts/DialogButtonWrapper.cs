@@ -37,9 +37,10 @@ public class DialogButtonWrapper : MonoBehaviour {
 	/// <param name="infos">Infos.</param>
 	public static void DisplayInfoPackage(PopulateVertical popDialog, Infopaket infoPaket){
 		popDialog.ClearDialogBox ();
-		if (infoPaket.infos != null && infoPaket.infos.Count > 0) {
+		if (infoPaket!= null && infoPaket.infos != null && infoPaket.infos.Count > 0) {
 			foreach (var info in infoPaket.infos) {
 				popDialog.addDialogText (info.content);
+
 			}
 		} 
 	}

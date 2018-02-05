@@ -114,7 +114,7 @@ Und auch mancher arme Schlucker</Info>
 	<NPC name="Dolvin">
 		<Infopaket>
 			<Info>Ich habe da was hinter den Äckern entdeckt...</Info>
-			<Info>Wenn du magst führe ich dich hin...</Info>
+			<Info>Ein verlassenes Lager. Wenn du magst führe ich dich hin...</Info>
 			<Info>Folge mir einfach...</Info>
 		</Infopaket>
 	</NPC>
@@ -141,5 +141,71 @@ Und auch mancher arme Schlucker</Info>
 			<Info>Ich repariere die Waffen für die Jäger hier</Info>
 			<Info>Vielleicht kannst du mit dem einem oder anderen reden</Info>
 		</Infopaket>
+	</NPC>
+	<NPC name="Tomb">
+		<Infopaket>
+				<Info>Mir fällt was ein über die Legende des Vraidos</Info>
+				<Info></Info>
+				<Info>Myra war eine Meisterin des oberen und unteren Ozeans während des Krieges der Magier.</Info>
+				<Info>Der Ruhm unseres Herrn Vraidos lockte Myra aus ihrer Zuflucht heraus</Info>
+				<Info>Sie setzte sich zu seinen Füßen nieder und lauschte seiner Weisheit</Info>
+				<Info>Da Vraidos wunderschön war, verliebte sich Myra in ihn und sie wollte ihn haben.</Info>
+				<Info>Doch Vraidos wollte sich nicht von seiner Aufgabe ablenken lassen, denn er witterte</Info>
+				<Info>schlimmsten Verrat bei den Toquinern</Info>
+				<Info>Und er ruhte nicht eher, bis er den Verrat entdeckt hatte, um endlich mit Myra</Info>
+				<Info>Ruhe zu finden.</Info>
+			</Infopaket>
+	</NPC>
+	<NPC name="Fountain">
+		<Infopaket>
+				<Info>Der Kelch der Myra: Das letzte Wasser das Vraidos zu sich nahm</Info>
+				<Info></Info>
+				<Info>Wer aus diesem Kelch trinkt, wir die letzte Wahrheit des Vraidos erfahren</Info>
+				<Info>Er wird kennen lernen den Verrat und den Hochmut innerhalb der Bruderschaft</Info>
+				<Info>Und er wird erkennen, dass viele die Feinde der Bruderschaft waren...</Info>
+				<Info>Im Grunde die Erlöser sind!</Info>
+			</Infopaket>
+	</NPC>
+	<NPC name="Hexenbulle">
+			<Infopaket>
+				<Info>Hexen-Bulle von Kirghlaird Walden (1809 n.L.)</Info>
+				<Info>Summis desiderantes affectibus: mit höchstem Eifer fordere ich dazu auf, 
+alle ketzerische Bosheit auszurotten. </Info>
+			<Info>Wider den abscheulichen Aberglauben und die zauberischen Übertretungen,</Info>
+			<Info>die mir aus einigen Teilen Albas, besonders aus den Erzbistümern Prioresse, Beornanburgh,</Info>
+			<Info>Corinnis und Fjorinde zugetragen worden sind, hilft lediglich unnachgiebige Härte.</Info>
+			<Info>Viele Brüder und Schwestern sind vom Glauben abgefallen ... die Menschen, die Frauen,</Info>
+			<Info>die Tiere, das Vieh, Getreide, Korn verderben ... die Menschen mit grausamen sowohl</Info>
+			<Info>innerlichen als äußerlichen Schmerzen und Plagen peinigen und verursachen,</Info>
+			<Info>dass die Männer nicht zeugen, die Frauen nicht empfangen können, dass Blitze </Info>
+			<Info>von der Erde in den Himmel fahren, und Schreckgespenste über unseren schönen</Info>
+			<Info>Auen und Berge wandeln</Info>
+			</Infopaket>
+	</NPC>
+	<NPC name="Hexenstahl">
+			<Infopaket>
+				<Info>Das Hexenstahl, Kirghlaird Walden zu Beornanburgh, 1811 n.L.</Info>
+				<Info>Die Art aber, damit zu beginnen, ist diese: Während die Büttel 
+sich zum peinlichen Verhör bereit machen, entkleiden sie ihn danach; </Info>
+			<Info> oder wenn es eine Frau ist, soll sie, bevor sie in das
+Strafgefängnis geführt wird von anderen ehrbaren 
+Frauen von gutem Rufe entkleidet werden.</Info>
+			<Info>Aus dem Grunde, damit (entdeckt werde), ob vielleicht irgend 
+ein Hexenwerkzeug in die in die Kleider eingenäht ist, 
+wie sie es häufig auf  die Belehrung der Dämonen hin aus den Gliedern
+eines ungetauften Knaben herstellen;</Info>
+			</Infopaket>
+	</NPC>
+	<NPC name="Notiz">
+			<Infopaket>
+				<Info>Ich schreibe das in aller Hast, falls wir Tod sein sollten</Info>
+				<Info>Es gibt einen großen Verrat in der Bruderschaft, ja
+in der ganze Geschichte! Und wir haben es entdeckt.</Info>
+			<Info> Grundgütiger. Oh Xan hilf uns. Der Verrat steckt wie
+ein Eitergeschwür in Alba</Info>
+			<Info>Aber ich muss mich beeilen: Edren hat herausgefunden,
+warum Vraidos wirklich verschwunden ist. Dass Walden recht hatte, die Kirgh zu
+reinigen. Dass das Königtum ein Verrat ist der gelenkt wird von...</Info>
+			</Infopaket>
 	</NPC>
 </NPCS>
