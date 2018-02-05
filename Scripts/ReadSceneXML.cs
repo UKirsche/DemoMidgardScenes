@@ -43,9 +43,8 @@ public class SceneResourceReader
 	/// <typeparam name="T">The 1st type parameter.</typeparam>
 	public static T GetMidgardResource<T>(string fileName) where T:class{
 		XmlSerializer deserializerResource = new XmlSerializer(typeof(T));
-		//		TextReader MidgardXMLReader = new StreamReader(@"./MidgardLaender.xml");
-		//      TextReader MidgardXMLReader = new StreamReader(@"Assets/Photon Unity Networking/Demos/DemoMidgardUI/Resources/"+ fileName);
-		TextReader SceneXMLReader = new StreamReader(@"/Users/Shared/Unity/Midgard/Assets/Photon Unity Networking/Demos/DemoWorker/Resources/"+ fileName);
+		//TextReader SceneXMLReader = new StreamReader(@"./" + fileName);
+		TextReader SceneXMLReader = new StreamReader(@"/Users/Shared/Unity/Midgard/Assets/Photon Unity Networking/Demos/DemoMidgardCharacterCreation/Resources/"+ fileName);
 		T listResource = deserializerResource.Deserialize(SceneXMLReader) as T;
 		SceneXMLReader.Close();
 		return listResource;
