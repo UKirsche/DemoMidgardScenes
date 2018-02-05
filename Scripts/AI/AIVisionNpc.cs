@@ -31,7 +31,7 @@ public class AIVisionNpc: MonoBehaviour
 	/// Inherited
 	/// </summary>
 	void FixedUpdate(){
-		LOSDrawDebug ();
+		//LOSDrawDebug ();
 	}
 
 
@@ -64,7 +64,6 @@ public class AIVisionNpc: MonoBehaviour
 	void Update()
 	{
 		UpdateVisibility();
-		Debug.Log (this.transform.parent.transform.parent.name + ": " + visibles.Count);
 	}
 
 	/// <summary>
