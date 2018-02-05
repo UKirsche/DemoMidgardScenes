@@ -40,12 +40,16 @@ public class CapsuleColiderInfo : MonoBehaviour {
 	/// <param name="other">Other.</param>
 	void OnTriggerEnter( Collider other )
 	{
-		SetActiveDialogView ();
+		if (other.attachedRigidbody.gameObject.tag == "Player") {
+			SetActiveDialogView ();
+		}
 	}
 
 	void OnTriggerExit(Collider other)
 	{
-		dialogView.SetActive (false);
+		if (other.attachedRigidbody.gameObject.tag == "Player") {
+			dialogView.SetActive (false);	
+		}
 	}
 
 }

@@ -31,7 +31,7 @@ public class AIVisionNpc: MonoBehaviour
 	/// Inherited
 	/// </summary>
 	void FixedUpdate(){
-		//LOSDrawDebug ();
+		LOSDrawDebug ();
 	}
 
 
