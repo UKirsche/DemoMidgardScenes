@@ -11,7 +11,7 @@ public class AILeadPC : AINPC {
 	protected GameObject talkPartner;
 	public GameObject goalPoint;
 	private bool isGoalPointActive = false;
-	private GameObject dialogView;
+	public GameObject dialogView;
 	private PopulateVertical populateDialog;
 	private bool setDialogOnce=false;
 
@@ -21,12 +21,11 @@ public class AILeadPC : AINPC {
 	public override void Start () {
 		base.Start ();
 
+		populateDialog = dialogView.GetComponentsInChildren<PopulateVertical> ()[0];
+
 		IsStroll = false;
 		talkPartner = null;
 		isGoalPointActive = false;
-
-		dialogView = GameObject.Find (PlayerDialogManager.DialogName);
-		populateDialog = dialogView.GetComponentsInChildren<PopulateVertical> ()[0];
 	}
 
 	[Task]
