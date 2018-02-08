@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(CapsuleCollider))]
 public class CapsuleColiderInfo : MonoBehaviour {
 	public GameObject dialogView;
 	private Infopaket dialogPackage;
