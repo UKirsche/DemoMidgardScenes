@@ -9,6 +9,7 @@ public class CapsuleColiderInfo : MonoBehaviour {
 	private Infopaket dialogPackage;
 	private PopulateVertical populateDialog;
 
+
 	// Use this for initializatio
 	void Start () {
 		populateDialog = dialogView.GetComponentsInChildren<PopulateVertical> ()[0];
@@ -28,6 +29,11 @@ public class CapsuleColiderInfo : MonoBehaviour {
 		dialogView.SetActive (true);
 		var npcDialogManager = GetComponent<NPCDialogManager> ();
 		var infopaket = npcDialogManager.GetNextInfoPackage ();
+
+		if (infopaket == null) {
+			infopaket = npcDialogManager.GetStandardInfo ();
+
+		}
 		DialogButtonWrapper.DisplayInfoPackage (populateDialog, infopaket);
 
 		return true;

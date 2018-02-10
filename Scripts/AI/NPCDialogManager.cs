@@ -7,7 +7,7 @@ public class NPCDialogManager : MonoBehaviour {
 
 	const string INFO_NAME = "Hallo, mein Name ist ";
 	const string INFO_TALKER = "Ich kann dir so manches erzählen, mein Freund ";
-	const string INFO_FINISH = "Ich habe alles gesagt";
+	const string INFO_FINISH = "Das war alles...";
 
 
 
@@ -86,7 +86,7 @@ public class NPCDialogManager : MonoBehaviour {
 		standardInfoFinish.infos.Add (CreateStandardInfo (INFO_FINISH));
 	}
 
-	private Info CreateStandardInfo(string content){
+	public Info CreateStandardInfo(string content){
 		Info info = new Info ();
 		info.content = content;
 		return info;
