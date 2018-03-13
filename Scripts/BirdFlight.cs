@@ -49,17 +49,36 @@ public class BirdFlight : MonoBehaviour {
 		bool outWest = OutOfBounds (birdCompass.west, this.transform.position.x, false);
 
 		Vector3 reflectVelocity = rb.velocity;
+		bool reflect = false;
 
 		if (outUp || outDown) {
 			reflectVelocity.y *= -1;
+			reflect = true;
 		} else if (outNorth || outSouth) {
 			reflectVelocity.z *= -1;
+			reflect = true;
 		} else if (outEast || outWest) {
 			reflectVelocity.x *= -1;	
+			reflect = true;
 		}
+
+		ReflectRotate (reflectVelocity, reflect);
 
 		rb.velocity = reflectVelocity;
 
+	}
+
+	/// <summary>
+	/// Reflects the rotate.
+	/// </summary>
+	/// <param name="reflectVelocity">Reflect velocity.</param>
+	/// <param name="reflect">If set to <c>true</c> reflect.</param>
+	void ReflectRotate (Vector3 reflectVelocity, bool reflect)
+	{
+		if (reflect) {
+			Vector3 rotTowards = this.transform.position + reflectVelocity;
+			transform.LookAt (rotTowards);
+		}
 	}
 
 	/// <summary>
@@ -88,7 +107,7 @@ public class BirdFlight : MonoBehaviour {
 		birdCompass.north = birdBounds.center.z + birdBounds.extents.z;
 		birdCompass.south = birdBounds.center.z - birdBounds.extents.z;
 		birdCompass.east = birdBounds.center.x + birdBounds.extents.x;
-		birdCompass.west = birdBounds.center.x + birdBounds.extents.x;
+		birdCompass.west = birdBounds.center.x - birdBounds.extents.x;
 
 		return birdCompass;
 	}
