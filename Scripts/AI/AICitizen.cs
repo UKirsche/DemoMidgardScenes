@@ -6,28 +6,14 @@ using Panda;
 
 public class AICitizen : AINPC {
 
-	public string wayPointStringHome;
-	public string wayPointStringBreakSit;
-
 	protected GameObject talkPartner;
 	protected GameObject sitOpportunity;
 
-
-	#region FSM-Variablen
-	[Task]
-	public bool IsBreak=false;
-	[Task]
-	public bool IsSitting=false;
-	[Task]
-	public bool IsDialog = false;
-	#endregion
+	public string wayPointStringBreakSit;
 
 	// Use Initialization from BaseClass
 	public override void Start () {
 		base.Start ();
-
-		IsBreak = true;
-		IsStroll = false;
 		talkPartner = null;
 	}
 
@@ -70,7 +56,7 @@ public class AICitizen : AINPC {
 	}
 
 	/// <summary>
-	/// Ises the talk partner reached.
+	/// Is sit opportunity reached reached.
 	/// </summary>
 	/// <returns><c>true</c>, if talk partner reached was ised, <c>false</c> otherwise.</returns>
 	/// <param name="talkPartnerPosition">Talk partner position.</param>
@@ -235,50 +221,5 @@ public class AICitizen : AINPC {
 		
 	#endregion
 
-
-
-
-	/// <summary>
-	/// Citizens walks global points in scene, usually city or village
-	/// </summary>
-	[Task]
-	public void GlobalStroll ()
-	{
-		waypoints = GameObject.FindGameObjectsWithTag(wayPointString);
-		base.Stroll ();
-	}
-
-	/// <summary>
-	/// Citizen walks around his homebase.
-	/// </summary>
-	[Task]
-	public void HomeStroll()
-	{
-		waypoints = GameObject.FindGameObjectsWithTag(wayPointStringHome);
-		base.Stroll ();
-	}
-
-	/// <summary>
-	/// Moves the citizen to the break-point
-	/// </summary>
-	[Task]
-	public void BreakSit()
-	{
-		agent.speed = strollSpeed;
-		waypoints = GameObject.FindGameObjectsWithTag(wayPointStringBreakSit);
-		RandomizeWayPointIndex ();
-		GameObject singleBreakPoint = waypoints [wayPointIndex];
-		if (!isWayPointReached ()) {
-			base.MoveToDestination (singleBreakPoint.transform.position);
-		} else if(isWayPointReached()){
-			agent.speed = 0;
-			character.gameObject.transform.Rotate(0,-90,0);
-			character.Move (Vector3.zero);
-			character.updateAnimatorStop ();
-
-			IsBreak = false;
-			Debug.Log ("Forward: " + character.m_ForwardAmount);
-		}
-	}
 
 }
