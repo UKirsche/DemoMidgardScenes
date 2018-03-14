@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 using Panda;
 
-public class AICitizen : AINPC {
+public class AICitizen : AIHuman {
 
 	protected GameObject talkPartner;
 	protected GameObject sitOpportunity;
@@ -104,7 +104,7 @@ public class AICitizen : AINPC {
 	#endregion
 
 
-	#region Talk Tasks
+	#region NPC Talk Tasks
 
 
 

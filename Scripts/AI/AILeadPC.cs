@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 using Panda;
 
-public class AILeadPC : AINPC {
+public class AILeadPC : AIHuman {
 
 	public string wayPointStringHome;
 
