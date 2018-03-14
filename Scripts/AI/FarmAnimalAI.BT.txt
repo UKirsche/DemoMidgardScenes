@@ -1,6 +1,0 @@
-//Einstiegsmethode zur Steuereung des NPC
-tree("PlayFarmAnimal")
-	tree("Stroll")
-
-tree("Stroll")
-	Stroll()
