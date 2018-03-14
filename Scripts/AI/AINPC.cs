@@ -21,10 +21,6 @@ public class AINPC : MonoBehaviour {
 	protected int wayPointIndex;
 	protected GameObject[] waypoints;
 
-	//FSM-Variables
-	[Task]
-	public bool IsStroll = false;
-
 
 
 	// Use this for initialization
@@ -40,18 +36,8 @@ public class AINPC : MonoBehaviour {
 		vision = GetComponentInChildren<AIVisionNpc> ();
 
 		AgentInitialization ();
-		FSMIntitialization ();
 
 
-	}
-
-	#region startup Methods
-	/// <summary>
-	/// FSM: Set Start state und prepare FSM to kick off
-	/// </summary>
-	private void FSMIntitialization ()
-	{
-		IsStroll = true;
 	}
 
 	/// <summary>
@@ -69,8 +55,6 @@ public class AINPC : MonoBehaviour {
 	protected void RandomizeWayPointIndex(){
 		wayPointIndex = Random.Range (0, waypoints.Length);
 	}
-	#endregion
-
 
 	#region waypoints
 	/// <summary>

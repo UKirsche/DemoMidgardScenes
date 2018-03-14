@@ -23,7 +23,6 @@ public class AILeadPC : AIHuman {
 
 		populateDialog = dialogView.GetComponentsInChildren<PopulateVertical> ()[0];
 
-		IsStroll = false;
 		talkPartner = null;
 		isGoalPointActive = false;
 	}
