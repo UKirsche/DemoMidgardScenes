@@ -126,11 +126,11 @@ public class AINPC : MonoBehaviour {
 
 	#region react to PC
 	/// <summary>
-	/// Determines whether this instance is PC in colliders.
+	/// Determines whether this instance is PC in colliders of vision
 	/// </summary>
 	/// <returns><c>true</c> if this instance is PC in colliders; otherwise, <c>false</c>.</returns>
 	[Task]
-	public bool IsPCInColliders()
+	public bool IsPCVisible()
 	{
 		bool retVal = false;
 		pcTalkPartners.Clear ();

@@ -7,7 +7,7 @@ tree("BeAlive")
 tree("TalkPC")
 	sequence
 		 UnsetDialogPartnerPC
-		 IsPCInColliders
+		 IsPCVisible
 		 ISPCInTalkDist
 		 StopMove
 		 RotateToPC
