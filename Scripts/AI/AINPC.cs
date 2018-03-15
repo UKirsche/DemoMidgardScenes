@@ -195,6 +195,17 @@ public class AINPC : MonoBehaviour {
 		}
 		return isReached;
 	}
+
+
+
+	/// <summary>
+	/// Approachs the destination of gameobject
+	/// </summary>
+	/// <param name="go">Go.</param>
+	protected void ApproachDestination(GameObject go){
+		this.MoveToDestination (go.transform.position);
+	}
+
 	#endregion
 		
 }

@@ -210,16 +210,5 @@ public class AICitizen : AIHuman {
 	} 
 	#endregion
 
-	#region Helpers
-	/// <summary>
-	/// Approachs the destination of gameobject
-	/// </summary>
-	/// <param name="go">Go.</param>
-	private void ApproachDestination(GameObject go){
-		this.MoveToDestination (go.transform.position);
-	}
-		
-	#endregion
-
 
 }
