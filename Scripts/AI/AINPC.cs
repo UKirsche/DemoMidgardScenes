@@ -15,7 +15,7 @@ public class AINPC : MonoBehaviour {
 	public float reachedMinDistance = 2.0f;
 	public string wayPointString;
 	protected AIVisionNpc vision;
-	protected List<GameObject> pcTalkPartners;
+	protected List<GameObject> pcCommunicationPartners;
 	protected GameObject pcTalkChosen;
 
 	protected int wayPointIndex;
@@ -31,7 +31,7 @@ public class AINPC : MonoBehaviour {
 
 		waypoints = GameObject.FindGameObjectsWithTag(wayPointString);
 		RandomizeWayPointIndex ();
-		pcTalkPartners = new List<GameObject> ();
+		pcCommunicationPartners = new List<GameObject> ();
 
 		vision = GetComponentInChildren<AIVisionNpc> ();
 
@@ -133,12 +133,12 @@ public class AINPC : MonoBehaviour {
 	public bool IsPCVisible()
 	{
 		bool retVal = false;
-		pcTalkPartners.Clear ();
+		pcCommunicationPartners.Clear ();
 
 		foreach (var collider in vision.colliders) {
 			var attachedGameObject = collider.attachedRigidbody != null ? collider.attachedRigidbody.gameObject: null;
 			if (attachedGameObject != null && attachedGameObject.tag.Equals(DemoRPGMovement.PLAYER_NAME)) {
-				pcTalkPartners.Add (attachedGameObject);
+				pcCommunicationPartners.Add (attachedGameObject);
 				retVal = true;
 
 			}
@@ -152,13 +152,13 @@ public class AINPC : MonoBehaviour {
 	/// </summary>
 	/// <returns><c>true</c>, if in talk dist was ISPCed, <c>false</c> otherwise.</returns>
 	[Task]
-	public bool ISPCInTalkDist()
+	public bool IsPCInCommunicationDist()
 	{
 		bool retVal = false;
 		float nearestTalkDistance = reachedMinDistance;
 
-		if (pcTalkPartners.Count > 0) {
-			foreach (var pc in pcTalkPartners) {
+		if (pcCommunicationPartners.Count > 0) {
+			foreach (var pc in pcCommunicationPartners) {
 				float distToPC = Vector3.Distance (transform.position, pc.transform.position);
 				if (distToPC <= nearestTalkDistance) {
 					nearestTalkDistance = distToPC;

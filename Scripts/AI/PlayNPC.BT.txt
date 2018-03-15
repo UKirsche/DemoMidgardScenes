@@ -10,7 +10,7 @@ tree("TalkPC")
 	sequence
 		 UnsetDialogPartnerPC
 		 IsPCVisible
-		 ISPCInTalkDist
+		 IsPCInCommunicationDist
 		 StopMove
 		 RotateToPC
 		 SetDialogPartnerPC

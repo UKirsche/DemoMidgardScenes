@@ -6,5 +6,5 @@ tree("TalkPC")
 	sequence
 		 UnsetDialogPartnerPC
 		 IsPCVisible
-		 ISPCInTalkDist
+		 IsPCInCommunicationDist
 		 SetDialogPartnerPC

@@ -1,23 +1,24 @@
-//Einstiegsmethode zur Steuereung des NPC
+//Wildes Tier hat 3 Grundmöglichkeiten: Essen, Attacke, Flucht und herumeumeln.
 tree("BeAlive")
-	tree("Stroll")
+	fallback
+		//tree("Eat")
+		//tree("Attack")
+		//tree("Flight")
+		tree("Stroll")
 
 tree ("Attack")
 	sequence 
-		IsTalkPartnerVisible
-		tree("ApproachPartner")
+		
+		IsPCVisible
+		//tree("ApproachPC")
 		StopMove
-		RotatePartner
 		Wait(60)
 		Random
 			Wait(5)
 			Wait(10)
 			Wait(40)
 			Wait(1)
-		Talk
 		Wait(100)
-		RemovePartnerFromSight
-		StopTalk
 		Fail
 
 tree("Stroll")
