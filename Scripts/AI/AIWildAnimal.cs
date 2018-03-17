@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityStandardAssets.Characters.ThirdPerson;
 using UnityEngine;
 using Panda;
 
@@ -76,7 +77,7 @@ public class AIWildAnimal : AINPC {
 	/// <returns><c>true</c>, if attack goal was set, <c>false</c> otherwise.</returns>
 	[Task]
 	public bool ApproachPrey(){
-		strollSpeed = approachSpeed;
+		strollSpeed = approachSpeed; //run
 		ApproachDestination (commPartnerChosen);
 		return true;
 	}
@@ -91,6 +92,18 @@ public class AIWildAnimal : AINPC {
 		bool isReached = true;
 		isReached = IsDestinationReached (commPartnerChosen);
 		return isReached;
+	}
+
+	/// <summary>
+	/// Ises the talk partner reached.
+	/// </summary>
+	/// <returns><c>true</c>, if talk partner reached was ised, <c>false</c> otherwise.</returns>
+	/// <param name="talkPartnerPosition">Talk partner position.</param>
+	[Task]
+	public bool StartAttack(){
+		ThirdPersonNPCWildAnimal meThird = GetComponent<ThirdPersonNPCWildAnimal> ();
+		meThird.Sit ();
+		return true;
 	}
 
 	#endregion
