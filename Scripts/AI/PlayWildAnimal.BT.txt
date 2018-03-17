@@ -1,17 +1,32 @@
-//Wildes Tier hat 3 Grundmöglichkeiten: Essen, Attacke, Flucht und herumeumeln.
+//Wildes Tier hat 4 Grundmöglichkeiten: Essen, Aggressiv, Attacke, Flucht und Gehen.
+// Im Essensmodus macht der Wolf erstmal nix
+// Bevor der Wolf angreift wird er aggressiv. Das hängt aber von der Nähe des PCs. 
+// Mensch haben als Nicht-Opfer eine andere Max-Nähe als bspw. Hirsche
+
+
 tree("BeAlive")
 	fallback
-		//tree("Eat")
-		//tree("Attack")
-		//tree("Flight")
+		tree("Eat")
+		sequence 
+			fallback
+				IsPCVisible
+				IsNPCVisible
+			fallback
+				tree("Attack")
+				tree("Aggressive")
+				tree("Flight")
 		tree("Stroll")
 
+tree ("Eat")
+	Fail
+
+//Attacke: Wenn PC/NCP noch näher: Setze PC/NPC als Ziel, ändere Approach speed und greife an.
 tree ("Attack")
 	sequence 
-		
-		IsPCVisible
-		//tree("ApproachPC")
+		IsAttackDistance
 		StopMove
+		Approach
+		SetAttackMove
 		Wait(60)
 		Random
 			Wait(5)
@@ -19,7 +34,30 @@ tree ("Attack")
 			Wait(40)
 			Wait(1)
 		Wait(100)
-		Fail
+
+tree("Approach")
+	fallback
+		repeat
+			while not IsPreyReached
+				ApproachPrey
+		Succeed
+
+//Agression: Wenn PC/NPC nahe genug: Stop Bewegung, Starte Aggressionsanimation
+tree("Aggressive")
+	sequence
+		IsAgressiveClose
+		StopMove
+		Wait(60)
+		SetAggressive
+		Wait(200)
+
+
+//Flucht: Falls PC nahe kommt i.d.R. Flucht- weiteste Distanz vom Wolf -> nicht bei Opfer
+tree("Flight")
+	sequence
+		IsPrey
+		IsFlightClose
+		Retreat
 
 tree("Stroll")
 	Stroll()

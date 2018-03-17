@@ -16,7 +16,8 @@ public class AINPC : MonoBehaviour {
 	public string wayPointString;
 	protected AIVisionNpc vision;
 	protected List<GameObject> pcCommunicationPartners;
-	protected GameObject pcTalkChosen;
+	protected List<GameObject> npcCommunicationPartners;
+	protected GameObject commPartnerChosen;
 
 	protected int wayPointIndex;
 	protected GameObject[] waypoints;
@@ -124,28 +125,31 @@ public class AINPC : MonoBehaviour {
 	}
 	#endregion
 
+
+	#region react to NPC
+	public bool IsNPCVisible()
+	{
+		npcCommunicationPartners.Clear ();
+		string npcTagName = DemoRPGMovement.NPC_TAG;
+		return IsGoVisible (npcTagName);
+
+	}
+	#endregion
+
 	#region react to PC
 	/// <summary>
-	/// Determines whether this instance is PC in colliders of vision
+	/// Determines whether this instance is PC in colliders of vision. Can also be another tagged GO, but usually Player
 	/// </summary>
 	/// <returns><c>true</c> if this instance is PC in colliders; otherwise, <c>false</c>.</returns>
 	[Task]
 	public bool IsPCVisible()
 	{
-		bool retVal = false;
 		pcCommunicationPartners.Clear ();
+		string pcTagName = DemoRPGMovement.PLAYER_NAME;
+		return IsGoVisible (pcTagName);
 
-		foreach (var collider in vision.colliders) {
-			var attachedGameObject = collider.attachedRigidbody != null ? collider.attachedRigidbody.gameObject: null;
-			if (attachedGameObject != null && attachedGameObject.tag.Equals(DemoRPGMovement.PLAYER_NAME)) {
-				pcCommunicationPartners.Add (attachedGameObject);
-				retVal = true;
-
-			}
-		}
-
-		return retVal;
 	}
+
 
 	/// <summary>
 	/// ISPCs the in talk dist.
@@ -154,28 +158,16 @@ public class AINPC : MonoBehaviour {
 	[Task]
 	public bool IsPCInCommunicationDist()
 	{
-		bool retVal = false;
 		float nearestTalkDistance = reachedMinDistance;
+		return IsGoInCommunicationDist (pcCommunicationPartners, nearestTalkDistance);
 
-		if (pcCommunicationPartners.Count > 0) {
-			foreach (var pc in pcCommunicationPartners) {
-				float distToPC = Vector3.Distance (transform.position, pc.transform.position);
-				if (distToPC <= nearestTalkDistance) {
-					nearestTalkDistance = distToPC;
-					pcTalkChosen = pc;
-					retVal = true;
-				} 
-			}
-		}
-
-		return retVal;
 	}
 
 
 	[Task]
 	public bool RotateToPC()
 	{
-		transform.LookAt(pcTalkChosen.transform.position);
+		transform.LookAt(commPartnerChosen.transform.position);
 		return true;
 	}
 	#endregion
@@ -206,6 +198,41 @@ public class AINPC : MonoBehaviour {
 		this.MoveToDestination (go.transform.position);
 	}
 
+
+	/// <summary>
+	/// Wrapper Methode für BT-Skript, da keine Parameter übergeben wrden
+	/// </summary>
+	/// <returns><c>true</c> if this instance is go visible the specified goTagName; otherwise, <c>false</c>.</returns>
+	/// <param name="goTagName">Go tag name.</param>
+	protected bool IsGoVisible (string goTagName)
+	{
+		bool retVal = false;
+		foreach (var collider in vision.colliders) {
+			var attachedGameObject = collider.attachedRigidbody != null ? collider.attachedRigidbody.gameObject : null;
+			if (attachedGameObject != null && attachedGameObject.tag.Contains (goTagName)) {
+				pcCommunicationPartners.Add (attachedGameObject);
+				retVal = true;
+			}
+		}
+
+		return retVal;
+	}
+
+	protected bool IsGoInCommunicationDist (List<GameObject> comPartners, float nearestComDistance)
+	{
+		bool retVal=false;
+		if (comPartners.Count > 0) {
+			foreach (var partner in comPartners) {
+				float distToGO = Vector3.Distance (transform.position, partner.transform.position);
+				if (distToGO <= nearestComDistance) {
+					nearestComDistance = distToGO;
+					commPartnerChosen = partner;
+					retVal = true;
+				}
+			}
+		}
+		return retVal;
+	}
 	#endregion
 		
 }

@@ -22,7 +22,7 @@ public class AIHuman : AINPC {
 	[Task]
 	public bool SetDialogPartnerPC()
 	{
-		var dialogManager = pcTalkChosen.GetComponent<PlayerDialogManager> ();	
+		var dialogManager = commPartnerChosen.GetComponent<PlayerDialogManager> ();	
 		if (dialogManager != null) {
 			dialogManager.SetDialogPartner (gameObject);
 		} 
@@ -36,11 +36,11 @@ public class AIHuman : AINPC {
 	[Task]
 	public bool UnsetDialogPartnerPC()
 	{
-		if (pcTalkChosen != null) {
-			var dialogManager = pcTalkChosen.GetComponent<PlayerDialogManager> ();
+		if (commPartnerChosen != null) {
+			var dialogManager = commPartnerChosen.GetComponent<PlayerDialogManager> ();
 			if (dialogManager != null) {
 				dialogManager.SetDialogPartner (null);
-				pcTalkChosen = null;
+				commPartnerChosen = null;
 			} 
 		}
 
