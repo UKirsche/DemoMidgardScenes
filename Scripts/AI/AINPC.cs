@@ -160,7 +160,6 @@ public class AINPC : MonoBehaviour {
 	{
 		float nearestTalkDistance = reachedMinDistance;
 		return IsGoInCommunicationDist (pcCommunicationPartners, nearestTalkDistance);
-
 	}
 
 

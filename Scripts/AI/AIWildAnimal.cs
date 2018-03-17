@@ -64,10 +64,9 @@ public class AIWildAnimal : AINPC {
 	[Task]
 	public bool IsAttackDistance()
 	{
-		bool retVal = false;
 		possiblePreyEnemy.AddRange (pcCommunicationPartners);
 		possiblePreyEnemy.AddRange (npcCommunicationPartners);
-		retVal =  IsGoInCommunicationDist (possiblePreyEnemy, attackDistance);
+		return IsGoInCommunicationDist (possiblePreyEnemy, attackDistance);
 
 	}
 
