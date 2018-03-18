@@ -33,13 +33,12 @@ tree("Approach")
 tree ("Attack")
 	sequence 
 		IsAttackDistance
-		StopMove
 		RotateToPC
 		tree("Approach")
 		StartAttack
-		Wait(60)
+		Wait(30)
 		StopAttack
-		Wait(100)
+		Wait(30)
 
 //Agression: Wenn PC/NPC nahe genug: Stop Bewegung, Starte Aggressionsanimation
 tree("Aggressive")
