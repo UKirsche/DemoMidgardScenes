@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 using Panda;
 
+[RequireComponent (typeof(ThirdPersonNPCNormal))]
 public class AICitizen : AIHuman {
 
 	protected GameObject talkPartner;

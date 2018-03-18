@@ -6,7 +6,6 @@
 
 tree("BeAlive")
 	fallback
-		tree("Eat")
 		sequence 
 			fallback
 				IsPCVisible
@@ -20,21 +19,8 @@ tree("BeAlive")
 tree ("Eat")
 	Fail
 
-//Attacke: Wenn PC/NCP noch näher: Setze PC/NPC als Ziel, ändere Approach speed und greife an.
-tree ("Attack")
-	sequence 
-		IsAttackDistance
-		StopMove
-		Approach
-		StartAttack
-		Wait(60)
-		Random
-			Wait(5)
-			Wait(10)
-			Wait(40)
-			Wait(1)
-		Wait(100)
 
+//Meas attack approach
 tree("Approach")
 	fallback
 		repeat
@@ -42,22 +28,34 @@ tree("Approach")
 				ApproachPrey
 		Succeed
 
+
+//Attacke: Wenn PC/NCP noch näher: Setze PC/NPC als Ziel, ändere Approach speed und greife an.
+tree ("Attack")
+	sequence 
+		IsAttackDistance
+		StopMove
+		RotateToPC
+		tree("Approach")
+		StartAttack
+		Wait(60)
+		StopAttack
+		Wait(100)
+
 //Agression: Wenn PC/NPC nahe genug: Stop Bewegung, Starte Aggressionsanimation
 tree("Aggressive")
 	sequence
-		IsAgressiveClose
+		IsAggressiveDistance
 		StopMove
-		Wait(60)
-		SetAggressive
-		Wait(200)
-
+		RotateToPC
+		StartAggressive
+		Wait(100)
+		StopAggressive
 
 //Flucht: Falls PC nahe kommt i.d.R. Flucht- weiteste Distanz vom Wolf -> nicht bei Opfer
 tree("Flight")
 	sequence
-		IsPrey
-		IsFlightClose
-		Retreat
+		IsFlightDistance
+		Flee
 
 tree("Stroll")
 	Stroll()

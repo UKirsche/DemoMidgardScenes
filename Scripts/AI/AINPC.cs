@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 using Panda;
 
-[RequireComponent (typeof(UnityEngine.AI.NavMeshAgent))]
 [RequireComponent (typeof(ThirdPersonNPCNormal))]
+[RequireComponent (typeof(UnityEngine.AI.NavMeshAgent))]
 public class AINPC : MonoBehaviour {
 
 	public UnityEngine.AI.NavMeshAgent agent { get; private set; }
@@ -33,7 +33,7 @@ public class AINPC : MonoBehaviour {
 		waypoints = GameObject.FindGameObjectsWithTag(wayPointString);
 		RandomizeWayPointIndex ();
 		pcCommunicationPartners = new List<GameObject> ();
-
+		npcCommunicationPartners = new List<GameObject> ();
 		vision = GetComponentInChildren<AIVisionNpc> ();
 
 		AgentInitialization ();
@@ -127,11 +127,12 @@ public class AINPC : MonoBehaviour {
 
 
 	#region react to NPC
+	[Task]
 	public bool IsNPCVisible()
 	{
 		npcCommunicationPartners.Clear ();
 		string npcTagName = DemoRPGMovement.NPC_TAG;
-		return IsGoVisible (npcTagName);
+		return IsGoVisible (npcTagName, npcCommunicationPartners);
 
 	}
 	#endregion
@@ -146,7 +147,7 @@ public class AINPC : MonoBehaviour {
 	{
 		pcCommunicationPartners.Clear ();
 		string pcTagName = DemoRPGMovement.PLAYER_NAME;
-		return IsGoVisible (pcTagName);
+		return IsGoVisible (pcTagName, pcCommunicationPartners);
 
 	}
 
@@ -203,13 +204,13 @@ public class AINPC : MonoBehaviour {
 	/// </summary>
 	/// <returns><c>true</c> if this instance is go visible the specified goTagName; otherwise, <c>false</c>.</returns>
 	/// <param name="goTagName">Go tag name.</param>
-	protected bool IsGoVisible (string goTagName)
+	protected bool IsGoVisible (string goTagName, List<GameObject> goList)
 	{
 		bool retVal = false;
 		foreach (var collider in vision.colliders) {
 			var attachedGameObject = collider.attachedRigidbody != null ? collider.attachedRigidbody.gameObject : null;
 			if (attachedGameObject != null && attachedGameObject.tag.Contains (goTagName)) {
-				pcCommunicationPartners.Add (attachedGameObject);
+				goList.Add (attachedGameObject);
 				retVal = true;
 			}
 		}
