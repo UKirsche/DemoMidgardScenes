@@ -7,33 +7,21 @@ using Panda;
 [RequireComponent (typeof(ThirdPersonNPCWildAnimal))]
 public class AIWildAnimal : AINPC {
 
-
-	//AttackDistance: Sobald so nahe, greift Wolf an. Entsprich min Distance
 	private float attackDistance;
-	//AggressiveDistance: Hier wird der Wolf aggressiv
 	private float aggressiveDistance;
-	//FlightDistance: Distance bei der ein Wolf sich verdrückt
 	private float flightDistance;
 
-	protected List<GameObject> possiblePreyEnemy;
-
-	//FSM-Variables
-	[Task]
-	public bool IsAttack;
-	[Task]
-	public bool IsAggressive;
-	[Task]
-	public bool IsFlight;
-	[Task]
-	public bool IsEat;
+	private float standardSpeed;
 
 
 	// Starte NPC Initialisierung
 	public override void Start () {
+		standardSpeed = strollSpeed;
 		character = GetComponent<ThirdPersonNPCWildAnimal> ();
-		base.Start ();
-		possiblePreyEnemy = new List<GameObject> ();
 		CalculateDistances ();
+		base.Start ();
+
+		//possiblePreyEnemy = new List<GameObject> ();
 		FSMIntitialization ();
 
 	}
@@ -50,10 +38,6 @@ public class AIWildAnimal : AINPC {
 	/// </summary>
 	private void FSMIntitialization ()
 	{
-		IsAttack = false;
-		IsAggressive = false;
-		IsFlight = false;
-		IsEat = false;
 	}
 
 
