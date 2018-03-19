@@ -139,7 +139,7 @@ public class AIWildAnimal : AINPC {
 	/// <param name="talkPartnerPosition">Talk partner position.</param>
 	[Task]
 	public bool StartAggressive(){
-		ThirdPersonNPCWildAnimal meThird = GetComponent<ThirdPersonNPCWildAnimal> ();
+		ThirdPersonNPCWildAnimal meThird = (ThirdPersonNPCWildAnimal)character;
 		meThird.Aggression ();
 		return true;
 	}
@@ -151,7 +151,7 @@ public class AIWildAnimal : AINPC {
 	/// <param name="talkPartnerPosition">Talk partner position.</param>
 	[Task]
 	public bool StopAggressive(){
-		ThirdPersonNPCWildAnimal meThird = GetComponent<ThirdPersonNPCWildAnimal> ();
+		ThirdPersonNPCWildAnimal meThird = (ThirdPersonNPCWildAnimal)character;
 		meThird.StopAggression ();
 		return true;
 	}
