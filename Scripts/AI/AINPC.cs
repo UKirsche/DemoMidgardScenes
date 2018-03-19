@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 using Panda;
 
-[RequireComponent (typeof(ThirdPersonNPCNormal))]
 [RequireComponent (typeof(UnityEngine.AI.NavMeshAgent))]
 public class AINPC : MonoBehaviour {
 
 	public UnityEngine.AI.NavMeshAgent agent { get; private set; }
-	public ThirdPersonNPCNormal character { get; private set; }
+	public ThirdPersonNPC character { get; set; }
 	public float approachSpeed = 1.0f;
 	public float strollSpeed = 0.5f;
 	public float reachedMinDistance = 2.0f;
@@ -28,8 +27,6 @@ public class AINPC : MonoBehaviour {
 	public virtual void Start () {
 		// get the components on the object we need ( should not be null due to require component so no need to check )
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent> ();
-		character = GetComponent<ThirdPersonNPCNormal> ();
-
 		waypoints = GameObject.FindGameObjectsWithTag(wayPointString);
 		RandomizeWayPointIndex ();
 		pcCommunicationPartners = new List<GameObject> ();

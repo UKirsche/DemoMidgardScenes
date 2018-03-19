@@ -30,6 +30,7 @@ public class AIWildAnimal : AINPC {
 
 	// Starte NPC Initialisierung
 	public override void Start () {
+		character = GetComponent<ThirdPersonNPCWildAnimal> ();
 		base.Start ();
 		possiblePreyEnemy = new List<GameObject> ();
 		CalculateDistances ();
@@ -101,7 +102,7 @@ public class AIWildAnimal : AINPC {
 	/// <param name="talkPartnerPosition">Talk partner position.</param>
 	[Task]
 	public bool StartAttack(){
-		ThirdPersonNPCWildAnimal meThird = GetComponent<ThirdPersonNPCWildAnimal> ();
+		ThirdPersonNPCWildAnimal meThird = (ThirdPersonNPCWildAnimal)character;
 		meThird.Attack ();
 		return true;
 	}
@@ -113,7 +114,7 @@ public class AIWildAnimal : AINPC {
 	/// <param name="talkPartnerPosition">Talk partner position.</param>
 	[Task]
 	public bool StopAttack(){
-		ThirdPersonNPCWildAnimal meThird = GetComponent<ThirdPersonNPCWildAnimal> ();
+		ThirdPersonNPCWildAnimal meThird = (ThirdPersonNPCWildAnimal)character;
 		meThird.StopAttack ();
 		return true;
 	}

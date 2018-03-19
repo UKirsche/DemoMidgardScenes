@@ -89,7 +89,7 @@ public class AICitizen : AIHuman {
 
 	[Task]
 	public bool Sit(){
-		ThirdPersonNPCNormal meThird = GetComponent<ThirdPersonNPCNormal> ();
+		ThirdPersonNPCNormal meThird = (ThirdPersonNPCNormal)character;
 		meThird.Sit ();
 		return true;
 	}
@@ -97,7 +97,7 @@ public class AICitizen : AIHuman {
 
 	[Task]
 	public bool StopSit(){
-		ThirdPersonNPCNormal meThird = GetComponent<ThirdPersonNPCNormal> ();
+		ThirdPersonNPCNormal meThird = (ThirdPersonNPCNormal)character;
 		meThird.StopSit ();
 		return true;
 	}
@@ -167,7 +167,7 @@ public class AICitizen : AIHuman {
 	/// </summary>
 	[Task]
 	public bool Talk(){
-		ThirdPersonNPCNormal meThird = GetComponent<ThirdPersonNPCNormal> ();
+		ThirdPersonNPCNormal meThird = (ThirdPersonNPCNormal)character;
 		meThird.Talk ();
 		return true;
 	}
@@ -177,7 +177,7 @@ public class AICitizen : AIHuman {
 	/// </summary>
 	[Task]
 	public bool StopTalk(){
-		ThirdPersonNPCNormal meThird = GetComponent<ThirdPersonNPCNormal> ();
+		ThirdPersonNPCNormal meThird = (ThirdPersonNPCNormal)character;
 		meThird.StopTalk ();
 		return true;
 	}

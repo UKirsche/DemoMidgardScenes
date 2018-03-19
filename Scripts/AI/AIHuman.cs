@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 using Panda;
 
+[RequireComponent (typeof(ThirdPersonNPCNormal))]
 public class AIHuman : AINPC {
 
 
 	// Use Initialization from BaseClass
 	public override void Start () {
+		character = GetComponent<ThirdPersonNPCNormal> ();
 		base.Start ();
 	}
 
