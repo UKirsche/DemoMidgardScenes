@@ -78,7 +78,7 @@ public class AIWildAnimal : AINPC {
 	/// <returns><c>true</c>, if attack goal was set, <c>false</c> otherwise.</returns>
 	[Task]
 	public bool ApproachPrey(){
-		strollSpeed = approachSpeed; //run
+		strollSpeed = approachSpeed;
 		ApproachDestination (commPartnerChosen);
 		return true;
 	}

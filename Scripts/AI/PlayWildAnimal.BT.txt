@@ -14,20 +14,7 @@ tree("BeAlive")
 				tree("Attack")
 				tree("Aggressive")
 				tree("Flight")
-		tree("Stroll")
-
-tree ("Eat")
-	Fail
-
-
-//Meas attack approach
-tree("Approach")
-	fallback
-		repeat
-			while not IsPreyReached
-				ApproachPrey
-		Succeed
-
+		WolfStroll
 
 //Attacke: Wenn PC/NCP noch näher: Setze PC/NPC als Ziel, ändere Approach speed und greife an.
 tree ("Attack")

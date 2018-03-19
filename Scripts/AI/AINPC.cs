@@ -186,7 +186,6 @@ public class AINPC : MonoBehaviour {
 	}
 
 
-
 	/// <summary>
 	/// Approachs the destination of gameobject
 	/// </summary>
