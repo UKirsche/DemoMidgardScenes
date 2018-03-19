@@ -29,8 +29,8 @@ public class AIWildAnimal : AINPC {
 	void CalculateDistances ()
 	{
 		attackDistance = 3*reachedMinDistance;
-		aggressiveDistance = 8 * reachedMinDistance;
-		flightDistance = 15 * reachedMinDistance;
+		aggressiveDistance = 8 *reachedMinDistance;
+		flightDistance = 11*reachedMinDistance;
 	}
 
 	/// <summary>
@@ -150,20 +150,45 @@ public class AIWildAnimal : AINPC {
 	public bool IsFlightDistance()
 	{
 		return IsGoInCommunicationDist (pcCommunicationPartners, flightDistance);
-
 	}
 
+	/// <summary>
+	/// Rotates the animal away from possible attacker.
+	/// </summary>
+	/// <returns><c>true</c>, if away was rotated, <c>false</c> otherwise.</returns>
+	[Task]
+	public bool RotateAway(){
+		Vector3 newForward = (transform.position - commPartnerChosen.transform.position);
+		newForward.Normalize ();
+		Vector3 lookAtPosition = this.transform.position + newForward;
+		transform.LookAt (lookAtPosition);
+		return true;
+	}
 
 	/// <summary>
-	/// Flees from pc.
+	/// Flees from pc. Assumes that forward vector of NPC already looks in opposite direction from Hunter
 	/// </summary>
-	/// <returns><c>true</c>, if talk partner reached was ised, <c>false</c> otherwise.</returns>
+	/// <returns><c>true</c>, if out of fleedistance <c>false</c> otherwise.</returns>
 	/// <param name="talkPartnerPosition">Talk partner position.</param>
 	[Task]
 	public bool Flee(){
-		ThirdPersonNPCWildAnimal meThird = GetComponent<ThirdPersonNPCWildAnimal> ();
-		meThird.Aggression ();
+		strollSpeed = approachSpeed;
+		Vector3 newForward = (transform.position - commPartnerChosen.transform.position);
+		newForward.Normalize ();
+		Vector3 fleeDestination = transform.position+(newForward*3);
+		Debug.DrawLine (transform.position,transform.position+newForward);
+		MoveToDestination (fleeDestination);
 		return true;
+	}
+	#endregion
+
+	#region
+	[Task]
+	public bool WolfStroll(){
+		strollSpeed = standardSpeed;
+		base.Stroll ();
+		return true;
+
 	}
 	#endregion
 }
