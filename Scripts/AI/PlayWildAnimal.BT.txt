@@ -2,8 +2,6 @@
 // Im Essensmodus macht der Wolf erstmal nix
 // Bevor der Wolf angreift wird er aggressiv. Das hängt aber von der Nähe des PCs. 
 // Mensch haben als Nicht-Opfer eine andere Max-Nähe als bspw. Hirsche
-
-
 tree("BeAlive")
 	fallback
 		sequence 
@@ -41,7 +39,14 @@ tree("Aggressive")
 tree("Flight")
 	sequence
 		IsFlightDistance
+		RotateAway
+		Wait(20)
 		Flee
 
-tree("Stroll")
-	Stroll()
+//Meas attack approach
+tree("Approach")
+	fallback
+		repeat
+			while not IsPreyReached
+				ApproachPrey
+		Succeed
