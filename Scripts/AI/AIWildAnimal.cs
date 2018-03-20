@@ -11,6 +11,11 @@ public class AIWildAnimal : AINPC {
 	public float aggressiveDistance;
 	public float flightDistance;
 
+	public AudioClip clipAttack;
+	public AudioClip clipAggressive;
+	public AudioClip clipFlight;
+
+	private AudioSource audioSource;
 	private float standardSpeed;
 
 
@@ -18,6 +23,8 @@ public class AIWildAnimal : AINPC {
 	public override void Start () {
 		standardSpeed = strollSpeed;
 		character = GetComponent<ThirdPersonNPCWildAnimal> ();
+		audioSource = GetComponent<AudioSource> ();
+
 		base.Start ();
 
 		//possiblePreyEnemy = new List<GameObject> ();
@@ -76,6 +83,8 @@ public class AIWildAnimal : AINPC {
 	/// <param name="talkPartnerPosition">Talk partner position.</param>
 	[Task]
 	public bool StartAttack(){
+		audioSource.clip = clipAttack;
+		audioSource.Play ();
 		ThirdPersonNPCWildAnimal meThird = (ThirdPersonNPCWildAnimal)character;
 		meThird.Attack ();
 		return true;
@@ -115,6 +124,8 @@ public class AIWildAnimal : AINPC {
 	/// <param name="talkPartnerPosition">Talk partner position.</param>
 	[Task]
 	public bool StartAggressive(){
+		audioSource.clip = clipAggressive;
+		audioSource.Play ();
 		ThirdPersonNPCWildAnimal meThird = (ThirdPersonNPCWildAnimal)character;
 		meThird.Aggression ();
 		return true;
