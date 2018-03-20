@@ -60,6 +60,8 @@ public class AIWildAnimal : AINPC {
 	[Task]
 	public bool ApproachPrey(){
 		strollSpeed = approachSpeed;
+		ThirdPersonNPCWildAnimal meThird = (ThirdPersonNPCWildAnimal)character;
+		meThird.Run ();
 		ApproachDestination (commPartnerChosen);
 		return true;
 	}
@@ -176,6 +178,8 @@ public class AIWildAnimal : AINPC {
 	[Task]
 	public bool Flee(){
 		strollSpeed = approachSpeed;
+		ThirdPersonNPCWildAnimal meThird = (ThirdPersonNPCWildAnimal)character;
+		meThird.Run ();
 		Vector3 newForward = (transform.position - commPartnerChosen.transform.position);
 		newForward.Normalize ();
 		Vector3 fleeDestination = transform.position+(newForward*3);
