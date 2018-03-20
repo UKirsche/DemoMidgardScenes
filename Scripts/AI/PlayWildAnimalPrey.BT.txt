@@ -1,0 +1,10 @@
+//Tier flüchtet bei gefahr
+tree("BeAlive")
+	fallback
+		sequence 
+			fallback
+				IsPCVisible
+				IsNPCVisible
+			fallback
+				tree("Flight")
+		WildStroll

@@ -7,9 +7,9 @@ using Panda;
 [RequireComponent (typeof(ThirdPersonNPCWildAnimal))]
 public class AIWildAnimal : AINPC {
 
-	private float attackDistance;
-	private float aggressiveDistance;
-	private float flightDistance;
+	public float attackDistance;
+	public float aggressiveDistance;
+	public float flightDistance;
 
 	private float standardSpeed;
 
@@ -18,19 +18,11 @@ public class AIWildAnimal : AINPC {
 	public override void Start () {
 		standardSpeed = strollSpeed;
 		character = GetComponent<ThirdPersonNPCWildAnimal> ();
-		CalculateDistances ();
 		base.Start ();
 
 		//possiblePreyEnemy = new List<GameObject> ();
 		FSMIntitialization ();
 
-	}
-
-	void CalculateDistances ()
-	{
-		attackDistance = 3*reachedMinDistance;
-		aggressiveDistance = 8 *reachedMinDistance;
-		flightDistance = 11*reachedMinDistance;
 	}
 
 	/// <summary>
@@ -184,7 +176,7 @@ public class AIWildAnimal : AINPC {
 
 	#region
 	[Task]
-	public bool WolfStroll(){
+	public bool WildStroll(){
 		strollSpeed = standardSpeed;
 		base.Stroll ();
 		return true;

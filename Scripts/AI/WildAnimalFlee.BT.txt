@@ -1,0 +1,7 @@
+//Bei WildAnimals
+tree("Flight")
+	sequence
+		IsFlightDistance
+		RotateAway
+		Wait(20)
+		Flee
