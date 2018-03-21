@@ -44,7 +44,7 @@ public class SceneResourceReader
 	public static T GetMidgardResource<T>(string fileName) where T:class{
 		XmlSerializer deserializerResource = new XmlSerializer(typeof(T));
 		//TextReader SceneXMLReader = new StreamReader(@"./" + fileName);
-		TextReader SceneXMLReader = new StreamReader(@"/Users/Shared/Unity/Midgard/Assets/Photon Unity Networking/Demos/DemoMidgardCharacterCreation/Resources/"+ fileName);
+		TextReader SceneXMLReader = new StreamReader(@"/Users/Shared/Unity/Midgard/Assets/Photon Unity Networking/Demos/DemoWorker/Resources/"+ fileName);
 		T listResource = deserializerResource.Deserialize(SceneXMLReader) as T;
 		SceneXMLReader.Close();
 		return listResource;

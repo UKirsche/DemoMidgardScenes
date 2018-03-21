@@ -3,59 +3,75 @@
 		<Infopaket>
 			<Info>Zum Beispiel über mich.
 Ich bin nämlich der Zunftmeister der Bauleute.</Info>
-			<Info>Die beste Zunft in Cambrygg.
+			<Info>Die beste Zunft in Cambryg.
 Wenn Du dich umsiehst, erkennst du es.
 Es gibt viele Baustellen.</Info>
 			<Info></Info>
-			<Info>Aber das schönste Gebäude ist immer noch die große Akademie</Info>
+			<Info>Aber das schönste Gebäude ist immer noch die große Akademie.
+Die könglich-albische Akademie. Seit diese errichtet wurde, 
+blüht die Stadt regelrecht auf. Natürlich war ich maßgeblich
+am Bau beteiligt. Ich habe nämlich in Chryseia studiert, 
+musst du wissen.</Info>
 		</Infopaket>
 		<Infopaket>
-			<Info>Die könglich-albische Akademie.
-Seit diese errichtet wurde, 
-blüht die Stadt regelrecht auf.</Info>
-			<Info>Natürlich war ich maßgeblich
-am Bau beteiligt. Ich habe nämlich in
-Chryseia studiert, musst du wissen.</Info>
-			<Info>Andere Zünfte haben sich anschließend niedergelassesn. 
-Und damit auch Händler, Weber usw.</Info>
-			<Info></Info>
-			<Info>In Alba genießen wir im Stadtrecht einen besonderen Status.</Info>
+			<Info>Der König damals, Lugan MacBeorn, hat die erste Anschub-
+finanzierung geleistet. Er wollte wohl, ähnlich wie in Fiorinde,
+ein Gegengewicht zum Einfluss der Kirgh einrichten. Es ist ihm gelungen. 
+Noch heute kommen Magister aus Fiorinde hierher, die wieder andere Gelehrte
+mitbringen.</Info>
+			<Info>Durch die Investitionen haben sich schnell andere  Zünfte 
+in Cambryg niedergelassen. Händler, Schreiner, Weber, Kesselflicker, Bäcker.
+Alle sind herbei geströmt und wollen teilhaben. </Info>
 		</Infopaket>
 		<Infopaket>
-			<Info>Neben der großen Akademie im Süden der Stadt
-gibt es noch eine kleinere am Hafen:
-Das Kolleg des Träumers mit offener Bibliothek</Info>
-			<Info>Der letzte Bau war der Turm der Lichtsuchergild</Info>
+			<Info>In Alba genießen wir im Stadtrecht einen besonderen Status. 
+Freidenker sind wir!
+
+Der Einfluss der Bruderschaft wie wohl das Geld des Königs ermöglichen das.
+Und glaube mir, wir kämpfen für unsere Rechte, den König und die Freiheit!</Info>
 		</Infopaket>
 		<Infopaket>
-			<Info>Die große Baustelle im Zentrum:
-Wird die hohe Schule der nützlichen Wissenschaften</Info>
+			<Info>Aber ich wollte dir ja über die Schönheiten der Stadt berichten:
+Neben der großen Akademie im Süden der Stadt gibt es noch eine kleinere am Hafen:</Info>
+			<Info>Das Kolleg des Träumers mit offener Bibliothek</Info>
+			<Info>Dann hat die Magiergilde ihren Turm hier, den Turm der Lichtsuchergilde</Info>
+			<Info>Architektonisch interessant ist auch das Viertel um die Akademie herum.
+Dort haben sich die wohlhabenden Bürger niedergelassen. Die, die etwas geleistet haben.
+Ich wohne auch da.</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info> Ach ja:
+Die große Baustelle im Zentrum hier wird wieder ein Meisterwerk:
+Hier entsteht die Schule der nützlichen Wissenschaften</Info>
 		</Infopaket>
 	</NPC>
 	<NPC name="Frewyn">
 		<Infopaket>
 			<Info>Ich bin nämlich Ratsherr und im Stadtrat</Info>
 			<Info>Dabei kümmere ich mich um die Einnahmen der Finanzen.
-Was ich sagen kann: unsere Stadt floriert. 
-Nicht zuletzt, weil wir, unter uns gesagt,
-auch Zuschüsse bekommen</Info>
-			<Info>Na sicher tun sich auch die Klöster hervor. 
-Die Bruderschaft z.B. hat uns von anfang an unterstützt.</Info>
+Was ich sagen kann: unsere Stadt floriert. Nicht zuletzt, weil wir, 
+unter uns gesagt, auch Zuschüsse bekommen. ABER: die Leute sind tüchtig.
+Hier kann man unabhängig von Clanzugehörigkeit oder Adelstitel etwas erreichen.</Info>
+			<Info>Na sicher tun sich auch die Klöster hervor. Die Bruderschaft
+z.B. hat uns von anfang an unterstützt. Sie sorgt dafür, dass wir ein kulturelles
+Zentrum sind und bleiben. So etwas lässt sich schwer beziffern, aber der 
+Effekt ist wohl spürbar. Sehen sie mich an! Aber:</Info>
 			<Info>Unter uns gesagt: hier gibt es einige Bürger,
-die verdienen 100x so viel wie billigen Arbeiter hier</Info>
+die verdienen 100x so viel wie billigen Arbeiter hier, und tun dafür wenig.
+Na klar, das liegt Küngel.</Info>
 		</Infopaket>
 		<Infopaket>
 			<Info>Und ja, das mit Bruder Dunstan...
 Schrecklich...Ich habe es gehört</Info>
-			<Info>Man mag es kaum glauben!</Info>
-			<Info>Mit einer Axt ermordert sagt man</Info>
+			<Info>Man mag es kaum glauben. Mit einer Axt ermordet
+sagt man. Ich weiß nicht. Wo früher alles ruhig war, wird es jetzt
+zunehmend gewalttätiger. So ist es nunmal.</Info>
 		</Infopaket>
 		<Infopaket>
 			<Info>Dabei war Dunstan so tüchtig.
 Ein wunderbarer Cellerar. 
 Der hatte seinen Finanzen im Griff!</Info>
-			<Info>Prior Lugan dagegen...</Info>
-			<Info>Der gibt das Geld lieber aus</Info>
+			<Info>Prior Lugan dagegen...Der gibt das Geld lieber aus</Info>
 		</Infopaket>
 		<Infopaket>
 			<Info>Fragen sie mal nach im Freudenviertel am Hafen</Info>
@@ -63,25 +79,38 @@ Der hatte seinen Finanzen im Griff!</Info>
 	</NPC>
 	<NPC name="MartinA">
 		<Infopaket>
-			<Info>Hallo, ich bin Martin</Info>
-			<Info>Tennisfan und Rollenspieler</Info>
+			<Info>Eigentlich flitze ich nur durch die Gegend, obwohl
+ich Spieler bin!</Info>
+			<Info>Uwe hat mich hier verbaut...</Info>
 		</Infopaket>
 	</NPC>
 	<NPC name="Donlan">
 		<Infopaket>
 			<Info>Ich betreibe das Gasthaus zum Goldenen Fuchs</Info>
 			<Info>Natürlich lerne ich viele Menschen kennen.
-Gerade jetzt zur Zeit des Fayre.</Info>
-			<Info>Ehrlich gesagt: auch allerhand Gesindel!</Info>
+Gerade jetzt zur Zeit des Fayre.
+Ehrlich gesagt: auch allerhand Gesindel! 
+			</Info>
+			<Info>
+Zumal hier auch immer wieder welche hängen bleiben. Oder Arbeit suchen.
+Da kann man schon Glück haben. Einige der Bauern finden im fahrenden
+Gesindel brauchbar Erntehelfer.</Info>
 		</Infopaket>
 		<Infopaket>
-			<Info>Aber solange die zahlen...</Info>
-			<Info>Bringen weningsten schöne Geschichten mit...</Info>
+			<Info>Mir sind die Barden am liebsten.
+Die machen die Bude voll. Gerade jetzt. Bringen meistens auch
+schöne Geschichten mit...</Info>
 			<Info>Zum Teil wenigstens...</Info>
 		</Infopaket>
 		<Infopaket>
 			<Info>Erzählt doch glatt einer, dass die in die Klöster
-Drogen schmuggeln. </Info>
+Drogen schmuggeln. 
+Dass er selbst gesehen hat, wie geschmuggelt wird. Rauschdrogen und Härteres.
+</Info>
+		<Info>Wie? Ob ich davon was verkaufe? Für wen hälts du mich</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>Wieviel zahlst du?</Info>
 		</Infopaket>
 	</NPC>
 	<NPC name="Emrys">
@@ -90,25 +119,33 @@ Drogen schmuggeln. </Info>
 			<Info>Aber meine Mädchen sind gerade alle belegt...</Info>
 		</Infopaket>
 		<Infopaket>
-			<Info>Achso, du willst wer meine Mädchen nimmt...</Info>
-			<Info>Na, gegen Bezahlung sage ich es dir...</Info>
-			<Info>Los, gib das Geld und sage niemandem davon...</Info>
+			<Info>Achso, du willst wer meine Mädchen nimmt...
+Na, gegen Bezahlung sage ich es dir... Vielleicht.
+Los, gib schon das Geld und sage niemandem davon...</Info>
 		</Infopaket>
 		<Infopaket>
-			<Info>Natürlich sind hier hohe Tiere...</Info>
-			<Info>Egal ob Magier, Magister und Magistrat....</Info>
+			<Info>Ach ja, ich wollte ja etwas erzählen...
+Es ist halt das Übliche: Egal ob Magier, Magister und Magistrat...
+Letzten Endes wollen sie ihre Macht auskosten. Mit jungen Mädchen.
+Oder was sie sonst so brauchen</Info>
 			<Info>Sie kommen alle...
-Und auch mancher arme Schlucker</Info>
+Und wenn sie genügend bezahlen, bekommen sie alles, was sie wollen.
+Ich stelle keine Fragen... Und das solltest du auch nicht.
+</Info>
 		</Infopaket>
 		<Infopaket>
-			<Info>Zum Beispiel kommt ein hoher Prior...</Info>
-			<Info>Ebenso wie ein kleiner Bruder....</Info>
-			<Info>Wenn du weißt,was ich meine!</Info>
+			<Info>Ob hier Mädchen verschwinden ?</Info>
+			<Info>Klar, tun die das. Manchen sind es irgendwann leid,
+und sie hauen einfach ab. Andere dagegen finden ihr Glück. Selten-
+aber wahr. Irgendein Magister, der sich verliebt...</Info>
+			<Info>Wenn du weißt,was ich meine!
+Ob ich dann neue finde?
+Na klar, sieh dich um? Es gibt immer genügend, die nichts haben.
+Nicht jeder hat so ein Glück wie du!</Info>
 		</Infopaket>
 		<Infopaket>
-			<Info>Dabei ist mir der Prior lieber!</Info>
-			<Info>Er nimmt zwar nur die hübschesten Mädchen</Info>
-			<Info>Verliebt sich aber nicht sofort in sie...</Info>
+			<Info>Und jetzt frag nicht mehr so dumm</Info>
+			<Info>Ich muss nach meinen Mädchen sehen.</Info>
 		</Infopaket>
 	</NPC>
 	<NPC name="Dolvin">
@@ -142,6 +179,108 @@ Und auch mancher arme Schlucker</Info>
 			<Info>Vielleicht kannst du mit dem einem oder anderen reden</Info>
 		</Infopaket>
 	</NPC>
+		<NPC name="Camelda">
+		<Infopaket>
+			<Info>Ich arbeite auch für Emrys. Sie muss hier irgendwo sein...</Info>
+			<Info>Ich habe Angst etwas zu erzählen... Aber egal, ich kann dir trotzdem was verraten.
+Du siehst freundlich aus, und du kommst nicht von hier. Vielleicht kannst du ja was ändern...
+Es verschwinden Mädchen hier, und das nicht nur aus Liebe...
+Ich glaube, dass ihnen Schlimmes angetan wird. Vielleicht viel schlimmer, als du es ahnst.
+Bestimmt werde ich auch bald weg sein...
+</Info>
+			<Info>Es wird unter den Mädchen gemunkelt, dass es das Böse wieder hier ist. 
+HIER in Cambryg! Dabei glaube ich, dass wir gebraucht werden für finstere Zwecke. 
+Gebraucht und anschließend werden wir weg geworfen. So ist das.
+</Info>
+		<Info>Ich träume manchmal nachts von einem langeren hageren Mann mit schwarzem Umhang.
+Der wird auch mich irgendwann hier holen.</Info>
+		<Info>Helfen? Nein, das kann mir niemand mehr...</Info>
+		</Infopaket>
+	</NPC>
+	<NPC name="Waffenschmied">
+		<Infopaket>
+			<Info>Ich repariere Waffen und Kessel jeglicher Art</Info>
+			<Info>Möchtest du was repariert haben?
+Das ist allemal besser als den Streit von den zweien da hinter mir ertragen zu müssen. 
+Hämmern! Ich liebe Hämmern!</Info>
+		</Infopaket>
+	</NPC>
+	<NPC name="Kräuterfrau">
+		<Infopaket>
+			<Info>Kräuter, Kräuter, gute Kräuter!!</Info>
+			<Info>Du bekommst alles bei mir: Heilt Wunden, körperlich UND
+seelisch. Dazu sind die Kräuter aus Chryseia ganz hervorragend geeignet. 
+
+Wir haben die Duftraute, die Eberraute, das graue Heiligenkraut, 
+valianische Kamille, Lavendiol, Ockerschwanzsalbei, 
+Distelhalmich, Furzschnarke, Zwiebelgünstling, Pechfremdler, 
+Clanngardanische Olivenrinze,den Spitzhalmkranz, die Farnholle usw.
+			</Info>
+			<Info>Wenn du etwas willst, was die Psyche aktiviert haben wir hier (flüsternd): Krat Thum Na, 
+Virola Calophyalia, Chacruna. ALLES legal, mein Lieber! Und aus der tegarischen Steppe
+Schachtelhalmkraut. Entspannt jeden einzelnen Muskel sag ich dir!
+			</Info>
+			<Info>Das Geschwätz von dem da kannst du dagegen vergessen. Der ist nur neidisch.
+Da vorne unter der Laube sitzen ein paar Kunden von mir. Frag die mal!</Info>
+		</Infopaket>
+	</NPC>
+	<NPC name="Lebensmittelhändler">
+		<Infopaket>
+			<Info>Frischen Fisch, friches Gemüse, alles hier bei mir, alles hier bei mir!</Info>
+			<Info>Viel besser als bei der Kräuterfrau. Hier ist alles gesünder.</Info>
+			<Info>Unter uns:
+die Alte vertickt Kram, den findest du hinten auf der Kuhwiese. Pilze!
+Verstehst du, was ich meine? Das geht nicht, sowas.
+			</Info>
+			<Info>Da hinten sitzen ein paar am Tisch. Das glaubst du nicht,
+da hat Bruder Merril schon eingegriffen. Sonst wäre der eine abgekratzt, 
+das schwöre ich bei meiner Tochter.</Info>
+		</Infopaket>
+	</NPC>
+	<NPC name="Marktwache">
+		<Infopaket>
+			<Info>Eigentlich ganz ruhig hier. Bis du gekommen bist.
+Latsch weiter, Junge, oder es gibt was auf die Schnauze!</Info>
+		</Infopaket>
+	</NPC>
+	<NPC name="Barde">
+		<Infopaket>
+			<Info>Jo Bruder! Wir kennen uns doch schon! Erinnerst du dich?</Info>
+			<Info>Nein?</Info>
+			<Info>Mann, du bist aber vergesslich, wir haben uns doch bei
+Beornanburgh getroffen. 
+Als der Waldläufer ankam. 
+Na, egal... vermutlich hast du viel zu tun.</Info>
+		<Info>Wir haben doch den Kronrat vorbei reiten sehen. Oder einen Teil davon.
+Ich glaube, das war eine Kutsche aus Cambryg, wenn mich meine heraldischen Kenntnisse nicht
+ganz verlassen haben. Oder aus Fiorinde...</Info>
+		<Info>Ich bewache hier die Instrumente für die anderen Jungs.
+Abends spielen wir auf der Bühne auf.</Info>
+		</Infopaket>
+	</NPC>
+	<NPC name="Schneider">
+		<Infopaket>
+			<Info>Guten Tag, Seniore!
+
+Ich bin Elvas, der Schneider am Orte. Wenn du dich interessierst,
+was ich so alles mache?
+
+Ich kann alles schneidern, von fröhlichen Kleidern, gut Bürgerlichem,
+bis hin zu Gewändern bei Trauerfeiern. 
+Natürlich kostet gute Qualität auch was. Aber meine Kunden bezahlen das gerne.
+
+Was ich zuletzt so für Aufträge hatte? Ja, das ware wirklich sehr speziell
+und interessant. Kutten, schwarze Kutten, mit feinsten Stickereien.
+
+Ehrlich gesagt, kam mir das schon auch unheimlicher vor. Aber wie gesagt, der Kunde hat
+SEHR gut bezahlt. Da solls mir egal sein. 
+
+Wer der Kunde war? Weiß ich nicht. Es war ein Junge hier, der das anonym in Auftrag gegben hat
+Mit Skizzen!</Info>
+		</Infopaket>
+	</NPC>
+
+	<!---Gegenstände -->
 	<NPC name="Tomb">
 		<Infopaket>
 				<Info>Mir fällt was ein über die Legende des Vraidos</Info>
@@ -149,12 +288,16 @@ Und auch mancher arme Schlucker</Info>
 				<Info>Myra war eine Meisterin des oberen und unteren Ozeans während des Krieges der Magier.</Info>
 				<Info>Der Ruhm unseres Herrn Vraidos lockte Myra aus ihrer Zuflucht heraus</Info>
 				<Info>Sie setzte sich zu seinen Füßen nieder und lauschte seiner Weisheit</Info>
+		</Infopaket>
+		<Infopaket>
 				<Info>Da Vraidos wunderschön war, verliebte sich Myra in ihn und sie wollte ihn haben.</Info>
+				<Info></Info>
 				<Info>Doch Vraidos wollte sich nicht von seiner Aufgabe ablenken lassen, denn er witterte</Info>
 				<Info>schlimmsten Verrat bei den Toquinern</Info>
+				<Info></Info>
 				<Info>Und er ruhte nicht eher, bis er den Verrat entdeckt hatte, um endlich mit Myra</Info>
 				<Info>Ruhe zu finden.</Info>
-			</Infopaket>
+		</Infopaket>
 	</NPC>
 	<NPC name="Fountain">
 		<Infopaket>
@@ -164,32 +307,32 @@ Und auch mancher arme Schlucker</Info>
 				<Info>Er wird kennen lernen den Verrat und den Hochmut innerhalb der Bruderschaft</Info>
 				<Info>Und er wird erkennen, dass viele die Feinde der Bruderschaft waren...</Info>
 				<Info>Im Grunde die Erlöser sind!</Info>
-			</Infopaket>
+				<Info></Info>
+				<Info>Ob ich wohl mehr über den Kelch in Erfahrung bringen kann? Wo?</Info>
+		</Infopaket>
 	</NPC>
 	<NPC name="Hexenbulle">
 			<Infopaket>
 				<Info>Hexen-Bulle von Kirghlaird Walden (1809 n.L.)</Info>
 				<Info>Summis desiderantes affectibus: mit höchstem Eifer fordere ich dazu auf, 
 alle ketzerische Bosheit auszurotten. </Info>
-			<Info>Wider den abscheulichen Aberglauben und die zauberischen Übertretungen,</Info>
-			<Info>die mir aus einigen Teilen Albas, besonders aus den Erzbistümern Prioresse, Beornanburgh,</Info>
-			<Info>Corinnis und Fjorinde zugetragen worden sind, hilft lediglich unnachgiebige Härte.</Info>
-			<Info>Viele Brüder und Schwestern sind vom Glauben abgefallen ... die Menschen, die Frauen,</Info>
-			<Info>die Tiere, das Vieh, Getreide, Korn verderben ... die Menschen mit grausamen sowohl</Info>
-			<Info>innerlichen als äußerlichen Schmerzen und Plagen peinigen und verursachen,</Info>
-			<Info>dass die Männer nicht zeugen, die Frauen nicht empfangen können, dass Blitze </Info>
-			<Info>von der Erde in den Himmel fahren, und Schreckgespenste über unseren schönen</Info>
-			<Info>Auen und Berge wandeln</Info>
+			<Info>Wider den abscheulichen Aberglauben und die zauberischen Übertretungen,
+die mir aus einigen Teilen Albas, besonders aus den Erzbistümern Prioresse, Beornanburgh,
+Corinnis und Fiorinde zugetragen worden sind, hilft lediglich unnachgiebige Härte.</Info>
+			<Info>Viele Brüder und Schwestern sind vom Glauben abgefallen ... die Menschen, die Frauen,
+innerlichen als äußerlichen Schmerzen und Plagen peinigen und verursachen,
+dass die Männer nicht zeugen, die Frauen nicht empfangen können, dass Blitze 
+von der Erde in den Himmel fahren, und Schreckgespenste über unseren schönen
+Auen und Berge wandeln</Info>
 			</Infopaket>
 	</NPC>
 	<NPC name="Hexenstahl">
 			<Infopaket>
 				<Info>Das Hexenstahl, Kirghlaird Walden zu Beornanburgh, 1811 n.L.</Info>
-				<Info>Die Art aber, damit zu beginnen, ist diese: Während die Büttel 
-sich zum peinlichen Verhör bereit machen, entkleiden sie ihn danach; </Info>
-			<Info> oder wenn es eine Frau ist, soll sie, bevor sie in das
-Strafgefängnis geführt wird von anderen ehrbaren 
-Frauen von gutem Rufe entkleidet werden.</Info>
+				<Info>Die Art aber, damit zu beginnen, ist diese: 
+Während die Büttel sich zum peinlichen Verhör bereit machen, entkleiden sie ihn danach; 
+oder wenn es eine Frau ist, soll sie, bevor sie in das Strafgefängnis geführt wird,
+von anderen ehrbaren Frauen von gutem Rufe entkleidet werden.</Info>
 			<Info>Aus dem Grunde, damit (entdeckt werde), ob vielleicht irgend 
 ein Hexenwerkzeug in die in die Kleider eingenäht ist, 
 wie sie es häufig auf  die Belehrung der Dämonen hin aus den Gliedern
@@ -203,9 +346,89 @@ eines ungetauften Knaben herstellen;</Info>
 in der ganze Geschichte! Und wir haben es entdeckt.</Info>
 			<Info> Grundgütiger. Oh Xan hilf uns. Der Verrat steckt wie
 ein Eitergeschwür in Alba</Info>
-			<Info>Aber ich muss mich beeilen: Edren hat herausgefunden,
+			<Info>Aber ich muss mich beeilen: Edran hat herausgefunden,
 warum Vraidos wirklich verschwunden ist. Dass Walden recht hatte, die Kirgh zu
-reinigen. Dass das Königtum ein Verrat ist der gelenkt wird von...</Info>
+reinigen. 
+Dass das Königtum ein Verrat ist der gelenkt wird von... .
+ 
+Wir verschwinden noch weiter in den Hügeln, damit uns wirklich keiner findet. 
+Zuletzt sind hier nachts Figuren in schwarzen Kutten herumgegeistert. 
+Sie suchen uns überall. 
+Es ist also an der Zeit, dass wir uns weiter zurück ziehen. 
+
+E.</Info>
+			</Infopaket>
+	</NPC>
+	<NPC name="MyraParchment">
+			<Infopaket>
+				<Info>Die erste Abschrift vom Myra-Kelch</Info>
+				<Info>Solange sich der Kelch der Myra im Besitz der Bruderschaft befindet,
+so lange wird Frieden herrschen zwischen den Konfessionen</Info>
+				<Info>Bei der Wahl des ersten Königs wurde Ingram von Prioresse der Kelch 
+der Myra übergeben. Er ist der Hüter der Wahrheit. Und diese Wahrheit wird immer entdeckt werden.</Info>
+			</Infopaket>
+	</NPC>
+	<NPC name="BookShelfIngramm">
+			<Infopaket>
+				<Info>Bulle von Ingramm von Prioresse 1892 n.L. zur Königskrönung Berandir MacBeorns</Info>
+				<Info>Und Wir befehlen Euch, kraft heiligen Gehorsams, so wie Ihr auch es versprecht 
+und ohne Zweifel es aus Eurer großen Ergebenheit und Eurem königlichen Großmut 
+erfüllen werdet, daß Ihr nach für alle Clans ein rechtschaffener
+und gottesfürchtige Mann werdet:</Info>
+				<Info>
+klug, kundig und erfahren, um den genannten Streit der Konfessionen beizulegen.
+Die Bewohner Albas sind wieder im Frieden zu unterweisen, wobei Ihr in allem 
+die gebotene Sorgfalt beachtet. </Info>
+				<Info>
+Und streng verbieten wir allen Personen, jedweden Standes oder Ranges, 
+selbst kaiserlicher und königlicher Würde, unter Strafe der 
+Exkommunikation ‚latae sententiae’, sich erneut 
+im Glauben zu streiten und zu töten.
+				</Info>
+			</Infopaket>
+	</NPC>
+	<NPC name="BannBulle">
+			<Infopaket>
+				<Info>Bannbulle von Ingramm von Prioresse 1893 </Info>
+				<Info>Hiermit wird Kirghlaird Walden exkommuniziert und die Verbannung geschickt:</Info>
+				<Info>Der unerhörte Mord am albischen Volke sei hiermit gesühnt. Man soll über Walden
+weitershin weder reden noch diskutieren. Sein Handeln und seine Taten
+mögen als Schandfleck in die ordentliche Geschichtsschreibung eingehen.</Info>
+				<Info>
+Walden selbst unterlag Geistern, die sein Handeln und Denken zerrüttet haben. Er beschuldigte,
+wo nichts zu beschuldigen war, außer natürlichem Leben.
+				</Info>
+			</Infopaket>
+	</NPC>
+	<NPC name="BriefMerril">
+			<Infopaket>
+				<Info>Brief des Kronrats an Bruder Merril </Info>
+				<Info>So seid ihr, Burder Merril, hiermit eingeladen zur Sitzung des Kronrates auf
+Empfehlung des Magisters Simael von Fiorinde, des großen Gelehrten der Magie, der zur Zeit an 
+Eurem Kloster weilt.</Info>
+				<Info>Denn wir benötigen Euren Rat in einer Angelegenheit mit höchster Dringlichkeit, welche 
+die Geschicke Albas weithin mit bestimmen wird...
+				</Info>
+			</Infopaket>
+	</NPC>
+		<NPC name="GeschichteAlba">
+			<Infopaket>
+				<Info>Vraidos Legende nach Eorvin MacDougall (1899 n.L.)</Info>
+				<Info>"Und als die Toquiner anlandeten, sausten Blitze vom Himmel und es peitschte Regen.</Info>
+				<Info>Denn sie kamen aus dem Nichts und sie konnten mit ihrer Flotte nicht wenden. So 
+fanden sie  Zuflucht bei den Albi und lehrten sie viele Dinge. Und der größte und weiseste 
+unter ihnen war Vraidos, der stets die Wahrheit sprach und die Zukunft sah. 
+Und er weissagte eine blühende Zukunft und höchsten Verrat. 
+Und es war Myra, mit der er viel sprach.
+
+Und sie umgarn Vraidos und wollte ihn für sich. Doch er sprach:
+Ich habe noch eine Aufgabe zu erledigen. Und Myra half ihm alsdann."
+				</Info>
+				<Info>So geht also die Legende, das Vraidos, bevor er mit Myra verschwand,
+etwas hinterlassen hat. Etwas von größter Bedeutung. Und schon viele Glücksritter,
+Gelehrte und Brüder haben umsonst danach gesucht.
+Dabei ist offensichtlich, dass Vraidos von der inneren Erkenntnis sprach,
+die er in seine Lehre einband, und die JEDEM Gläubigen bei rechtem Bemühen zugänglich ist.</Info>
 			</Infopaket>
 	</NPC>
 </NPCS>
