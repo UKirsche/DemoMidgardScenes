@@ -1,0 +1,10 @@
+tree("BeAlive")
+	Sit
+tree("TalkPC")
+	sequence
+		 UnsetDialogPartnerPC
+		 IsPCVisible
+		 IsPCInCommunicationDist
+		 StopMove
+		 RotateToPC
+		 SetDialogPartnerPC
