@@ -8,3 +8,4 @@ tree("TalkPC")
 		 IsPCVisible
 		 IsPCInCommunicationDist
 		 SetDialogPartnerPC
+		 RotateToPC
