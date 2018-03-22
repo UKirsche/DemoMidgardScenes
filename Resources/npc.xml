@@ -1,12 +1,12 @@
 <NPCS>
 	<NPC name="Osrick">
 		<Infopaket>
-			<Info> Ja, ich habe das Ganze los getreten. 
+			<Info>Ja, ich habe das Ganze los getreten. 
 Hätte ich doch bloß nie was gesagt,
 als ich dieses komische Dokument in Händen hatte.
 Schließlich bin ich nur Kalligraph. Ach, ach...
 			</Info>
-			<Info> Wie es anfing? 
+			<Info>Wie es anfing? 
 Ja, ich bekam als dieses Dokument vom Kloster 
 der Weitreichenden Erinnerung.
 Die suchen uns manchmal auf, weil wir gut ausgebildete Kalligraphen sind.
@@ -59,26 +59,48 @@ Dann lieber beim Cellerar.
 Oh mein Gott. Aber was hat das damit zu tun? Und Aelric vom Kloster
 der weitreichenden Erinnerung auch? Von einem Gorilla zerfetzt?
 Um Xans Willen...</Info>
+			<Info>Was? Das mit Dunstan war Kyrlen? Der Metzgergeselle?
+Aus Angst, seine Anstellung zu verlieren...? Ja, ja, meist sind
+es die einfachsten Motive und Ängste, die einen zu schrecklichen Taten
+verleiten.</Info>
+		  <Info>Aber das mit Aelric und dem Gorilla, erscheint mir
+merkwürdig. Es gibt dies Gorillas hier nicht. Dunke Mächte sind am 
+Werke. Wir werden wohl noch etwas hier bleiben müsse.</Info>
+		</Infopaket>
+		<Infopaket>
+		  <Info>Aber ich vetraue euch. Findet heraus so viel ihr
+könnt. Falls das nicht möglich ist, zieht euch zurück wie wir!
+		  </Info>
 		</Infopaket>
 	</NPC>
 	<NPC name="Edran">
 		<Infopaket>
-			<Info> Ja, ich habe das Ganze los getreten. 
-Hätte ich doch bloß nie was gesagt,
-als ich dieses komische Dokument in Händen hatte.
-Schließlich bin ich nur Kalligraph. Ach, ach...
+			<Info>Wie ich und Osric in Kontakt kamen, ja nun.
+Eben über den KOLLEGIALEN Austausch unserer beiden Klöster.
+Ich bin ein Bibliothekar im Kloster der weitreichenden Erinnerung
+und ich denke, zurecht stolz auf die Schriftensammlung. Ich hege
+und pflege sie, wie meine Kinder. 
 			</Info>
-			<Info> Wie es anfing? 
-Ja, ich bekam als dieses Dokument vom Kloster 
-der Weitreichenden Erinnerung.
-Die suchen uns manchmal auf, weil wir gut ausgebildete Kalligraphen sind.
-Ich dachte mir nichts dabei, schließlich ist das meine Arbeit.
-Bis mir dieses einzelne kurze Pamphlet aus dem Buch herausfiel.</Info>
-			<Info> Um was für ein Buch es sich handelte? 
-"Die Träume und Rätsel von Vraidos",
-eine Abhandlung über Vraidos und das Mysterium seines Verschwindens.
-Ähnlich wie das Book of Dheis. Also ein Standardwerk
+			<Info>Immer mal wieder muss ich dann auch Prior Lugan
+vom Kloster der Kirgh um Hilfe bitten. Zwar haben wir auch sehr 
+talentierte Schreiber und Kalligraphen. Aber ich möchte behaupten,
+dass Lugan, ohne dass er es genau weiß, einige der besten Künstler
+Albas bei sich hat. Ich meine damit vor allem Bruder Osrick.
+</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>So war es also bei der Schrift über Vraidos 
+der Fall. Ein sehr altes Dokument, dass, so sagt man, sogar 
+auf die ersten Anhänger von Vraidos zurückgeht. 
+Sozusagen die Grundlage unseres Kanons. Unser Meister hat 
+daher auf mein Anraten hin Kontakt mit Lugan aufgenommen, der
+wiederum wie üblich Osrick das Dokument vermittelte.
 	</Info>
+	<Info>Tja, und dann kam Osrick damit zu mir. Mir fiel schnell
+auf, dass die Niederschrift alt ist. Ein Schriftenabgleich ergab
+dann, dass der Schreiberling Bruder Dunwick war. Ein hochgelehrter
+aber vollem begehrter und ehrlicher Mystiker. Seine Schriften 
+sind ebenfalls bei uns zu finden.</Info>
 		</Infopaket>
 		<Infopaket>
 			<Info>Dieses elende Pamphlet. Entgegen der gängigen Tradierung
