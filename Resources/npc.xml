@@ -15,8 +15,78 @@ Bis mir dieses einzelne kurze Pamphlet aus dem Buch herausfiel.</Info>
 			<Info> Um was für ein Buch es sich handelte? 
 "Die Träume und Rätsel von Vraidos",
 eine Abhandlung über Vraidos und das Mysterium seines Verschwindens.
-Ähnlich wie das Book of Dheis.
+Ähnlich wie das Book of Dheis. Also ein Standardwerk
 	</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>Dieses elende Pamphlet. Entgegen der gängigen Tradierung
+wird hier nicht Warden bei der Verfolgung angeklagt, sondern Ingram von
+Prioresse. Das damalige Oberhaupt der Bruderschaft. Es gibt eine lange 
+Geschichte dunkler Magier innerhalb der Bruderschaft, deren Ziel es immer
+war, Einfluss auf den König zu nehmen. Das hat aber Edran herausgefunden.
+			</Info>
+			<Info>Fragt Edran gleich mal.
+Er ist ein guter Freund von mir, und dem habe ich das Dokument zukommen 
+lassen. Ich dachte ja, das wäre ein Gesudle, das irgendwie in 
+das ursprüngliche Dokument hineingelangt ist.
+			</Info>
+			<Info>Edran hat aber ganz andere Dinge herausgefunden.
+V.a. Dingen hat er etwas wachgerüttelt, was lieber im Dunkeln 
+geblieben wäre. Den ehrgeizigen Bruder Merril z.B. 
+und seinen privaten Attaché. Den junge und immer grün gekleideten
+Golvan. </Info>
+			</Infopaket>
+			<Infopaket>
+			<Info>Auf jeden Fall war Edran schlagartig in Gefahr. 
+Nachdem er seine Entdeckung mit der Klosterführung teilte,
+fühlte er sich öfters verfolgt. Das kann er euch
+ja selber erzählen. Und irgendwann wurde er am hellichten Tage verschleppt, 
+in eine dunkle Kellerzelle im Kloster gepackt und eingesperrt.</Info>
+		</Infopaket>
+	</NPC>
+	<NPC name="Edran">
+		<Infopaket>
+			<Info> Ja, ich habe das Ganze los getreten. 
+Hätte ich doch bloß nie was gesagt,
+als ich dieses komische Dokument in Händen hatte.
+Schließlich bin ich nur Kalligraph. Ach, ach...
+			</Info>
+			<Info> Wie es anfing? 
+Ja, ich bekam als dieses Dokument vom Kloster 
+der Weitreichenden Erinnerung.
+Die suchen uns manchmal auf, weil wir gut ausgebildete Kalligraphen sind.
+Ich dachte mir nichts dabei, schließlich ist das meine Arbeit.
+Bis mir dieses einzelne kurze Pamphlet aus dem Buch herausfiel.</Info>
+			<Info> Um was für ein Buch es sich handelte? 
+"Die Träume und Rätsel von Vraidos",
+eine Abhandlung über Vraidos und das Mysterium seines Verschwindens.
+Ähnlich wie das Book of Dheis. Also ein Standardwerk
+	</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>Dieses elende Pamphlet. Entgegen der gängigen Tradierung
+wird hier nicht Warden bei der Verfolgung angeklagt, sondern Ingram von
+Prioresse. Das damalige Oberhaupt der Bruderschaft. Es gibt eine lange 
+Geschichte dunkler Magier innerhalb der Bruderschaft, deren Ziel es immer
+war, Einfluss auf den König zu nehmen. Das hat aber Edran herausgefunden.
+			</Info>
+			<Info>Fragt Edran gleich mal.
+Er ist ein guter Freund von mir, und dem habe ich das Dokument zukommen 
+lassen. Ich dachte ja, das wäre ein Gesudle, das irgendwie in 
+das ursprüngliche Dokument hineingelangt ist.
+			</Info>
+			<Info>Edran hat aber ganz andere Dinge herausgefunden.
+V.a. Dingen hat er etwas wachgerüttelt, was lieber im Dunkeln 
+geblieben wäre. Den ehrgeizigen Bruder Merril z.B. 
+und seinen privaten Attaché. Den junge und immer grün gekleideten
+Golvan. 
+			</Info>
+			</Infopaket>
+			<Infopaket>
+			<Info>Auf jeden Fall wurde Edran plötzlich nach dem 
+dem Leben getrachtet. Er wurde von einer Gruppe schwarzer
+vermummter Gestalten verschleppt, in eine dunkle Kellerzelle
+im Kloster. Ein ganz verlassenes Eck.</Info>
 		</Infopaket>
 	</NPC>
 	<NPC name="Kennard">
