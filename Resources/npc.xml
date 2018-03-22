@@ -162,7 +162,7 @@ Ich sah wie der Abt mit Magister Simael aus Fiorinde auf dem Weg
 ins Hauptgebäude waren.</Info>
 		</Infopaket>
 		<Infopaket>
-			<Info>Simael gilt als Gesichtsgelehrter ersten Ranges,
+			<Info>Simael gilt als Geschichtsgelehrter ersten Ranges,
 und ich erwog im Stillen, ob ich wohl ihn ins Vertrauen ziehen sollte.
 </Info>
 			<Info>Davor wollte ich allerdings nochmal in der Bibliothek
@@ -669,6 +669,17 @@ etwas hinterlassen hat. Etwas von größter Bedeutung. Und schon viele Glücksri
 Gelehrte und Brüder haben umsonst danach gesucht.
 Dabei ist offensichtlich, dass Vraidos von der inneren Erkenntnis sprach,
 die er in seine Lehre einband, und die JEDEM Gläubigen bei rechtem Bemühen zugänglich ist.</Info>
+			</Infopaket>
+	</NPC>
+	<NPC name="Codebuch">
+			<Infopaket>
+				<Info>X3C lautet ein Hinweis</Info>
+				<Info>Er folgt der Sprache der Bibliothekare</Info>
+				<Info>Willst du mich finden, so beachte dieses:</Info>
+				<Info>Die Zahl ergibt das Ziel von hinten, dann von vorne</Info>
+				<Info>Hast du das verstanden, dann gehe zur 13 von hinten und von vorne.</Info>
+				<Info>Oder von vorne und von hinten</Info>
+				<Info>13 ist der Schlüssel, der das Tor öffnet</Info>
 			</Infopaket>
 	</NPC>
 </NPCS>
