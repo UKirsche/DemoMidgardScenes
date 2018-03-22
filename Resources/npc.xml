@@ -171,8 +171,11 @@ will, flog mir dort, als durch Zufall bei Herausnehmen eines Buches,
 ein kleines Holzkästchen, kaum 5cm groß, in die Hände. Darin, nur
 mit einem Schlüssels eines Bibliothekars zu öffnen, fand ich eine
 Nachricht einen Code.
+
 X3C
+
 Zu diesem Code gab es einen Hinweis.
+
 Der Hinweis liegt im Zelt bei den Büchern, falls ihr nachsehen wollt.</Info>
 			<Info>Ich hatte leider keine Zeit mehr, diesen Code
 zu entschlüsseln, oder ihm weiter nachzugehen. Denn kurz darauf wurde ich,
@@ -209,14 +212,32 @@ erstmal abtauchen, weg von hier. Vetraue keinem hohen Würdenträger mehr."</Inf
 		<Info>So fand ich mich unvermittelt auf der Straße, verängstigt.
 Sofort begab ich mich heimlich zu Osrick. Nun ja, wir treffen uns ab und an
 auch privat. Ich keinen einen Zugang...</Info>
+		</Infopaket>
+		<Infopaket>
 		<Info>So schlich ich mich also zu Osrick, erläuterte ihm die Situation 
-in aller Hast, machte eine Skizze usw. Osrick war natürlich vollkommen überfordert.
-Doch er folgte mir. Ich kenne hinter Cambryg bei den Felder ein kleines Versteck...
+in aller Hast, machte eine Skizze usw. Osrick war natürlich vollkommen 
+überfordert. Doch er folgte mir. Ich kenne hinter Cambryg bei den 
+Felder ein kleines Versteck...
 		</Info>
-		<Info>Dort angekommen verharrten wir ein zwei Nächte. Es waren Wölfe in
-der Nähe, was uns veranlasste, über das Versteck weiter nachzudenken. So
+		<Info>Dort angekommen verharrten wir ein, zwei Nächte. Es waren Wölfe 
+in der Nähe, was uns veranlasste, über das Versteck weiter nachzudenken. So
 gingen wir im Morgengrauen heimlich zu den Hügeln bei den Bergen, um ein
-besseres Versteck zu finden.</Info>
+besseres Versteck zu finden. Was wir auch taten</Info>
+		 <Info>Am letzten Abend dann, hörten wir nicht nur Wölfe, sondern 
+sahen eine dunkle Prozession schwarze Männer in grünglichem Licht still zu 
+den Wölfen ziehen. In ihrer Mitte hielten sie in bewusstloses Mädchen.
+		</Info>
+		</Infopaket>
+		<Infopaket>
+		<Info>Das war mehr als genug. Ich hinterließ heimlich eine
+Nachricht für Aelric. Und nun sind wir hier...</Info>
+		<Info>Ich kann euch jetzt nur diesen Tipp geben. Lasst die Finger
+von der Sache. Seid ihr trotzdem verrückt genug, so knackt den Code und
+seht in der Bibliothek des Klosters der weitreichenden Erinnerung nach, 
+ob ihr dazu was findet. Dunwick war schließlich Bibliothekar, als wird
+der Code etwas mit Büchern oder Schrift zu tun haben... 
+		</Info>
+		<Info>Viel Glück euch!</Info>
 		</Infopaket>
 	</NPC>
 	<NPC name="Kennard">
