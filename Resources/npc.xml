@@ -27,21 +27,38 @@ war, Einfluss auf den König zu nehmen. Das hat aber Edran herausgefunden.
 			</Info>
 			<Info>Fragt Edran gleich mal.
 Er ist ein guter Freund von mir, und dem habe ich das Dokument zukommen 
-lassen. Ich dachte ja, das wäre ein Gesudle, das irgendwie in 
+lassen. Edran ist ja Bruder und Bibliothekar im Vraidos-Kloster. Ein
+hervorragender Gelehrter wie ich anmerken möchte.
+Meine Meinung war ja, meine Fund wäre ein Gesudle, das irgendwie in 
 das ursprüngliche Dokument hineingelangt ist.
 			</Info>
-			<Info>Edran hat aber ganz andere Dinge herausgefunden.
-V.a. Dingen hat er etwas wachgerüttelt, was lieber im Dunkeln 
-geblieben wäre. Den ehrgeizigen Bruder Merril z.B. 
-und seinen privaten Attaché. Den junge und immer grün gekleideten
-Golvan. </Info>
-			</Infopaket>
-			<Infopaket>
-			<Info>Auf jeden Fall war Edran schlagartig in Gefahr. 
+			<Info>Edran hat mich aber bald eines Besseren belehrt.
+Er hat mit seinen Recherchen etwas wachgerüttelt, was lieber im 
+Verborgenen geblieben wäre... </Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>Auf jeden Fall schwebte Edran schlagartig in Gefahr. 
 Nachdem er seine Entdeckung mit der Klosterführung teilte,
 fühlte er sich öfters verfolgt. Das kann er euch
 ja selber erzählen. Und irgendwann wurde er am hellichten Tage verschleppt, 
-in eine dunkle Kellerzelle im Kloster gepackt und eingesperrt.</Info>
+in eine dunkle Kellerzelle im Kloster gepackt und eingesperrt.
+			</Info>
+			<Info>Mit Hilfe von Aelric gelang ihm schließlich die 
+Flucht. Zuerst waren wir ein paar Meter hinter Cambryg versteckt, hinter den 
+Feldern. Aber das wurde uns bald zu gefährlich. Nicht nur wegen der Wölfe.
+Da waren nachts und morgen ebenfalls die schwarzen Männer unterwegs.
+Also sind wir hierher geflüchtet.
+			</Info>
+		</Infopaket>
+		<Infopaket>
+			<Info>Und jetzt, ja jetzt, gibt es wohl erstmal kein zurück
+mehr. Lugan ist in jedem Fall kein Prior, dem ich mich anvertrauen möchte.
+Dann lieber beim Cellerar.
+			</Info>
+			<Info>Was, der ist tot? Deswegen wurde ihr angeheuert?
+Oh mein Gott. Aber was hat das damit zu tun? Und Aelric vom Kloster
+der weitreichenden Erinnerung auch? Von einem Gorilla zerfetzt?
+Um Xans Willen...</Info>
 		</Infopaket>
 	</NPC>
 	<NPC name="Edran">
