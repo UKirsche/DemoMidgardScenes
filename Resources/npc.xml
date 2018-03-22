@@ -1,4 +1,24 @@
 <NPCS>
+	<NPC name="Osrick">
+		<Infopaket>
+			<Info> Ja, ich habe das Ganze los getreten. 
+Hätte ich doch bloß nie was gesagt,
+als ich dieses komische Dokument in Händen hatte.
+Schließlich bin ich nur Kalligraph. Ach, ach...
+			</Info>
+			<Info> Wie es anfing? 
+Ja, ich bekam als dieses Dokument vom Kloster 
+der Weitreichenden Erinnerung.
+Die suchen uns manchmal auf, weil wir gut ausgebildete Kalligraphen sind.
+Ich dachte mir nichts dabei, schließlich ist das meine Arbeit.
+Bis mir dieses einzelne kurze Pamphlet aus dem Buch herausfiel.</Info>
+			<Info> Um was für ein Buch es sich handelte? 
+"Die Träume und Rätsel von Vraidos",
+eine Abhandlung über Vraidos und das Mysterium seines Verschwindens.
+Ähnlich wie das Book of Dheis.
+	</Info>
+		</Infopaket>
+	</NPC>
 	<NPC name="Kennard">
 		<Infopaket>
 			<Info>Zum Beispiel über mich.
