@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(CapsuleCollider))]
 public class CapsuleColliderBeam : MonoBehaviour {
 
 	public Vector3 beamTo;
