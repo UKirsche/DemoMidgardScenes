@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 public static class PlayerStats
 {
-	public static readonly Vector3 startMidgard = new Vector3(29,7,123);
+	public static readonly Vector3 startMidgard = new Vector3(27,1,183);
 
 	private static Vector3 beamPosition;
 	public static Vector3 BeamPosition 
