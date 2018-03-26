@@ -519,8 +519,8 @@ und interessant. Kutten, schwarze Kutten, mit feinsten Stickereien.
 Ehrlich gesagt, kam mir das schon auch unheimlicher vor. Aber wie gesagt, der Kunde hat
 SEHR gut bezahlt. Da solls mir egal sein. 
 
-Wer der Kunde war? Weiß ich nicht. Es war ein Junge hier, der das anonym in Auftrag gegben hat
-Mit Skizzen!</Info>
+Wer der Kunde war? Weiß ich nicht. Es war ein Junge hier, 
+der das anonym in Auftrag gegben hat. Mit Skizzen!</Info>
 		</Infopaket>
 	</NPC>
 
@@ -745,6 +745,30 @@ Typischerweise gibt es in der Gaststätte ein albisches Dart zu finden.</Info>
 				<Info>Kontorhaus</Info>
 				<Info>Hier werden die Handelsschiffe, die den Mourne entlangfahren, registiert. 
 Auch wird hier in der Regel die Ware gelöscht.</Info>
+			</Infopaket>
+	</NPC>
+		<NPC name="Lichtsuchergilde">
+			<Infopaket>
+				<Info>Magierturm der Lichtsuchergilde</Info>
+				<Info>Hier ist der Magierturm der Lichtsuchergilde. Die Lichtsuchergilde
+ist eine sehr tolerante Magiergilde, die auch anderen Magiern Zugang zu ihrem Archiv 
+und v.a. ihren Zaubermitteln erlaubt. Hinter dem Magierturm findest du ein kleines Handels-
+haus, in dem man auch Zaubermittel erwerben kann.</Info>
+			</Infopaket>
+	</NPC>
+	<NPC name="Träumerkolleg">
+			<Infopaket>
+				<Info>Kolleg des Träumers</Info>
+				<Info>Hier ist das Kolleg des Träumers. Ein Symbole
+für den Fortschritt und die Wissenschaft in Alba. Hier kannst
+du eventuell manch Interssantes herausfinden.</Info>
+			</Infopaket>
+	</NPC>
+		<NPC name="Armenviertel">
+			<Infopaket>
+				<Info>Willkommen im Armenviertel</Info>
+				<Info>Hier findest du diejenigen, die anderweitig
+vom Reichtum der Stadt profitieren müssen...</Info>
 			</Infopaket>
 	</NPC>
 </NPCS>
