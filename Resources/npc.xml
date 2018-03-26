@@ -465,7 +465,7 @@ Virola Calophyalia, Chacruna. ALLES legal, mein Lieber! Und aus der tegarischen 
 Schachtelhalmkraut. Entspannt jeden einzelnen Muskel sag ich dir!
 			</Info>
 			<Info>Das Geschwätz von dem da kannst du dagegen vergessen. Der ist nur neidisch.
-Da vorne unter der Laube sitzen ein paar Kunden von mir. Frag die mal!</Info>
+Unter uns: Da vorne unter der Laube sitzt mein Lieferant. Frag den mal!</Info>
 		</Infopaket>
 	</NPC>
 	<NPC name="Lebensmittelhändler">
@@ -476,9 +476,21 @@ Da vorne unter der Laube sitzen ein paar Kunden von mir. Frag die mal!</Info>
 die Alte vertickt Kram, den findest du hinten auf der Kuhwiese. Pilze!
 Verstehst du, was ich meine? Das geht nicht, sowas.
 			</Info>
-			<Info>Da hinten sitzen ein paar am Tisch. Das glaubst du nicht,
+			<Info>Da hinten saßen vorher ein paar am Tisch. Das glaubst du nicht,
 da hat Bruder Merril schon eingegriffen. Sonst wäre der eine abgekratzt, 
 das schwöre ich bei meiner Tochter.</Info>
+		</Infopaket>
+	</NPC>
+	<NPC name="Drogenschmuggler">
+		<Infopaket>
+			<Info>Habe gehört: Auf der Königsstraße haben sie ein 
+paar von meinen Kollegen hochgenommen...</Info>
+			<Info>Blutige Anfäger sag ich Dir!
+Das muss man schon anders angehen. Woher weißt du von mir?
+Hat die Kräuterfrau geplappert?</Info>
+			<Info>Egal: Hab genügend Abnehmer... Gerade von den Gelehrten.
+Da kommt immer so ein kleiner grün gekleiderter Gnom von nem Kloster.
+Wenn du mich fragst: was der braucht ist harter Stoff...</Info>
 		</Infopaket>
 	</NPC>
 	<NPC name="Marktwache">
