@@ -737,4 +737,11 @@ Typischerweise gibt es in der Gaststätte ein albisches Dart zu finden.</Info>
 				<Info>Der Besitzer, Donlan, weiß auch so manche Neuigkeiten.</Info>
 			</Infopaket>
 	</NPC>
+	<NPC name="Kontorhaus">
+			<Infopaket>
+				<Info>Kontorhaus</Info>
+				<Info>Hier werden die Handelsschiffe, die den Mourne entlangfahren, registiert. 
+Auch wird hier in der Regel die Ware gelöscht.</Info>
+			</Infopaket>
+	</NPC>
 </NPCS>
