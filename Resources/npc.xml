@@ -410,7 +410,8 @@ Nicht jeder hat so ein Glück wie du!</Info>
 	<NPC name="Wächter">
 		<Infopaket>
 			<Info>Das ist könglich albische Akademie</Info>
-			<Info>Solange du keine Scheiße baust...kannst rein.</Info>
+			<Info>Hier kommst aufgrund eines Treffens von Teilen
+des Kronrats derzeit nicht rein.</Info>
 		</Infopaket>
 	</NPC>
 	<NPC name="SchmiedTom">
