@@ -771,4 +771,10 @@ du eventuell manch Interssantes herausfinden.</Info>
 vom Reichtum der Stadt profitieren müssen...</Info>
 			</Infopaket>
 	</NPC>
+	<NPC name="Magiershop">
+			<Infopaket>
+				<Info>Im Magierladen gibts alles Interessante für
+Zauberverrückte zu erwerben.</Info>
+			</Infopaket>
+	</NPC>
 </NPCS>

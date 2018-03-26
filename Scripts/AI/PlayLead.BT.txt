@@ -4,7 +4,7 @@ tree("BeAlive")
 		MoveToInfoPoint
 		not tree("TalkPC")
 		not SetGoalPointActive
-		not Wait(150)
+		not Wait(220)
 		UnsetDialogPartnerPC
 
 tree("TalkPC")
