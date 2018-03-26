@@ -1,7 +1,6 @@
 //Einstiegsmethode zur Steuereung des NPC
 tree("BeAlive")
 	fallback
-		tree("TalkPC")
 		tree("Talk")
 		tree("Sit")
 		tree("Stroll")
