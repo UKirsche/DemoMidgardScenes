@@ -1,0 +1,77 @@
+<NPCS>
+	<NPC name="Osrick">
+		<Mission>
+			<Infopaket>
+				<Info>Mission 1.</Info>
+				<Info>Start: so siehts aus</Info>
+				<Option>
+					<Beschreibung>Wähle Option1</Beschreibung>
+					<Infopaket>
+						<Info>Tja, gut gewählt</Info>
+						<Info>Oder widd was anders wählen als 1?</Info>
+						<Info>Aber was sagst du jetzt, du affe?? Hast gleich nächste Wahl</Info>
+						<Option>
+							<Beschreibung>Wähle geschachtelt 1</Beschreibung>
+							<Infopaket>
+								<Info>Das wars innerhalb</Info>
+								<Option>
+									<Beschreibung>Wähle geschachtelt 2</Beschreibung>
+									<Infopaket>
+										<Info>Das wars innerhalinnerhalb</Info>
+									</Infopaket>
+								</Option>
+							</Infopaket>
+						</Option>
+					</Infopaket>
+				</Option>
+				<Option>
+					<Beschreibung>Wähle Option2</Beschreibung>
+					<Infopaket>
+						<Info>Tja, schlecht gewählt</Info>
+					</Infopaket>
+				</Option>
+			</Infopaket>
+			<Infopaket>
+				<Info>Dialog 1</Info>
+			</Infopaket>
+		</Mission>
+		<Mission>
+			<Infopaket>
+				<Info>Mission 2:</Info>
+				<Info>HIer folgt die zweite Mission</Info>
+				<Option>
+					<Beschreibung>Wähle Option2</Beschreibung>
+					<Infopaket>
+						<Info>Tja, gut gewählt</Info>
+						<Info>Oder widd was anders wählen als 1?</Info>
+						<Info>Aber was sagst du jetzt, du affe?? Hast gleich nächste Wahl</Info>
+						<Option>
+							<Beschreibung>Wähle geschachtelt 1</Beschreibung>
+							<Infopaket>
+								<Info>Das wars innerhalb</Info>
+								<Option>
+									<Beschreibung>Misson 2 geschachtelt 2</Beschreibung>
+									<Infopaket>
+										<Info>Das wars innerhalinnerhalb</Info>
+									</Infopaket>
+								</Option>
+							</Infopaket>
+						</Option>
+					</Infopaket>
+				</Option>
+				<Option>
+					<Beschreibung>Wähle Option2</Beschreibung>
+					<Infopaket>
+						<Info>Oder widd was anders wählen als 2?</Info>
+					</Infopaket>
+				</Option>
+			</Infopaket>
+			<Infopaket>
+				<Info>Tja, das war der Dialog 2 mit mir.</Info>
+			</Infopaket>
+		</Mission>
+		<Infopaket>
+				<Info>Schüss</Info>
+		</Infopaket>
+	</NPC>
+</NPCS>

@@ -17,13 +17,33 @@ public class NPC
 	public string name { get; set; }
 	[XmlElement("Infopaket")]
 	public List<Infopaket> infopakete = new List<Infopaket> ();
+	[XmlElement("Mission")]
+	public List<Mission> missionen = new List<Mission> ();
+
 }
 
 public class Infopaket
 {
 	[XmlElement("Info")]
 	public List<Info> infos = new List<Info>();
+	[XmlElement("Option")]
+	public List<Option> optionen { get; set;}
 }
+
+public class Mission
+{
+	[XmlElement("Infopaket")]
+	public List<Infopaket> infopakete = new List<Infopaket> ();
+}
+
+public class Option
+{
+	[XmlElement("Beschreibung")]
+	public string Beschreibung{ get; set;}
+	[XmlElement("Infopaket")]
+	public List<Infopaket> infopakete = new List<Infopaket> ();
+}
+
 
 public class Info
 {
@@ -36,6 +56,7 @@ public class Info
 public class SceneResourceReader
 {
 	public static string MidgardNPC = "npc.xml";
+	public static string MidgardNPCTest = "npctest.xml";
 	/// Holt die als XML gespeichert Resource in Objekt
 	/// </summary>
 	/// <returns>The midgard resource.</returns>
