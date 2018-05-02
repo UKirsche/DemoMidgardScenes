@@ -24,11 +24,21 @@ public class DialogNode<T>:Node<DialogNode<T>>{
 /// <summary>
 /// Dialog parser: Holt für den entsprechenden Knoten, die anzuzeigenden Blätter
 /// </summary>
-class DialogParser {
-	DialogNode<object> startNode;
+public class DialogParser {
+	private DialogNode<object> startNode;
+	public DialogNode<object> StartNode { 
+		get{ return startNode; }
+		set{ startNode = value; }
+	}
+
+	/// <summary>
+	///  Werden mit relevanter Option von außen bestimmt
+	/// </summary>
 	List<DialogNode<object>> optionalStartNodes;
 
-
+	/// <summary>
+	/// Initializes a new instance of the <see cref="DialogParser"/> class.
+	/// </summary>
 	public DialogParser(){
 		startNode = null;
 		optionalStartNodes = new List<DialogNode<object>>();
@@ -40,7 +50,7 @@ class DialogParser {
 	/// Mögliche Startknoten sind: Optionspaket, Option, Mission
 	/// </summary>
 	/// <returns>Infos.</returns>
-	private List<Info> GetInfos(){
+	public List<Info> GetInfos(){
 		List<Info> returnList=null;	
 		if(startNode.nodeElement!=null){
 			//Hier wird der tmpNode nicht direkt neu gesetzt, sondern eine Liste möglicher tmpNodes ermittelt
@@ -50,8 +60,8 @@ class DialogParser {
 			} else if(startNode.typeNodeElement==typeof(Mission)|| startNode.typeNodeElement==typeof(Option)) { //Falls Startknoten Mission oder Option (einzige weiteren Knoten mit Lauf nach unten
 				DialogNode<object> nextNode = new DialogNode<object> ();
 				SetNextNodeParentType (nextNode);
-				Infopaket infopaket = GetNextInfoPaket();
 				nextNode.typeNodeElement = typeof(Infopaket);
+				Infopaket infopaket = GetNextInfoPaket();
 				SetParent (infopaket, nextNode);
 				SetStartNode(nextNode);
 				returnList = infopaket.infos;
@@ -79,7 +89,7 @@ class DialogParser {
 	/// </summary>
 	/// <param name="infopaket">Infopaket.</param>
 	/// <param name="newNode">New node.</param>
-	void SetParent(Infopaket infopaket, DialogNode<object> newNode){
+	private void SetParent(Infopaket infopaket, DialogNode<object> newNode){
 		newNode.nodeElement = infopaket;
 		newNode.parentNode = startNode;
 	}
@@ -111,6 +121,9 @@ class DialogParser {
 		List<Option> optionen = opaket.optionen;
 		foreach (var option in optionen) {
 			DialogNode<object> optionsNode = new DialogNode<object>();
+			optionsNode.nodeElement = option;
+			optionsNode.typeNodeElement = typeof(Option);
+			optionsNode.typeParentNodeElement = typeof(Optionspaket);
 			optionsNode.parentNode = startNode;
 			optionalStartNodes.Add(optionsNode);
 		}
@@ -131,11 +144,14 @@ class DialogParser {
 	///  ->Infopaket eine Ebene weiter oben.
 	/// </summary>
 	/// <param name="newNode">New node.</param>
-	public void SetStartNode(DialogNode<object> nextNode){
+	private void SetStartNode(DialogNode<object> nextNode){
 		Infopaket infopaket = nextNode.nodeElement as Infopaket;
 		if(infopaket.optionspaket!=null){//Neuer Startknoten
 			DialogNode<object> newStartNode = new DialogNode<object> ();
 			startNode = newStartNode;
+			startNode.nodeElement = infopaket.optionspaket;
+			startNode.typeNodeElement = typeof(Optionspaket);
+			startNode.typeParentNodeElement = typeof(Infopaket);
 			startNode.parentNode = nextNode;
 		} else {
 			//Neuer Knoten:moveUpward
@@ -146,7 +162,7 @@ class DialogParser {
 	/// <summary>
 	/// Moves the tree upward.
 	/// </summary>
-	public void MoveUpward(){
+	private void MoveUpward(){
 		DialogNode<object> tmpNodeParent =  startNode.parentNode;
 		DialogNode<object> tmpNode = startNode;
 		List<Infopaket> infopakete= new List<Infopaket>();
