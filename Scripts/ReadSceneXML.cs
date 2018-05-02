@@ -22,18 +22,26 @@ public class NPC
 
 }
 
-public class Infopaket
-{
-	[XmlElement("Info")]
-	public List<Info> infos = new List<Info>();
-	[XmlElement("Option")]
-	public List<Option> optionen { get; set;}
-}
-
 public class Mission
 {
 	[XmlElement("Infopaket")]
 	public List<Infopaket> infopakete = new List<Infopaket> ();
+}
+
+
+public class Infopaket
+{
+	[XmlElement("Info")]
+	public List<Info> infos = new List<Info>();
+	[XmlElement("Optionspaket")]
+	public Optionspaket optionspaket { get; set;}
+}
+
+
+public class Optionspaket
+{
+	[XmlElement("Option")]
+	public List<Option> optionen = new List<Option> ();
 }
 
 public class Option
