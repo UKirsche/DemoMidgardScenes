@@ -9,7 +9,6 @@ using UnityEngine;
 /// </summary>
 public class Node<T> where T:Node<T>{
 	public T parentNode;
-
 }
 
 /// <summary>
@@ -32,9 +31,18 @@ public class DialogParser {
 	}
 
 	/// <summary>
+	/// Shows whether next Page has Options to choose from
+	/// </summary>
+	private bool isOption=false;
+	public bool IsOption {
+		get { return isOption;}
+	}
+
+
+	/// <summary>
 	///  Werden mit relevanter Option von außen bestimmt
 	/// </summary>
-	List<DialogNode<object>> optionalStartNodes;
+	public List<DialogNode<object>> optionalStartNodes;
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="DialogParser"/> class.
@@ -58,6 +66,7 @@ public class DialogParser {
 				SetParentOptionalStartNodes (); //OptionsListe gesetzt, kein Rückgabe
 
 			} else if(startNode.typeNodeElement==typeof(Mission)|| startNode.typeNodeElement==typeof(Option)) { //Falls Startknoten Mission oder Option (einzige weiteren Knoten mit Lauf nach unten
+				isOption=false;
 				DialogNode<object> nextNode = new DialogNode<object> ();
 				SetNextNodeParentType (nextNode);
 				nextNode.typeNodeElement = typeof(Infopaket);
@@ -116,6 +125,7 @@ public class DialogParser {
 	/// Methode wird nur bei Optionspaketen gebraucht, welche die optionalen Punkte in einer Liste festlegt
 	/// </summary>
 	private void SetParentOptionalStartNodes(){
+		isOption = true;
 		optionalStartNodes.Clear(); //leere die alte Liste;
 		Optionspaket opaket = startNode.nodeElement as Optionspaket;
 		List<Option> optionen = opaket.optionen;
@@ -181,6 +191,7 @@ public class DialogParser {
 			infopakete.Remove(infopaket);
 
 			if (infopakete.Count > 0) {
+				startNode = startNode.parentNode;
 				return;
 			} 
 		}
@@ -189,17 +200,19 @@ public class DialogParser {
 		startNode = startNode.parentNode;
 		infopakete.Clear ();
 
-		if(startNode.typeNodeElement==typeof(Option)){
-			Option option = tmpNodeParent.nodeElement as Option;
-			infopakete = option.infopakete;
-		} else if (startNode.typeNodeElement==typeof(Mission)){
-			Mission mission = tmpNodeParent.nodeElement as Mission;
-			infopakete = mission.infopakete;	
-		}
-		if (infopakete.Count > 0) {
-			return;
-		} else {
-			MoveUpward ();
+		if (startNode != null) {
+			if(startNode.typeNodeElement==typeof(Option)){
+				Option option = tmpNodeParent.nodeElement as Option;
+				infopakete = option.infopakete;
+			} else if (startNode.typeNodeElement==typeof(Mission)){
+				Mission mission = tmpNodeParent.nodeElement as Mission;
+				infopakete = mission.infopakete;	
+			}
+			if (infopakete.Count > 0) {
+				return;
+			} else {
+				MoveUpward ();
+			}
 		}
 
 	}

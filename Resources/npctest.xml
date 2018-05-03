@@ -8,7 +8,7 @@
 					<Option>
 						<Beschreibung>Wähle Option1</Beschreibung>
 						<Infopaket>
-							<Info>Tja, gut gewählt</Info>
+							<Info>Tja, gut gewählt 1</Info>
 							<Info>Oder widd was anders wählen als 1?</Info>
 							<Info>Aber was sagst du jetzt, du affe?? Hast gleich nächste Wahl</Info>
 							<Optionspaket>
@@ -18,13 +18,13 @@
 										<Info>Das wars innerhalb</Info>
 										<Optionspaket>
 											<Option>
-												<Beschreibung>Wähle geschachtelt 2</Beschreibung>
+												<Beschreibung>Wähle geschachtelt geschachtelt 1</Beschreibung>
 												<Infopaket>
 													<Info>Das wars innerhalinnerhalb</Info>
 												</Infopaket>
 											</Option>
 											<Option>
-												<Beschreibung>Wähle geschachtelt 2</Beschreibung>
+												<Beschreibung>Wähle geschachtelt geschachtelt 2</Beschreibung>
 												<Infopaket>
 													<Info>Das wars innerhalinnerhalb</Info>
 												</Infopaket>
