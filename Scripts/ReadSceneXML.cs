@@ -65,6 +65,8 @@ public class SceneResourceReader
 {
 	public static string MidgardNPC = "npc.xml";
 	public static string MidgardNPCTest = "npctest.xml";
+	public static string MidgardNPCTest2 = "npctest2.xml";
+
 	/// Holt die als XML gespeichert Resource in Objekt
 	/// </summary>
 	/// <returns>The midgard resource.</returns>

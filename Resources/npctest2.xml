@@ -1,0 +1,81 @@
+<NPCS>
+	<NPC name="Osrick">
+		<Mission>
+			<Infopaket>
+				<Info>Mission 1: Du sollst den geflohenen Esel fangen.</Info>
+				<Info>Start: Gehe zur Stelle mit dem Teich</Info>
+				<Info>Dort findest du 2 Eimer. Einer ist rot, der andere grün. Welche willst du?</Info>
+				<Optionspaket>
+					<Option>
+						<Beschreibung>Der rote Eimer sieht schäbig aus. Er hat noch etwas Wasser.</Beschreibung>
+						<Infopaket>
+							<Info>Als du den Eimer nimmst, fängt er an zu sprechen</Info>
+							<Info>Zu bist völlig überrascht.</Info>
+							<Optionspaket>
+								<Option>
+									<Beschreibung>Ich stelle den Eimer sofort zurück auf den Brunnenrand</Beschreibung>
+									<Infopaket>
+										<Info>Als du den Eimer zurückgestellt hast, fängt er an zu weinen.</Info>
+										<Optionspaket>
+											<Option>
+												<Beschreibung>Ich nehme den Eimer wieder an mich</Beschreibung>
+												<Infopaket>
+													<Info>Als du den Eimer wieder an dich nimmst, fängt er an, Dir seine Lebensgeschichte zu erzählen.</Info>
+												</Infopaket>
+											</Option>
+											<Option>
+												<Beschreibung>Ich lasse den Eimer stehen.</Beschreibung>
+												<Infopaket>
+													<Info>Das Gejammer des Eimers wird herzzerreißend.</Info>
+													<Optionspaket>
+														<Option>
+															<Beschreibung>Es nervt mich furchtbar... Ich pfeffere das Ding in den Brunnen.</Beschreibung>
+															<Infopaket>
+																<Info>Der Eimer verschwindet mit einem hohlen Gebrüll im Brunnen.</Info>
+															</Infopaket>
+														</Option>
+														<Option>
+															<Beschreibung>Es nervt mich so, dass ich davon renne</Beschreibung>
+															<Infopaket>
+																<Info>Als ich weiter weg bin ist nichts mehr zu hören. Nur mein Gewissen brüllt noch.</Info>
+															</Infopaket>
+														</Option>
+													</Optionspaket>
+												</Infopaket>
+												<Infopaket>
+													<Info>Grausig. Vielleicht sollte ich den Eimer doch an mich nehmen?</Info>
+												</Infopaket>
+											</Option>
+										</Optionspaket>
+									</Infopaket>
+									<Infopaket>
+										<Info>Du bist jetzt recht außer Atem nach dem Szenario mit dem Eimer</Info>
+									</Infopaket>
+								</Option>
+								<Option>
+									<Beschreibung>Ich nehme den Eimer an mich</Beschreibung>
+									<Infopaket>
+										<Info>Der Eimer ist die sehr dankbar. Er ist ein verzauberter Prinz</Info>
+										<Info>Und erzählt dir seine Lebensgeschichte</Info>
+									</Infopaket>
+								</Option>
+							</Optionspaket>
+						</Infopaket>
+					</Option>
+					<Option>
+						<Beschreibung>Der grüne Eimer</Beschreibung>
+						<Infopaket>
+							<Info>Tja, schlecht gewählt. Du verschwindest direkt.</Info>
+						</Infopaket>
+					</Option>
+			</Optionspaket>
+		</Infopaket>
+		<Infopaket>
+			<Info>Da an der Ecke steht endlich der Esel!</Info>
+		</Infopaket>
+		</Mission>
+		<Infopaket>
+				<Info>Schüss</Info>
+		</Infopaket>
+	</NPC>
+</NPCS>
