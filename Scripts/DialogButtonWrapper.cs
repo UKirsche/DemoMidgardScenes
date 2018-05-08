@@ -25,21 +25,35 @@ public class DialogButtonWrapper : MonoBehaviour {
 	public void GetNextDialog(){
 		GameObject playerObject = GameObject.FindGameObjectWithTag (DemoRPGMovement.PLAYER_NAME);
 		PlayerDialogManager playerDialogManager = playerObject.GetComponent<PlayerDialogManager> ();
-		Infopaket infopaket = playerDialogManager.GetNextDialogPackageFromNPC ();
-		if (infopaket != null) {
-			DisplayInfoPackage (populateDialog, infopaket);
+		List<string> dialogRows = playerDialogManager.GetNextDialogPackageFromNPC ();
+		if (dialogRows.Count > 0) {
+			DisplayDialog(dialogRows);
 		}
 	}
 
 	/// <summary>
-	/// Displays the info package on the dialog
+	/// Displays a simple Dialog in Rows
 	/// </summary>
 	/// <param name="infos">Infos.</param>
-	public static void DisplayInfoPackage(PopulateVertical popDialog, List<string> dialogRows, bool isOption){
-		popDialog.ClearDialogBox ();
+	public static void DisplayDialog(List<string> dialogRows){
+		populateDialog.ClearDialogBox ();
 		if (dialogRows.Count > 0) {
 			foreach (var dialogRow in dialogRows) {
-				popDialog.addDialogText (dialogRow);
+				populateDialog.addDialogText (dialogRow);
+
+			}
+		} 
+	}
+
+	/// <summary>
+	/// Displays a Dialog Page 
+	/// </summary>
+	/// <param name="infos">Infos.</param>
+	public static void DisplayDialogOption(List<string> dialogRows){
+		populateDialog.ClearDialogBox ();
+		if (dialogRows.Count > 0) {
+			foreach (var dialogRow in dialogRows) {
+				populateDialog.addDialogText (dialogRow);
 
 			}
 		} 

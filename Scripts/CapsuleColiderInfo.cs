@@ -34,7 +34,7 @@ public class CapsuleColiderInfo : MonoBehaviour {
 			infopaket = npcDialogManager.GetStandardInfo ();
 
 		}
-		DialogButtonWrapper.DisplayInfoPackage (populateDialog, infopaket);
+		DialogButtonWrapper.DisplayDialog (populateDialog, infopaket);
 
 		return true;
 	}
