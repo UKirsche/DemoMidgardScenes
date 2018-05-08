@@ -35,11 +35,11 @@ public class DialogButtonWrapper : MonoBehaviour {
 	/// Displays the info package on the dialog
 	/// </summary>
 	/// <param name="infos">Infos.</param>
-	public static void DisplayInfoPackage(PopulateVertical popDialog, Infopaket infoPaket){
+	public static void DisplayInfoPackage(PopulateVertical popDialog, List<string> dialogRows, bool isOption){
 		popDialog.ClearDialogBox ();
-		if (infoPaket!= null && infoPaket.infos != null && infoPaket.infos.Count > 0) {
-			foreach (var info in infoPaket.infos) {
-				popDialog.addDialogText (info.content);
+		if (dialogRows.Count > 0) {
+			foreach (var dialogRow in dialogRows) {
+				popDialog.addDialogText (dialogRow);
 
 			}
 		} 

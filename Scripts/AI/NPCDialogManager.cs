@@ -48,15 +48,8 @@ public class NPCDialogManager : MonoBehaviour {
 	/// <summary>
 	/// Gets the next info package from Dialogpack for NPC and removes it from the list
 	/// </summary>
-	public Infopaket GetNextInfoPackage(){
-		Infopaket infPackage=null;
-		//get first element of the list
-		if (HasInfoPakets()) {
-			infPackage = npcDialogs [0];
-			npcDialogs.Remove (infPackage);
-		} 
+	public List<string> GetNextDialog(){
 
-		return infPackage;
 	}
 
 	/// <summary>

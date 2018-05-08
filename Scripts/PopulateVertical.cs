@@ -46,4 +46,15 @@ public class PopulateVertical : MonoBehaviour {
 		newDialog.GetComponent<Text> ().text = dialogString;
 		dialogTextElements.Add (newDialog);
 	}
+
+
+	/// <summary>
+	/// Adds the dialog option to the Vertical Group
+	/// </summary>
+	public void addDialogOption(string dialogString){
+		GameObject newDialog;
+		newDialog = Instantiate (prefabDialogText, transform); //ensures that
+		newDialog.GetComponent<Text> ().text = dialogString;
+		dialogTextElements.Add (newDialog);
+	}
 }
