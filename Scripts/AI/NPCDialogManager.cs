@@ -40,7 +40,6 @@ public class NPCDialogManager : MonoBehaviour {
 		
 	}
 
-
 	private bool HasInfoPakets(){
 		bool retVal = (npcDialogs != null && npcDialogs.Count > 0) ? true : false;
 		return retVal;
@@ -59,6 +58,24 @@ public class NPCDialogManager : MonoBehaviour {
 
 		return infPackage;
 	}
+
+	/// <summary>
+	/// Gets the next infos: 
+	/// Schnittstelle für die neueren Infos. Ersetzt GetNextInfoPackage, bei dem DialogWindow die einzelnen Infos durchgeht
+	/// </summary>
+	/// <returns>The next infos.</returns>
+	public List<Info> GetNextInfos(){
+	}
+
+
+
+	/// <summary>
+	/// Gets the next options (s.o.
+	/// </summary>
+	/// <returns>The next options.</returns>
+	public List<Option> GetNextOptions(){
+	}
+
 
 
 	/// <summary>
