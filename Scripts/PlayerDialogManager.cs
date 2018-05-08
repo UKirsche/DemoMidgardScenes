@@ -34,15 +34,24 @@ public class PlayerDialogManager : MonoBehaviour {
 
 	/// Holt nächstes Infopaket vom NPC
 	/// </summary>
-	public Infopaket GetNextDialogPackageFromNPC(){
-		Infopaket infopaket = null;;
+	public List<string> GetNextDialogPackageFromNPC(){
+		List<string> dialogRows = null;
 		if (npcTalkPartner != null) {
 			var npcDialogManager = npcTalkPartner.GetComponent<NPCDialogManager> ();
-			infopaket = npcDialogManager.GetNextInfoPackage ();
+			dialogRows = npcDialogManager.GetNextDialog ();
 
 		}
 
-		return infopaket;
+		return dialogRows;
+	}
+
+	/// <summary>
+	/// If collected dialog is a list of options
+	/// </summary>
+	/// <returns><c>true</c> if this instance is dialog option from NP; otherwise, <c>false</c>.</returns>
+	public bool IsDialogOptionFromNPC(){
+		var npcDialogManager = npcTalkPartner.GetComponent<NPCDialogManager> ();
+		return npcDialogManager.IsOptionDialog ();
 	}
 		
 
@@ -59,7 +68,7 @@ public class PlayerDialogManager : MonoBehaviour {
 			var npcDialogManager = npcTalkPartner.GetComponent<NPCDialogManager> ();
 
 			Infopaket standardPaket = npcDialogManager.GetStandardInfo ();
-			DialogButtonWrapper.DisplayInfoPackage (populateDialog, standardPaket);
+			DialogButtonWrapper.DisplayDialog (populateDialog, standardPaket);
 		}
 
 		return true;

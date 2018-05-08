@@ -17,7 +17,8 @@ public class NPCDialogManager : MonoBehaviour {
 
 
 	//StandardInfos
-	private List<Infopaket> npcDialogs;
+	private NPC npcDialogs;
+	private DialogParser dialogParser;
 	private Infopaket standardInfoName;
 	private Infopaket standardInfoFinish;
 	private Infopaket standardInfoTalker;
@@ -32,12 +33,27 @@ public class NPCDialogManager : MonoBehaviour {
 		npcName = gameObject.name;
 		GameObject scripts = GameObject.Find ("Scripts");
 		NPCDialogLoader dialogLoader = scripts.GetComponent<NPCDialogLoader> ();
-		npcDialogs = dialogLoader.GetDialogByNPC (npcName).infopakete;
+		npcDialogs = dialogLoader.GetDialogByNPC (npcName);
 		wasInformand = HasInfoPakets();
+
+		//DialogParser
+		InitializeDialogParser();
 
 		//Erzeugt Standard-Infopakete
 		CreateStandardInfoPakets ();
 		
+	}
+
+	/// <summary>
+	/// Initializes the dialog parser with the first Mission. There is always min 1 Mission
+	/// </summary>
+	private void InitializeDialogParser(){
+		dialogParser = new DialogParser ();
+		Mission mission = npcDialogs.missionen [0];
+		dialogParser.StartNode.nodeElement = mission;
+		dialogParser.StartNode.typeNodeElement = typeof(Mission);
+		dialogParser.StartNode.typeParentNodeElement = null;
+		dialogParser.StartNode.parentNode = null;
 	}
 
 	private bool HasInfoPakets(){
@@ -51,6 +67,10 @@ public class NPCDialogManager : MonoBehaviour {
 	public List<string> GetNextDialog(){
 
 	}
+
+	public bool IsOptionDialog(){
+	}
+
 
 	/// <summary>
 	/// Gets the next infos: 
