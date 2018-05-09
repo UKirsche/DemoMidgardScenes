@@ -32,8 +32,8 @@ public class NPCDialogManager : MonoBehaviour {
 		
 		npcName = gameObject.name;
 		GameObject scripts = GameObject.Find ("Scripts");
-		NPCDialogLoader dialogLoader = scripts.GetComponent<NPCDialogLoader> ();
-		npcDialogs = dialogLoader.GetDialogByNPC (npcName);
+		DialogLoader dialogLoader = scripts.GetComponent<DialogLoader> ();
+		npcDialogs = dialogLoader.GetDialog<NPC> (npcName);
 		wasInformand = HasInfoPakets();
 
 		//DialogParser
