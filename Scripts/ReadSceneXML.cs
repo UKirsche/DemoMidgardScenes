@@ -5,21 +5,32 @@ using System.Xml.Serialization;
 using System.IO;
 
 #region NPC
+
+public class Artifacts
+{
+	[XmlElement("Artifact")]
+	public List<Artifact> npcListe = new List<Artifact>();
+}
+
+public class Artifact 
+{
+	[XmlAttribute("name")]
+	public string name { get; set; }
+	[XmlElement("Infopaket")]
+	public List<Infopaket> infopakete = new List<Infopaket> ();
+
+}
+
 public class NPCS
 {
 	[XmlElement("NPC")]
 	public List<NPC> npcListe = new List<NPC>();
 }
 
-public class NPC 
+public class NPC : Artifact
 {
-	[XmlAttribute("name")]
-	public string name { get; set; }
-	[XmlElement("Infopaket")]
-	public List<Infopaket> infopakete = new List<Infopaket> ();
 	[XmlElement("Mission")]
 	public List<Mission> missionen = new List<Mission> ();
-
 }
 
 public class Mission
