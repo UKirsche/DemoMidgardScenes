@@ -9,7 +9,7 @@ using System.IO;
 public class Artifacts
 {
 	[XmlElement("Artifact")]
-	public List<Artifact> npcListe = new List<Artifact>();
+	public List<Artifact> artifactListe = new List<Artifact>();
 }
 
 public class Artifact 
@@ -75,6 +75,7 @@ public class Info
 public class SceneResourceReader
 {
 	public static string MidgardNPC = "npc.xml";
+	public static string MidgardArtficats = "artifacts.xml";
 	public static string MidgardNPCTest = "npctest.xml";
 	public static string MidgardNPCTest2 = "npctest2.xml";
 
