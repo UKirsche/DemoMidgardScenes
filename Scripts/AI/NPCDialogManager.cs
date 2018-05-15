@@ -50,70 +50,73 @@ public class NPCDialogManager : ArtifactDialogManager {
 		dialogParser.StartNode.parentNode = null;
 	}
 
-	private bool HasInfoPakets(){
-		bool retVal = (npcDialogs != null && npcDialogs.Count > 0) ? true : false;
-		return retVal;
-	}
-
 	/// <summary>
 	/// Gets the next info package from Dialogpack for NPC and removes it from the list
 	/// </summary>
 	public List<string> GetNextDialog(){
+		List<string> returnList;
+		returnList = GetNextInfos ();
+		if (dialogParser.IsOption) {
+			returnList = FormatOptions ();
+		} 
 
+		return returnList;
 	}
 
-	public bool IsOptionDialog(){
+	/// <summary>
+	/// Ermittelt, ob der nächste Dialog ein Optionsdialog ist
+	/// </summary>
+	/// <returns><c>true</c>, if dialog option was nexted, <c>false</c> otherwise.</returns>
+	public bool NextDialogOption(){
+		return dialogParser.IsOption;
 	}
-
 
 	/// <summary>
 	/// Gets the next infos: 
-	/// Schnittstelle für die neueren Infos. Ersetzt GetNextInfoPackage, bei dem DialogWindow die einzelnen Infos durchgeht
+	/// Liefert die nächsten NPC-Infos als Liste von strings
 	/// </summary>
 	/// <returns>The next infos.</returns>
-	public List<Info> GetNextInfos(){
+	private List<string> GetNextInfos(){
+		List<string> infoStrings = new List<string> ();
+		List<Info> infos = dialogParser.GetInfos ();
+		foreach (var info in infos) {
+			infoStrings.Add (info.content);
+		}
+
+		return infoStrings;
 	}
-
-
-
-	/// <summary>
-	/// Gets the next options (s.o.
-	/// </summary>
-	/// <returns>The next options.</returns>
-	public List<Option> GetNextOptions(){
-	}
-
 
 
 	/// <summary>
 	/// Get Standard Info for a Character
 	/// </summary>
-	public Infopaket GetStandardInfo(){
-		if (HasInfoPakets ()) {
-			return standardInfoTalker;
+	public List<string> GetStandardInfo(){
+		if (HasMissionPakets ()) {
+			return standardInfos.StandardInfoTalker;
 		} else {
 			if (wasInformand) {
-				return standardInfoFinish;
+				return standardInfos.StandardInfoFinish;
 			}
-			return standardInfoName;
+			return standardInfos.StandardInfoName;
 		}
 	}
 
-	#region Standardauskünfte
-	private void CreateStandardInfoPakets(){
-		standardInfoName = new Infopaket ();
-		standardInfoName.infos.Add (CreateStandardInfo (INFO_NAME + npcName));
-		standardInfoTalker = new Infopaket ();
-		standardInfoTalker.infos.Add (CreateStandardInfo (INFO_NAME + npcName));
-		standardInfoTalker.infos.Add (CreateStandardInfo (INFO_TALKER));
-		standardInfoFinish = new Infopaket ();
-		standardInfoFinish.infos.Add (CreateStandardInfo (INFO_FINISH));
+
+	/// <summary>
+	/// Liefert die Optionen (Auswahlmöglichkeiten) als Liste von strings
+	/// </summary>
+	/// <returns>The next options.</returns>
+	private List<string> FormatOptions(){
+		List<string> optionStrings = new List<string> ();
+		List<DialogNode<object>> optionNodes = dialogParser.optionalStartNodes;
+		foreach (var optionNode in optionNodes) {
+			Option nodeElement = optionNode.nodeElement as Option;
+			optionStrings.Add (nodeElement.Beschreibung);
+		}
+
+		return optionStrings;
 	}
 
-	public Info CreateStandardInfo(string content){
-		Info info = new Info ();
-		info.content = content;
-		return info;
-	}
-	#endregion
+
+
 }
