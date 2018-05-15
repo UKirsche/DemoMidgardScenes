@@ -28,13 +28,13 @@ public class CapsuleColiderInfo : MonoBehaviour {
 	public bool SetActiveDialogView(){
 		dialogView.SetActive (true);
 		var npcDialogManager = GetComponent<NPCDialogManager> ();
-		var infopaket = npcDialogManager.GetNextInfoPackage ();
+		var dialogString = npcDialogManager.GetNextDialog ();
 
-		if (infopaket == null) {
-			infopaket = npcDialogManager.GetStandardInfo ();
+		if (dialogString == null) {
+			dialogString = npcDialogManager.GetStandardInfo ();
 
 		}
-		DialogButtonWrapper.DisplayDialog (populateDialog, infopaket);
+		DialogButtonWrapper.DisplayDialog (dialogString, populateDialog);
 
 		return true;
 	}
