@@ -51,7 +51,7 @@ public class PlayerDialogManager : MonoBehaviour {
 	/// <returns><c>true</c> if this instance is dialog option from NP; otherwise, <c>false</c>.</returns>
 	public bool IsDialogOptionFromNPC(){
 		var npcDialogManager = npcTalkPartner.GetComponent<NPCDialogManager> ();
-		return npcDialogManager.IsOptionDialog ();
+		return npcDialogManager.NextDialogOption ();
 	}
 		
 
@@ -67,8 +67,8 @@ public class PlayerDialogManager : MonoBehaviour {
 			dialogView.SetActive (true);
 			var npcDialogManager = npcTalkPartner.GetComponent<NPCDialogManager> ();
 
-			Infopaket standardPaket = npcDialogManager.GetStandardInfo ();
-			DialogButtonWrapper.DisplayDialog (populateDialog, standardPaket);
+			List<string> standardInfos = npcDialogManager.GetStandardInfo ();
+			DialogButtonWrapper.DisplayDialog (standardInfos, populateDialog);
 		}
 
 		return true;
