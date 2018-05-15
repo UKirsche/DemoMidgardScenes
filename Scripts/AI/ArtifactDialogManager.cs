@@ -6,7 +6,7 @@ public class ArtifactDialogManager : MonoBehaviour {
 
 	//Artifact Name to search for in XML
 	public string artifactName;
-	private Artifact artifactDialog;
+	protected Artifact artifactDialog;
 
 
 	// Use this for initialization

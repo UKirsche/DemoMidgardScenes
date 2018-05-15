@@ -4,27 +4,18 @@ using UnityEngine;
 
 public class NPCDialogManager : ArtifactDialogManager {
 
-	//StandardInfos
 	private NPC npcDialogs;
 	private DialogParser dialogParser;
 	private StandardNPCInfos standardInfos;
-
-
-	//Anfangszustand: NPC hat Infos zu vergeben
 	private bool wasInformand;
-
-
-	protected bool HasMissionPakets(){
-		bool retVal = (npcDialogs != null && npcDialogs.missionen.Count > 0) ? true : false;
-		return retVal;
-	}
 
 	// Use this for initialization
 	public override void Start () {
-		base.Start();
-		wasInformand = HasMissionPakets() || HasInfoPakets();
+		artifactName = gameObject.name;
+		LoadDialog ();
 		InitializeDialogParser();
 		standardInfos = new StandardNPCInfos (artifactName);
+		wasInformand = HasMissionPakets() || HasInfoPakets();
 		
 	}
 
@@ -35,6 +26,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 		GameObject scripts = GameObject.Find ("Scripts");
 		DialogLoader dialogLoader = scripts.GetComponent<DialogLoader> ();
 		npcDialogs = dialogLoader.GetDialog<NPC> (artifactName) as NPC;
+		artifactDialog = npcDialogs; //upcast
 	}
 
 
@@ -49,6 +41,12 @@ public class NPCDialogManager : ArtifactDialogManager {
 		dialogParser.StartNode.typeParentNodeElement = null;
 		dialogParser.StartNode.parentNode = null;
 	}
+
+	protected bool HasMissionPakets(){
+		bool retVal = (npcDialogs != null && npcDialogs.missionen.Count > 0) ? true : false;
+		return retVal;
+	}
+
 
 	/// <summary>
 	/// Gets the next info package from Dialogpack for NPC and removes it from the list
@@ -71,6 +69,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 		return dialogParser.IsOption;
 	}
 
+	#region private hilfsmethoden
 	/// <summary>
 	/// Gets the next infos: 
 	/// Liefert die nächsten NPC-Infos als Liste von strings
@@ -117,6 +116,6 @@ public class NPCDialogManager : ArtifactDialogManager {
 		return optionStrings;
 	}
 
-
+	#endregion
 
 }
