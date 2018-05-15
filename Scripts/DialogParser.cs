@@ -35,7 +35,7 @@ public class DialogParser {
 	/// </summary>
 	private bool isOption=false;
 	public bool IsOption {
-		get { return isOption;}
+		get { return startNode.typeNodeElement == typeof(Optionspaket);}
 	}
 
 
@@ -66,7 +66,6 @@ public class DialogParser {
 				SetParentOptionalStartNodes (); //OptionsListe gesetzt, kein Rückgabe
 
 			} else if(startNode.typeNodeElement==typeof(Mission)|| startNode.typeNodeElement==typeof(Option)) { //Falls Startknoten Mission oder Option (einzige weiteren Knoten mit Lauf nach unten
-				isOption=false;
 				DialogNode<object> nextNode = new DialogNode<object> ();
 				SetNextNodeParentType (nextNode);
 				nextNode.typeNodeElement = typeof(Infopaket);
@@ -125,7 +124,6 @@ public class DialogParser {
 	/// Methode wird nur bei Optionspaketen gebraucht, welche die optionalen Punkte in einer Liste festlegt
 	/// </summary>
 	private void SetParentOptionalStartNodes(){
-		isOption = true;
 		optionalStartNodes.Clear(); //leere die alte Liste;
 		Optionspaket opaket = startNode.nodeElement as Optionspaket;
 		List<Option> optionen = opaket.optionen;
