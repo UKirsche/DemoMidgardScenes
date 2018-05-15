@@ -2,47 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCDialogManager : MonoBehaviour {
-
-
-	const string INFO_NAME = "Hallo, mein Name ist ";
-	const string INFO_TALKER = "Ich kann dir so manches erzählen, mein Freund ";
-	const string INFO_FINISH = "Das war alles...";
-
-
-
-
-	//npcName isGO name
-	public string npcName;
-
+public class NPCDialogManager : ArtifactDialogManager {
 
 	//StandardInfos
 	private NPC npcDialogs;
 	private DialogParser dialogParser;
-	private Infopaket standardInfoName;
-	private Infopaket standardInfoFinish;
-	private Infopaket standardInfoTalker;
+	private StandardNPCInfos standardInfos;
 
-	//Anfangszustand: NPC ist beladen
+
+	//Anfangszustand: NPC hat Infos zu vergeben
 	private bool wasInformand;
 
 
+	protected bool HasMissionPakets(){
+		bool retVal = (npcDialogs != null && npcDialogs.missionen.Count > 0) ? true : false;
+		return retVal;
+	}
+
 	// Use this for initialization
-	void Start () {
-		
-		npcName = gameObject.name;
-		GameObject scripts = GameObject.Find ("Scripts");
-		DialogLoader dialogLoader = scripts.GetComponent<DialogLoader> ();
-		npcDialogs = dialogLoader.GetDialog<NPC> (npcName);
-		wasInformand = HasInfoPakets();
-
-		//DialogParser
+	public override void Start () {
+		base.Start();
+		wasInformand = HasMissionPakets() || HasInfoPakets();
 		InitializeDialogParser();
-
-		//Erzeugt Standard-Infopakete
-		CreateStandardInfoPakets ();
+		standardInfos = new StandardNPCInfos (artifactName);
 		
 	}
+
+	/// <summary>
+	/// Überschreibt die Methode
+	/// </summary>
+	protected override void LoadDialog(){
+		GameObject scripts = GameObject.Find ("Scripts");
+		DialogLoader dialogLoader = scripts.GetComponent<DialogLoader> ();
+		npcDialogs = dialogLoader.GetDialog<NPC> (artifactName) as NPC;
+	}
+
 
 	/// <summary>
 	/// Initializes the dialog parser with the first Mission. There is always min 1 Mission
