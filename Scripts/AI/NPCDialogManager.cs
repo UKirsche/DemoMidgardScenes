@@ -79,8 +79,10 @@ public class NPCDialogManager : ArtifactDialogManager {
 	private List<string> GetNextInfos(){
 		List<string> infoStrings = new List<string> ();
 		List<Info> infos = dialogParser.GetInfos ();
-		foreach (var info in infos) {
-			infoStrings.Add (info.content);
+		if (infos != null) {
+			foreach (var info in infos) {
+				infoStrings.Add (info.content);
+			}
 		}
 
 		return infoStrings;

@@ -35,7 +35,11 @@ public class DialogParser {
 	/// </summary>
 	public bool IsOption {
 		get {
-			return startNode.typeNodeElement == typeof(Optionspaket);}
+			if (startNode != null) {
+				return startNode.typeNodeElement == typeof(Optionspaket);
+			}
+			return false;
+		}
 	}
 
 
