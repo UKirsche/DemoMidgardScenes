@@ -6,8 +6,8 @@ public class NPCDialogManager : ArtifactDialogManager {
 
 	private NPC npcDialogs;
 	private DialogParser dialogParser;
-	private StandardNPCInfos standardInfos;
 	private bool wasInformand;
+
 
 	// Use this for initialization
 	public override void Start () {
@@ -15,8 +15,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 		LoadDialog ();
 		artifactDialog = npcDialogs; //upcast
 		InitializeDialogParser();
-		standardInfos = new StandardNPCInfos (artifactName);
-		wasInformand = HasMissionPakets() || HasInfoPakets();
+		wasInformand = HasMissions() || HasInfos();
 		
 	}
 
@@ -26,6 +25,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 	protected override void LoadDialog(){
 		GameObject scripts = GameObject.Find ("Scripts");
 		DialogLoader dialogLoader = scripts.GetComponent<DialogLoader> ();
+		standardInfos = new StandardNPCInfos (artifactName);
 		npcDialogs = dialogLoader.GetDialog<NPC> (artifactName) as NPC;
 	}
 
@@ -43,7 +43,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 		dialogParser.StartNode.parentNode = null;
 	}
 
-	protected bool HasMissionPakets(){
+	protected bool HasMissions(){
 		bool retVal = (npcDialogs != null && npcDialogs.missionen.Count > 0) ? true : false;
 		return retVal;
 	}
@@ -76,7 +76,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 	/// Liefert die nächsten NPC-Infos als Liste von strings
 	/// </summary>
 	/// <returns>The next infos.</returns>
-	private List<string> GetNextInfos(){
+	public override List<string> GetNextInfos(){
 		List<string> infoStrings = new List<string> ();
 		List<Info> infos = dialogParser.GetInfos ();
 		if (infos != null) {
@@ -88,12 +88,11 @@ public class NPCDialogManager : ArtifactDialogManager {
 		return infoStrings;
 	}
 
-
 	/// <summary>
 	/// Get Standard Info for a Character
 	/// </summary>
-	public List<string> GetStandardInfo(){
-		if (HasMissionPakets ()) {
+	public override List<string> GetStandardInfo(){
+		if (HasMissions ()) {
 			return standardInfos.StandardInfoTalker;
 		} else {
 			if (wasInformand) {
@@ -102,6 +101,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 			return standardInfos.StandardInfoName;
 		}
 	}
+
 
 
 	/// <summary>

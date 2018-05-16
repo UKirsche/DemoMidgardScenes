@@ -27,11 +27,11 @@ public class CapsuleColiderInfo : MonoBehaviour {
 	/// <param name="activate">If set to <c>true</c> activate.</param>
 	public bool SetActiveDialogView(){
 		dialogView.SetActive (true);
-		var npcDialogManager = GetComponent<NPCDialogManager> ();
-		var dialogString = npcDialogManager.GetNextDialog ();
+		var artifactDialogManager = GetComponent<ArtifactDialogManager> ();
+		var dialogString = artifactDialogManager.GetNextInfos ();
 
-		if (dialogString == null) {
-			dialogString = npcDialogManager.GetStandardInfo ();
+		if (dialogString == null || dialogString.Count==0) {
+			dialogString = artifactDialogManager.GetStandardInfo ();
 
 		}
 		DialogButtonWrapper.DisplayDialog (dialogString, populateDialog);
