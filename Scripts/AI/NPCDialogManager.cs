@@ -26,7 +26,6 @@ public class NPCDialogManager : ArtifactDialogManager {
 		GameObject scripts = GameObject.Find ("Scripts");
 		DialogLoader dialogLoader = scripts.GetComponent<DialogLoader> ();
 		npcDialogs = dialogLoader.GetDialog<NPC> (artifactName) as NPC;
-		artifactDialog = npcDialogs; //upcast
 	}
 
 
@@ -35,6 +34,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 	/// </summary>
 	private void InitializeDialogParser(){
 		dialogParser = new DialogParser ();
+		dialogParser.StartNode = new DialogNode<object> ();
 		Mission mission = npcDialogs.missionen [0];
 		dialogParser.StartNode.nodeElement = mission;
 		dialogParser.StartNode.typeNodeElement = typeof(Mission);
@@ -52,12 +52,12 @@ public class NPCDialogManager : ArtifactDialogManager {
 	/// Gets the next info package from Dialogpack for NPC and removes it from the list
 	/// </summary>
 	public List<string> GetNextDialog(){
-		List<string> returnList;
+		List<string> returnList = null;
+		bool isOption = dialogParser.IsOption;
 		returnList = GetNextInfos ();
-		if (dialogParser.IsOption) {
+		if (isOption) {
 			returnList = FormatOptions ();
-		} 
-
+		}
 		return returnList;
 	}
 
