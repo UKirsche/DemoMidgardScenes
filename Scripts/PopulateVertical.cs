@@ -10,16 +10,10 @@ public class PopulateVertical : MonoBehaviour {
 	private List<GameObject> dialogTextElements;
 
 	// Use this for initialization
-	void Awake () {
+	public virtual void Awake () {
 		dialogTextElements = new List<GameObject> ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-
 	public void Populate(){
 		for (int i = 0; i < numCount; i++) {
 			addDialogText ("tst");
