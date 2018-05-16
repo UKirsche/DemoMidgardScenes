@@ -33,9 +33,9 @@ public class DialogParser {
 	/// <summary>
 	/// Shows whether next Page has Options to choose from
 	/// </summary>
-	private bool isOption=false;
 	public bool IsOption {
-		get { return startNode.typeNodeElement == typeof(Optionspaket);}
+		get {
+			return startNode.typeNodeElement == typeof(Optionspaket);}
 	}
 
 
@@ -60,7 +60,7 @@ public class DialogParser {
 	/// <returns>Infos.</returns>
 	public List<Info> GetInfos(){
 		List<Info> returnList=null;	
-		if(startNode.nodeElement!=null){
+		if(startNode!=null && startNode.nodeElement!=null){
 			//Hier wird der tmpNode nicht direkt neu gesetzt, sondern eine Liste möglicher tmpNodes ermittelt
 			if (startNode.typeNodeElement == typeof(Optionspaket)) {
 				SetParentOptionalStartNodes (); //OptionsListe gesetzt, kein Rückgabe
@@ -154,7 +154,7 @@ public class DialogParser {
 	/// <param name="newNode">New node.</param>
 	private void SetStartNode(DialogNode<object> nextNode){
 		Infopaket infopaket = nextNode.nodeElement as Infopaket;
-		if(infopaket.optionspaket!=null){//Neuer Startknoten
+		if(infopaket.optionspaket!=null){//Drill Down
 			DialogNode<object> newStartNode = new DialogNode<object> ();
 			startNode = newStartNode;
 			startNode.nodeElement = infopaket.optionspaket;
@@ -162,10 +162,50 @@ public class DialogParser {
 			startNode.typeParentNodeElement = typeof(Infopaket);
 			startNode.parentNode = nextNode;
 		} else {
-			//Neuer Knoten:moveUpward
-			MoveUpward();
+			//Same level
+			if (HasMoreInfoPaketeOnLevel (nextNode)) {
+				RemoveLastInfopaket (nextNode);
+			} else {
+				MoveUpward();
+			}
 		}
 	}
+
+	/// <summary>
+	/// Determines whether this instance has more info pakete on level the specified nextNode.
+	/// </summary>
+	/// <returns><c>true</c> if this instance has more info pakete on level the specified nextNode; otherwise, <c>false</c>.</returns>
+	/// <param name="nextNode">Next node.</param>
+	private bool HasMoreInfoPaketeOnLevel(DialogNode<object> nextNode){
+		if(nextNode.typeParentNodeElement == typeof(Option)){
+			Option optionParent = (nextNode.parentNode.nodeElement as Option);
+			return optionParent.infopakete.Count > 1;
+		} else if(nextNode.typeParentNodeElement== typeof(Mission)){
+			Mission missionParent = (nextNode.parentNode.nodeElement as Mission);
+			return missionParent.infopakete.Count > 1;
+		}
+		return false;
+	}
+
+	/// <summary>
+	/// Removes the last infopaket.
+	/// </summary>
+	/// <param name="nextNode">Next node.</param>
+	private void  RemoveLastInfopaket(DialogNode<object> nextNode){
+		List<Infopaket> infopakete=null;
+		if(nextNode.typeParentNodeElement == typeof(Option)){
+			Option optionParent = (nextNode.parentNode.nodeElement as Option);
+			infopakete = optionParent.infopakete;
+		} else if(nextNode.typeParentNodeElement== typeof(Mission)){
+			Mission missionParent = (nextNode.parentNode.nodeElement as Mission);
+			infopakete = missionParent.infopakete;
+		}
+
+		Infopaket delPaket = infopakete [0];
+		infopakete.Remove (delPaket);
+	}
+
+
 
 	/// <summary>
 	/// Moves the tree upward.
