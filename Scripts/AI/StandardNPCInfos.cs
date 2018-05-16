@@ -12,6 +12,7 @@ public class StandardNPCInfos {
 
 	public StandardNPCInfos(string _npcName){
 		npcName = _npcName;
+		CreateStandardInfos ();
 	}
 
 	//Getters
