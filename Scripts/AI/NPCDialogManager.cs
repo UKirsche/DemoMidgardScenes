@@ -13,6 +13,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 	public override void Start () {
 		artifactName = gameObject.name;
 		LoadDialog ();
+		artifactDialog = npcDialogs; //upcast
 		InitializeDialogParser();
 		standardInfos = new StandardNPCInfos (artifactName);
 		wasInformand = HasMissionPakets() || HasInfoPakets();
