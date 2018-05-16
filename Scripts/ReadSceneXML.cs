@@ -75,7 +75,7 @@ public class Info
 public class SceneResourceReader
 {
 	public static string MidgardNPC = "npc.xml";
-	public static string MidgardArtficats = "artifacts.xml";
+	public static string MidgardArtficats = "artifact.xml";
 	public static string MidgardNPCTest = "npctest.xml";
 	public static string MidgardNPCTest2 = "npctest2.xml";
 

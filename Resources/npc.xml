@@ -1,5 +1,6 @@
 <NPCS>
 	<NPC name="Osrick">
+	<Mission>
 		<Infopaket>
 			<Info>Ja, ich habe das Ganze los getreten. 
 Hätte ich doch bloß nie was gesagt,
@@ -72,8 +73,10 @@ Werke. Wir werden wohl noch etwas hier bleiben müsse.</Info>
 könnt. Falls das nicht möglich ist, zieht euch zurück wie wir!
 		  </Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="Edran">
+	<Mission>
 		<Infopaket>
 			<Info>Wie ich und Osric in Kontakt kamen, ja nun.
 Eben über den KOLLEGIALEN Austausch unserer beiden Klöster.
@@ -239,8 +242,10 @@ der Code etwas mit Büchern oder Schrift zu tun haben...
 		</Info>
 		<Info>Viel Glück euch!</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="Kennard">
+	<Mission>
 		<Infopaket>
 			<Info>Zum Beispiel über mich.
 Ich bin nämlich der Zunftmeister der Bauleute.</Info>
@@ -287,8 +292,10 @@ Ich wohne auch da.</Info>
 Die große Baustelle im Zentrum hier wird wieder ein Meisterwerk:
 Hier entsteht die Schule der nützlichen Wissenschaften</Info>
 		</Infopaket>
+	</Mission>
 	</NPC>
 	<NPC name="Frewyn">
+	<Mission>
 		<Infopaket>
 			<Info>Ich bin nämlich Ratsherr und im Stadtrat</Info>
 			<Info>Dabei kümmere ich mich um die Einnahmen der Finanzen.
@@ -319,15 +326,19 @@ Der hatte seinen Finanzen im Griff!</Info>
 		<Infopaket>
 			<Info>Fragen sie mal nach im Freudenviertel am Hafen</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="MartinA">
+	<Mission>
 		<Infopaket>
 			<Info>Eigentlich flitze ich nur durch die Gegend, obwohl
 ich Spieler bin!</Info>
 			<Info>Uwe hat mich hier verbaut...</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="Donlan">
+	<Mission>
 		<Infopaket>
 			<Info>Ich betreibe das Gasthaus zum Goldenen Fuchs</Info>
 			<Info>Natürlich lerne ich viele Menschen kennen.
@@ -355,8 +366,10 @@ Dass er selbst gesehen hat, wie geschmuggelt wird. Rauschdrogen und Härteres.
 		<Infopaket>
 			<Info>Wieviel zahlst du?</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="Emrys">
+		<Mission>
 		<Infopaket>
 			<Info>Ja, ich weiß was du Fragen willst...</Info>
 			<Info>Aber meine Mädchen sind gerade alle belegt...</Info>
@@ -390,15 +403,19 @@ Nicht jeder hat so ein Glück wie du!</Info>
 			<Info>Und jetzt frag nicht mehr so dumm</Info>
 			<Info>Ich muss nach meinen Mädchen sehen.</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="Dolvin">
+		<Mission>
 		<Infopaket>
 			<Info>Ich habe da was hinter den Äckern entdeckt...</Info>
 			<Info>Ein verlassenes Lager. Wenn du magst führe ich dich hin...</Info>
 			<Info>Folge mir einfach...</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="Rodrick">
+		<Mission>
 		<Infopaket>
 			<Info>Da ich Jäger bin, weiß ich, das draußen abgeht...</Info>
 			<Info>Da passieren in letzter Zeit komische Dinge. Wilde Tiere</Info>
@@ -409,21 +426,27 @@ Nicht jeder hat so ein Glück wie du!</Info>
 			<Info>Es reißt, was es zwischen die Tatzen bekommt</Info>
 			<Info>...</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="Wächter">
+		<Mission>
 		<Infopaket>
 			<Info>Das ist könglich albische Akademie</Info>
 			<Info>Hier kommst aufgrund eines Treffens von Teilen
 des Kronrats derzeit nicht rein.</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="SchmiedTom">
+		<Mission>
 		<Infopaket>
 			<Info>Ich repariere die Waffen für die Jäger hier</Info>
 			<Info>Vielleicht kannst du mit dem einem oder anderen reden</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 		<NPC name="Camelda">
+		<Mission>
 		<Infopaket>
 			<Info>Ich arbeite auch für Emrys. Sie muss hier irgendwo sein...</Info>
 			<Info>Ich habe Angst etwas zu erzählen... Aber egal, ich kann dir trotzdem was verraten.
@@ -440,16 +463,20 @@ Gebraucht und anschließend werden wir weg geworfen. So ist das.
 Der wird auch mich irgendwann hier holen.</Info>
 		<Info>Helfen? Nein, das kann mir niemand mehr...</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="Waffenschmied">
+		<Mission>
 		<Infopaket>
 			<Info>Ich repariere Waffen und Kessel jeglicher Art</Info>
 			<Info>Möchtest du was repariert haben?
 Das ist allemal besser als den Streit von den zweien da hinter mir ertragen zu müssen. 
 Hämmern! Ich liebe Hämmern!</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="Kräuterfrau">
+		<Mission>
 		<Infopaket>
 			<Info>Kräuter, Kräuter, gute Kräuter!!</Info>
 			<Info>Du bekommst alles bei mir: Heilt Wunden, körperlich UND
@@ -467,8 +494,10 @@ Schachtelhalmkraut. Entspannt jeden einzelnen Muskel sag ich dir!
 			<Info>Das Geschwätz von dem da kannst du dagegen vergessen. Der ist nur neidisch.
 Unter uns: Da vorne unter der Laube sitzt mein Lieferant. Frag den mal!</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="Lebensmittelhändler">
+		<Mission>
 		<Infopaket>
 			<Info>Frischen Fisch, friches Gemüse, alles hier bei mir, alles hier bei mir!</Info>
 			<Info>Viel besser als bei der Kräuterfrau. Hier ist alles gesünder.</Info>
@@ -480,8 +509,10 @@ Verstehst du, was ich meine? Das geht nicht, sowas.
 da hat Bruder Merril schon eingegriffen. Sonst wäre der eine abgekratzt, 
 das schwöre ich bei meiner Tochter.</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="Drogenschmuggler">
+		<Mission>
 		<Infopaket>
 			<Info>Habe gehört: Auf der Königsstraße haben sie ein 
 paar von meinen Kollegen hochgenommen...</Info>
@@ -492,14 +523,18 @@ Hat die Kräuterfrau geplappert?</Info>
 Da kommt immer so ein kleiner grün gekleiderter Gnom von nem Kloster.
 Wenn du mich fragst: was der braucht ist harter Stoff...</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="Marktwache">
+		<Mission>
 		<Infopaket>
 			<Info>Eigentlich ganz ruhig hier. Bis du gekommen bist.
 Latsch weiter, Junge, oder es gibt was auf die Schnauze!</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="Barde">
+		<Mission>
 		<Infopaket>
 			<Info>Jo Bruder! Wir kennen uns doch schon! Erinnerst du dich?</Info>
 			<Info>Nein?</Info>
@@ -513,8 +548,10 @@ ganz verlassen haben. Oder aus Fiorinde...</Info>
 		<Info>Ich bewache hier die Instrumente für die anderen Jungs.
 Abends spielen wir auf der Bühne auf.</Info>
 		</Infopaket>
+		</Mission>
 	</NPC>
 	<NPC name="Schneider">
+		<Mission>
 		<Infopaket>
 			<Info>Guten Tag, Seniore!
 
@@ -534,259 +571,6 @@ SEHR gut bezahlt. Da solls mir egal sein.
 Wer der Kunde war? Weiß ich nicht. Es war ein Junge hier, 
 der das anonym in Auftrag gegben hat. Mit Skizzen!</Info>
 		</Infopaket>
-	</NPC>
-
-	<!---Gegenstände -->
-	<NPC name="Tomb">
-		<Infopaket>
-				<Info>Mir fällt was ein über die Legende des Vraidos</Info>
-				<Info></Info>
-				<Info>Myra war eine Meisterin des oberen und unteren Ozeans während des Krieges der Magier.</Info>
-				<Info>Der Ruhm unseres Herrn Vraidos lockte Myra aus ihrer Zuflucht heraus</Info>
-				<Info>Sie setzte sich zu seinen Füßen nieder und lauschte seiner Weisheit</Info>
-		</Infopaket>
-		<Infopaket>
-				<Info>Da Vraidos wunderschön war, verliebte sich Myra in ihn und sie wollte ihn haben.</Info>
-				<Info></Info>
-				<Info>Doch Vraidos wollte sich nicht von seiner Aufgabe ablenken lassen, denn er witterte</Info>
-				<Info>schlimmsten Verrat bei den Toquinern</Info>
-				<Info></Info>
-				<Info>Und er ruhte nicht eher, bis er den Verrat entdeckt hatte, um endlich mit Myra</Info>
-				<Info>Ruhe zu finden.</Info>
-		</Infopaket>
-	</NPC>
-	<NPC name="Fountain">
-		<Infopaket>
-				<Info>Der Kelch der Myra: Das letzte Wasser das Vraidos zu sich nahm</Info>
-				<Info></Info>
-				<Info>Wer aus diesem Kelch trinkt, wir die letzte Wahrheit des Vraidos erfahren</Info>
-				<Info>Er wird kennen lernen den Verrat und den Hochmut innerhalb der Bruderschaft</Info>
-				<Info>Und er wird erkennen, dass viele die Feinde der Bruderschaft waren...</Info>
-				<Info>Im Grunde die Erlöser sind!</Info>
-				<Info></Info>
-				<Info>Ob ich wohl mehr über den Kelch in Erfahrung bringen kann? Wo?</Info>
-		</Infopaket>
-	</NPC>
-	<NPC name="Hexenbulle">
-			<Infopaket>
-				<Info>Hexen-Bulle von Kirghlaird Walden (1809 n.L.)</Info>
-				<Info>Summis desiderantes affectibus: mit höchstem Eifer fordere ich dazu auf, 
-alle ketzerische Bosheit auszurotten. </Info>
-			<Info>Wider den abscheulichen Aberglauben und die zauberischen Übertretungen,
-die mir aus einigen Teilen Albas, besonders aus den Erzbistümern Prioresse, Beornanburgh,
-Corinnis und Fiorinde zugetragen worden sind, hilft lediglich unnachgiebige Härte.</Info>
-			<Info>Viele Brüder und Schwestern sind vom Glauben abgefallen ... die Menschen, die Frauen,
-innerlichen als äußerlichen Schmerzen und Plagen peinigen und verursachen,
-dass die Männer nicht zeugen, die Frauen nicht empfangen können, dass Blitze 
-von der Erde in den Himmel fahren, und Schreckgespenste über unseren schönen
-Auen und Berge wandeln</Info>
-			</Infopaket>
-	</NPC>
-	<NPC name="Hexenstahl">
-			<Infopaket>
-				<Info>Das Hexenstahl, Kirghlaird Walden zu Beornanburgh, 1811 n.L.</Info>
-				<Info>Die Art aber, damit zu beginnen, ist diese: 
-Während die Büttel sich zum peinlichen Verhör bereit machen, entkleiden sie ihn danach; 
-oder wenn es eine Frau ist, soll sie, bevor sie in das Strafgefängnis geführt wird,
-von anderen ehrbaren Frauen von gutem Rufe entkleidet werden.</Info>
-			<Info>Aus dem Grunde, damit (entdeckt werde), ob vielleicht irgend 
-ein Hexenwerkzeug in die in die Kleider eingenäht ist, 
-wie sie es häufig auf  die Belehrung der Dämonen hin aus den Gliedern
-eines ungetauften Knaben herstellen;</Info>
-			</Infopaket>
-	</NPC>
-	<NPC name="Notiz">
-			<Infopaket>
-				<Info>Ich schreibe das in aller Hast, falls wir Tod sein sollten</Info>
-				<Info>Es gibt einen großen Verrat in der Bruderschaft, ja
-in der ganze Geschichte! Und wir haben es entdeckt.</Info>
-			<Info> Grundgütiger. Oh Xan hilf uns. Der Verrat steckt wie
-ein Eitergeschwür in Alba</Info>
-			<Info>Aber ich muss mich beeilen: Edran hat herausgefunden,
-warum Vraidos wirklich verschwunden ist. Dass Walden recht hatte, die Kirgh zu
-reinigen. 
-Dass das Königtum ein Verrat ist der gelenkt wird von... .
- 
-Wir verschwinden noch weiter in den Hügeln, damit uns wirklich keiner findet. 
-Zuletzt sind hier nachts Figuren in schwarzen Kutten herumgegeistert. 
-Sie suchen uns überall. 
-Es ist also an der Zeit, dass wir uns weiter zurück ziehen. 
-
-E.</Info>
-			</Infopaket>
-	</NPC>
-	<NPC name="MyraParchment">
-			<Infopaket>
-				<Info>Die erste Abschrift vom Myra-Kelch</Info>
-				<Info>Solange sich der Kelch der Myra im Besitz der Bruderschaft befindet,
-so lange wird Frieden herrschen zwischen den Konfessionen</Info>
-				<Info>Bei der Wahl des ersten Königs wurde Ingram von Prioresse der Kelch 
-der Myra übergeben. Er ist der Hüter der Wahrheit. Und diese Wahrheit wird immer entdeckt werden.</Info>
-			</Infopaket>
-	</NPC>
-	<NPC name="BookShelfIngramm">
-			<Infopaket>
-				<Info>Bulle von Ingramm von Prioresse 1892 n.L. zur Königskrönung Berandir MacBeorns</Info>
-				<Info>Und Wir befehlen Euch, kraft heiligen Gehorsams, so wie Ihr auch es versprecht 
-und ohne Zweifel es aus Eurer großen Ergebenheit und Eurem königlichen Großmut 
-erfüllen werdet, daß Ihr nach für alle Clans ein rechtschaffener
-und gottesfürchtige Mann werdet:</Info>
-				<Info>
-klug, kundig und erfahren, um den genannten Streit der Konfessionen beizulegen.
-Die Bewohner Albas sind wieder im Frieden zu unterweisen, wobei Ihr in allem 
-die gebotene Sorgfalt beachtet. </Info>
-				<Info>
-Und streng verbieten wir allen Personen, jedweden Standes oder Ranges, 
-selbst kaiserlicher und königlicher Würde, unter Strafe der 
-Exkommunikation ‚latae sententiae’, sich erneut 
-im Glauben zu streiten und zu töten.
-				</Info>
-			</Infopaket>
-	</NPC>
-	<NPC name="BannBulle">
-			<Infopaket>
-				<Info>Bannbulle von Ingramm von Prioresse 1893 </Info>
-				<Info>Hiermit wird Kirghlaird Walden exkommuniziert und die Verbannung geschickt:</Info>
-				<Info>Der unerhörte Mord am albischen Volke sei hiermit gesühnt. Man soll über Walden
-weitershin weder reden noch diskutieren. Sein Handeln und seine Taten
-mögen als Schandfleck in die ordentliche Geschichtsschreibung eingehen.</Info>
-				<Info>
-Walden selbst unterlag Geistern, die sein Handeln und Denken zerrüttet haben. Er beschuldigte,
-wo nichts zu beschuldigen war, außer natürlichem Leben.
-				</Info>
-			</Infopaket>
-	</NPC>
-	<NPC name="BriefMerril">
-			<Infopaket>
-				<Info>Brief des Kronrats an Bruder Merril </Info>
-				<Info>So seid ihr, Burder Merril, hiermit eingeladen zur Sitzung des Kronrates auf
-Empfehlung des Magisters Simael von Fiorinde, des großen Gelehrten der Magie, der zur Zeit an 
-Eurem Kloster weilt.</Info>
-				<Info>Denn wir benötigen Euren Rat in einer Angelegenheit mit höchster Dringlichkeit, welche 
-die Geschicke Albas weithin mit bestimmen wird...
-				</Info>
-			</Infopaket>
-	</NPC>
-		<NPC name="GeschichteAlba">
-			<Infopaket>
-				<Info>Vraidos Legende nach Eorvin MacDougall (1899 n.L.)</Info>
-				<Info>"Und als die Toquiner anlandeten, sausten Blitze vom Himmel und es peitschte Regen.</Info>
-				<Info>Denn sie kamen aus dem Nichts und sie konnten mit ihrer Flotte nicht wenden. So 
-fanden sie  Zuflucht bei den Albi und lehrten sie viele Dinge. Und der größte und weiseste 
-unter ihnen war Vraidos, der stets die Wahrheit sprach und die Zukunft sah. 
-Und er weissagte eine blühende Zukunft und höchsten Verrat. 
-Und es war Myra, mit der er viel sprach.
-
-Und sie umgarn Vraidos und wollte ihn für sich. Doch er sprach:
-Ich habe noch eine Aufgabe zu erledigen. Und Myra half ihm alsdann."
-				</Info>
-				<Info>So geht also die Legende, das Vraidos, bevor er mit Myra verschwand,
-etwas hinterlassen hat. Etwas von größter Bedeutung. Und schon viele Glücksritter,
-Gelehrte und Brüder haben umsonst danach gesucht.
-Dabei ist offensichtlich, dass Vraidos von der inneren Erkenntnis sprach,
-die er in seine Lehre einband, und die JEDEM Gläubigen bei rechtem Bemühen zugänglich ist.</Info>
-			</Infopaket>
-	</NPC>
-	<NPC name="Codebuch">
-			<Infopaket>
-				<Info>X3C lautet ein Hinweis</Info>
-				<Info>Er folgt der Sprache der Bibliothekare</Info>
-				<Info>Willst du mich finden, so beachte dieses:</Info>
-				<Info>Die Zahl ergibt das Ziel von hinten, dann von vorne</Info>
-				<Info>Hast du das verstanden, dann gehe zur 13 von hinten und von vorne.</Info>
-				<Info>Oder von vorne und von hinten</Info>
-				<Info>13 ist der Schlüssel, der das Tor öffnet</Info>
-			</Infopaket>
-	</NPC>
-	<NPC name="Bürgerviertel">
-			<Infopaket>
-				<Info>Das Bürgerviertel in Cambryg:</Info>
-				<Info>Cambryg besticht im Gegensatz zum ländlichen Alba durch
-eine moderne Architektur der wohlhabenden Bürgerschaft</Info>
-				<Info>Das wird v.a. hier im Bürgerviertel ersichtlich.
-Mehrstöckige Fachwerkbauten, oftmal reichlich verziert sind Kennzeichen
-der wohlhabenden Bürgerschaft.</Info>
-				<Info>Der Reichtum der Bürgerschaft geht zum einen auf den Handel
-mit dem restlichen Alba und Chryseia zurück. Darüber hinaus aber auf die
-Unterstützung durch den König, dem an einem unabhängigen Cambryg viel gelegen ist.</Info>
-				<Info>Du kannst dich mit den Bürgern hier unterhalten,
-indem du dich ihnen einfach annäherst.</Info>
-				<Info>Aber Vorsicht:
-Sie wiederholen sich nicht.</Info>
-			</Infopaket>
-	</NPC>
-	<NPC name="Bürgermeister">
-		<Infopaket>
-			<Info>Das ist das Haus des Bürgermeisters.</Info>
-			<Info>Es ist ein typisches Haus für ein Mitglied des Stadtrates.
-Diese Herren lassen sich ihr Engagement gut entlohnen. Wie zu jeder Zeit,
-so ist es auch hier fraglich, ob diese Einnahmen wirklich auf die
-großen Leistungen der Herren zurückzuführen sind.</Info>
-		</Infopaket>
-	</NPC>
-		<NPC name="Quinlain">
-		<Infopaket>
-			<Info>Haus von Quinlain</Info>
-			<Info>Hier hat Quinlain gewohnt. Ein reicher Stoffändler.
-Seit seine Tochter vor ein paar Jahren verschwunden ist,
-ist er weggezogen. Er sucht sie wahrscheinlich irgendwo...</Info>
-		</Infopaket>
-	</NPC>
-	<NPC name="Bauernviertel">
-			<Infopaket>
-				<Info>Das Bauernviertel in Cambryg:</Info>
-				<Info>Hier wohnen die ebenfalls wohlhabenden Großgrundbesitzer</Info>
-				<Info>Das milde Klima in Cambryg begünstigt den Anbau von Obst
-und Getreide.</Info>
-				<Info>Felder, Plantage sowie eine Mühle sind hinter Cambryg 
-zu finden.</Info>
-				<Info>Durch den Hafen werden überflüssige Erträge weiter
-verschifft.</Info>
-			</Infopaket>
-	</NPC>
-	<NPC name="Goldenerfuchs">
-			<Infopaket>
-				<Info>Das Gasthaus in Cambryg:</Info>
-				<Info>Im Goldenen Fuchs wird gezecht und getratscht. 
-Typischerweise gibt es in der Gaststätte ein albisches Dart zu finden.</Info>
-				<Info>Der Besitzer, Donlan, weiß auch so manche Neuigkeiten.</Info>
-			</Infopaket>
-	</NPC>
-	<NPC name="Kontorhaus">
-			<Infopaket>
-				<Info>Kontorhaus</Info>
-				<Info>Hier werden die Handelsschiffe, die den Mourne entlangfahren, registiert. 
-Auch wird hier in der Regel die Ware gelöscht.</Info>
-			</Infopaket>
-	</NPC>
-		<NPC name="Lichtsuchergilde">
-			<Infopaket>
-				<Info>Magierturm der Lichtsuchergilde</Info>
-				<Info>Hier ist der Magierturm der Lichtsuchergilde. Die Lichtsuchergilde
-ist eine sehr tolerante Magiergilde, die auch anderen Magiern Zugang zu ihrem Archiv 
-und v.a. ihren Zaubermitteln erlaubt. Hinter dem Magierturm findest du ein kleines Handels-
-haus, in dem man auch Zaubermittel erwerben kann.</Info>
-			</Infopaket>
-	</NPC>
-	<NPC name="Träumerkolleg">
-			<Infopaket>
-				<Info>Kolleg des Träumers</Info>
-				<Info>Hier ist das Kolleg des Träumers. Ein Symbole
-für den Fortschritt und die Wissenschaft in Alba. Hier kannst
-du eventuell manch Interssantes herausfinden.</Info>
-			</Infopaket>
-	</NPC>
-		<NPC name="Armenviertel">
-			<Infopaket>
-				<Info>Willkommen im Armenviertel</Info>
-				<Info>Hier findest du diejenigen, die anderweitig
-vom Reichtum der Stadt profitieren müssen...</Info>
-			</Infopaket>
-	</NPC>
-	<NPC name="Magiershop">
-			<Infopaket>
-				<Info>Im Magierladen gibts alles Interessante für
-Zauberverrückte zu erwerben.</Info>
-			</Infopaket>
+		</Mission>
 	</NPC>
 </NPCS>
