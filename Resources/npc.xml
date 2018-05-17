@@ -349,7 +349,16 @@ Ehrlich gesagt: auch allerhand Gesindel!
 Zumal hier auch immer wieder welche hängen bleiben. Oder Arbeit suchen.
 Da kann man schon Glück haben. Einige der Bauern finden im fahrenden
 Gesindel brauchbar Erntehelfer.</Info>
+		<Optionspaket>
+			<Option>
+				<Beschreibung>Wähle Option1</Beschreibung>
+			</Option>
+			<Option>
+				<Beschreibung>Wähle Option2</Beschreibung>
+			</Option>
+		</Optionspaket>
 		</Infopaket>
+
 		<Infopaket>
 			<Info>Mir sind die Barden am liebsten.
 Die machen die Bude voll. Gerade jetzt. Bringen meistens auch
