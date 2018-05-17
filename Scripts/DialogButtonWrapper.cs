@@ -49,10 +49,11 @@ public class DialogButtonWrapper : MonoBehaviour {
 	/// </summary>
 	/// <param name="infos">Infos.</param>
 	public static void DisplayDialogOption(List<string> dialogRows, PopulateVertical populateDialog){
-		populateDialog.ClearDialogBox ();
+		PopulateVerticalToggle popVertical = populateDialog as PopulateVerticalToggle;
+		popVertical.ClearDialogBox ();
 		if (dialogRows.Count > 0) {
 			foreach (var dialogRow in dialogRows) {
-				populateDialog.addDialogText (dialogRow);
+				popVertical.addDialogOption(dialogRow);
 
 			}
 		} 
