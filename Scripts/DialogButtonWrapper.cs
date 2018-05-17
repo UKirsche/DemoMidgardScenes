@@ -22,7 +22,11 @@ public class DialogButtonWrapper : MonoBehaviour {
 		PlayerDialogManager playerDialogManager = playerObject.GetComponent<PlayerDialogManager> ();
 		List<string> dialogRows = playerDialogManager.GetNextDialogPackageFromNPC ();
 		if (dialogRows!=null && dialogRows.Count > 0) {
-			DisplayDialogText(dialogRows, populateDialog);
+			if (playerDialogManager.IsDialogOptionFromNPC ()) {
+				DisplayDialogOption (dialogRows, populateDialog);
+			} else {
+				DisplayDialogText(dialogRows, populateDialog);
+			}
 		}
 	}
 
