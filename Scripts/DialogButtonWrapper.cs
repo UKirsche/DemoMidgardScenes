@@ -20,9 +20,10 @@ public class DialogButtonWrapper : MonoBehaviour {
 	public void GetNextDialog(){
 		GameObject playerObject = GameObject.FindGameObjectWithTag (DemoRPGMovement.PLAYER_NAME);
 		PlayerDialogManager playerDialogManager = playerObject.GetComponent<PlayerDialogManager> ();
+		bool isOptionDialog = playerDialogManager.IsNextDialogOptionFromNPC ();
 		List<string> dialogRows = playerDialogManager.GetNextDialogPackageFromNPC ();
 		if (dialogRows!=null && dialogRows.Count > 0) {
-			if (playerDialogManager.IsDialogOptionFromNPC ()) {
+			if (isOptionDialog) {
 				DisplayDialogOption (dialogRows, populateDialog);
 			} else {
 				DisplayDialogText(dialogRows, populateDialog);

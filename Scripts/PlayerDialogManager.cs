@@ -49,7 +49,7 @@ public class PlayerDialogManager : MonoBehaviour {
 	/// If collected dialog is a list of options
 	/// </summary>
 	/// <returns><c>true</c> if this instance is dialog option from NP; otherwise, <c>false</c>.</returns>
-	public bool IsDialogOptionFromNPC(){
+	public bool IsNextDialogOptionFromNPC(){
 		var npcDialogManager = npcTalkPartner.GetComponent<NPCDialogManager> ();
 		return npcDialogManager.NextDialogOption ();
 	}
