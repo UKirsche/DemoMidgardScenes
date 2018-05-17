@@ -34,7 +34,7 @@ public class CapsuleColiderInfo : MonoBehaviour {
 			dialogString = artifactDialogManager.GetStandardInfo ();
 
 		}
-		DialogButtonWrapper.DisplayDialog (dialogString, populateDialog);
+		DialogButtonWrapper.DisplayDialogText (dialogString, populateDialog);
 
 		return true;
 	}

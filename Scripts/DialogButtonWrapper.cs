@@ -22,7 +22,7 @@ public class DialogButtonWrapper : MonoBehaviour {
 		PlayerDialogManager playerDialogManager = playerObject.GetComponent<PlayerDialogManager> ();
 		List<string> dialogRows = playerDialogManager.GetNextDialogPackageFromNPC ();
 		if (dialogRows!=null && dialogRows.Count > 0) {
-			DisplayDialog(dialogRows, populateDialog);
+			DisplayDialogText(dialogRows, populateDialog);
 		}
 	}
 
@@ -30,7 +30,7 @@ public class DialogButtonWrapper : MonoBehaviour {
 	/// Displays a simple Dialog in Rows
 	/// </summary>
 	/// <param name="infos">Infos.</param>
-	public static void DisplayDialog(List<string> dialogRows, PopulateVertical populateDialog){
+	public static void DisplayDialogText(List<string> dialogRows, PopulateVertical populateDialog){
 		populateDialog.ClearDialogBox ();
 		if (dialogRows.Count > 0) {
 			foreach (var dialogRow in dialogRows) {
