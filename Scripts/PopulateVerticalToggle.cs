@@ -22,6 +22,7 @@ public class PopulateVerticalToggle : PopulateVertical {
 	/// Clears the dialg text.
 	/// </summary>
 	public override void ClearDialogBox(){
+		base.ClearDialogBox ();
 		if (dialogToggleElements.Count > 0) {
 			foreach (var item in dialogToggleElements) {
 				Destroy (item);
@@ -34,7 +35,7 @@ public class PopulateVerticalToggle : PopulateVertical {
 	/// </summary>
 	public void addDialogOption(string dialogString){
 		GameObject newDialog;
-		newDialog = Instantiate (prefabDialogToggle, transform); //ensures that
+		newDialog = Instantiate (prefabDialogToggle, transform); //ensures that element listed in canvas 
 		newDialog.GetComponent<Toggle>().group = toggleGroup;
 		newDialog.GetComponentInChildren<Text> ().text = dialogString;
 		dialogToggleElements.Add (newDialog);
