@@ -18,6 +18,8 @@ public class DialogButtonWrapper : MonoBehaviour {
 	/// Gets the next dialog für den PC vom NPC.
 	/// </summary>
 	public void GetNextDialog(){
+
+
 		GameObject playerObject = GameObject.FindGameObjectWithTag (DemoRPGMovement.PLAYER_NAME);
 		PlayerDialogManager playerDialogManager = playerObject.GetComponent<PlayerDialogManager> ();
 		bool isOptionDialog = playerDialogManager.IsNextDialogOptionFromNPC ();
@@ -30,6 +32,7 @@ public class DialogButtonWrapper : MonoBehaviour {
 			}
 		}
 	}
+		
 
 	/// <summary>
 	/// Displays a simple Dialog in Rows
