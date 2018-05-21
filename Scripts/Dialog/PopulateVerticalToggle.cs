@@ -40,10 +40,14 @@ public class PopulateVerticalToggle : PopulateVertical {
 	/// </summary>
 	/// <returns><c>true</c> if this instance has selected toggle; otherwise, <c>false</c>.</returns>
 	public bool HasSelectedToggle(){
-		Toggle selected = toggleGroup.ActiveToggles ().First ();
-		if (selected != null) {
-			return true;
+		Toggle numberToggles = toggleGroup.ActiveToggles ().FirstOrDefault ();
+		if (numberToggles !=null) {
+			Toggle selected = toggleGroup.ActiveToggles ().First ();
+			if (selected != null) {
+				return true;
+			}
 		}
+
 		return false;
 	}
 
