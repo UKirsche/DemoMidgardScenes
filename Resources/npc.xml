@@ -352,9 +352,15 @@ Gesindel brauchbar Erntehelfer.</Info>
 		<Optionspaket>
 			<Option>
 				<Beschreibung>Wähle Option1</Beschreibung>
+				<Infopaket>
+					<Info>Leck mich</Info>
+				</Infopaket>
 			</Option>
 			<Option>
 				<Beschreibung>Wähle Option2</Beschreibung>
+				<Infopaket>
+					<Info>Leck mich nicht</Info>
+				</Infopaket>
 			</Option>
 		</Optionspaket>
 		</Infopaket>

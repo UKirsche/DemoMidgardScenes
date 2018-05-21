@@ -54,6 +54,16 @@ public class PlayerDialogManager : MonoBehaviour {
 		return npcDialogManager.NextDialogOption ();
 	}
 		
+	/// <summary>
+	/// Sets the index of the chosen option.
+	/// </summary>
+	/// <param name="index">Index.</param>
+	public void SetChosenOptionIndex(int index){
+		var npcDialogManager = npcTalkPartner.GetComponent<NPCDialogManager> ();
+		npcDialogManager.SetChosenOptionIndex (index);
+
+	}
+
 
 	#region tasks
 

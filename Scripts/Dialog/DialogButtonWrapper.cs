@@ -26,7 +26,7 @@ public class DialogButtonWrapper : MonoBehaviour {
 		if (lastWasOption) {
 			PopulateVerticalToggle populateToggle = populateDialog as PopulateVerticalToggle;
 			int seletedIndex = populateToggle.GetSelectedToggleID ();
-
+			playerDialogManager.SetChosenOptionIndex (seletedIndex);
 		}
 		bool isOptionDialog = DialogTypeChecker.NextIsOption (playerDialogManager);
 

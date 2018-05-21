@@ -63,6 +63,16 @@ public class NPCDialogManager : ArtifactDialogManager {
 	}
 
 	/// <summary>
+	/// Sets the index of the chosen option.
+	/// </summary>
+	/// <param name="index">Index.</param>
+	public void SetChosenOptionIndex(int index){
+		if (index >= 0) {
+			dialogParser.SetParentOptionalStartNodeIndex (index);
+		}
+	}
+
+	/// <summary>
 	/// Ermittelt, ob der nächste Dialog ein Optionsdialog ist
 	/// </summary>
 	/// <returns><c>true</c>, if dialog option was nexted, <c>false</c> otherwise.</returns>
