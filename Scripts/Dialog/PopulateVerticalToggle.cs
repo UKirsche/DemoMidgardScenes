@@ -73,6 +73,8 @@ public class PopulateVerticalToggle : PopulateVertical {
 	public void addDialogOption(string dialogString){
 		GameObject newDialog;
 		newDialog = Instantiate (prefabDialogToggle, transform); //ensures that element listed in canvas 
+		Toggle newToggle = newDialog.GetComponent<Toggle>();
+		toggleGroup.RegisterToggle(newToggle);
 		newDialog.GetComponent<Toggle>().group = toggleGroup;
 		newDialog.GetComponentInChildren<Text> ().text = dialogString;
 		dialogToggleElements.Add (newDialog);
