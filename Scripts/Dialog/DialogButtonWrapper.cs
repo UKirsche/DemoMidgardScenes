@@ -22,7 +22,8 @@ public class DialogButtonWrapper : MonoBehaviour {
 
 		GameObject playerObject = GameObject.FindGameObjectWithTag (DemoRPGMovement.PLAYER_NAME);
 		PlayerDialogManager playerDialogManager = playerObject.GetComponent<PlayerDialogManager> ();
-		bool isOptionDialog = playerDialogManager.IsNextDialogOptionFromNPC ();
+		bool isOptionDialog = DialogTypeChecker.NextIsOption (playerDialogManager);
+		bool lastWasOption = DialogTypeChecker.LastWasOption (populateDialog as PopulateVerticalToggle);
 		List<string> dialogRows = playerDialogManager.GetNextDialogPackageFromNPC ();
 		if (dialogRows!=null && dialogRows.Count > 0) {
 			if (isOptionDialog) {
