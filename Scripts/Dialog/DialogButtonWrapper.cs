@@ -18,26 +18,9 @@ public class DialogButtonWrapper : MonoBehaviour {
 	/// Gets the next dialog für den PC vom NPC.
 	/// </summary>
 	public void GetNextDialog(){
-
-
-		GameObject playerObject = GameObject.FindGameObjectWithTag (DemoRPGMovement.PLAYER_NAME);
-		PlayerDialogManager playerDialogManager = playerObject.GetComponent<PlayerDialogManager> ();
-		bool lastWasOption = DialogTypeChecker.LastWasOption (populateDialog as PopulateVerticalToggle);
-		if (lastWasOption) {
-			PopulateVerticalToggle populateToggle = populateDialog as PopulateVerticalToggle;
-			int seletedIndex = populateToggle.GetSelectedToggleID ();
-			playerDialogManager.SetChosenOptionIndex (seletedIndex);
-		}
-		bool isOptionDialog = DialogTypeChecker.NextIsOption (playerDialogManager);
-
-		List<string> dialogRows = playerDialogManager.GetNextDialogPackageFromNPC ();
-		if (dialogRows!=null && dialogRows.Count > 0) {
-			if (isOptionDialog) {
-				DialogDisplayManager.DisplayDialogOption (dialogRows, populateDialog);
-			} else {
-				DialogDisplayManager.DisplayDialogText(dialogRows, populateDialog);
-			}
-		}
+		GameObject scripts = GameObject.Find ("Scripts");
+		DialogDisplayManager dialogDisplay = scripts.GetComponent<DialogDisplayManager> ();
+		dialogDisplay.DisplayNextDialog (populateDialog as PopulateVerticalToggle);
 	}
 
 }
