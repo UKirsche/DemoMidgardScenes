@@ -78,7 +78,7 @@ public class PlayerDialogManager : MonoBehaviour {
 			var npcDialogManager = npcTalkPartner.GetComponent<NPCDialogManager> ();
 
 			List<string> standardInfos = npcDialogManager.GetStandardInfo ();
-			DialogButtonWrapper.DisplayDialogText (standardInfos, populateDialog);
+			DialogDisplayManager.DisplayDialogText (standardInfos, populateDialog);
 		}
 
 		return true;
