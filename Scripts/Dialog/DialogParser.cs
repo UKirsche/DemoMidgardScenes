@@ -141,6 +141,14 @@ public class DialogParser {
 		}
 	}
 
+
+	public void SetParentOptionalStartNodeIndex(int optionIndex){
+		if (optionIndex < optionalStartNodes.Count) {
+			DialogNode<object> newStartNode = optionalStartNodes [optionIndex];
+			startNode = newStartNode;
+		}
+	}
+
 	//Setzt neuen Startpunkt mit Parent. -> Upward-Jumping
 	//Beispiele: 
 	// * Infopaket enthält weiteres Optionspaket (letzter Leave auf einer Ebene)
