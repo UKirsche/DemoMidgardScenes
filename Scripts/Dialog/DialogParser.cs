@@ -112,7 +112,7 @@ public class DialogParser {
 	/// Für jeden Startknoten muss das nächste Infopaket geholt werden (bis auf Optionspaket, das Optionen hat)
 	/// </summary>
 	/// <returns>The next info paket.</returns>
-	private Infopaket GetNextInfoPaket(){
+	protected Infopaket GetNextInfoPaket(){
 		Infopaket returnPaket = null;
 		if(startNode.typeNodeElement == typeof(Option)){
 			returnPaket = (startNode.nodeElement as Option).infopakete[0];
@@ -164,7 +164,7 @@ public class DialogParser {
 	///  ->Infopaket eine Ebene weiter oben.
 	/// </summary>
 	/// <param name="newNode">New node.</param>
-	private void SetStartNode(DialogNode<object> nextNode){
+	protected void SetStartNode(DialogNode<object> nextNode){
 		Infopaket infopaket = nextNode.nodeElement as Infopaket;
 		if(infopaket.optionspaket!=null){//Drill Down
 			DialogNode<object> newStartNode = new DialogNode<object> ();

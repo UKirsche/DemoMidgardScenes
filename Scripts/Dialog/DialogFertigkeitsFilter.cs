@@ -9,23 +9,21 @@ using UnityEngine;
 public class DialogFertigkeitsFilter {
 
 	private DialogParser dialogParser;
-	public bool IsFilterDialog { get; set;}
 
 
 	public DialogFertigkeitsFilter(DialogParser _dialogParser){
 
 		dialogParser = _dialogParser;
-		IsFilterDialog = false;
 	}
 
 
-	public List<string> FilterDialog(){
-		if (IsFilterDialog) {
-			
+	public void FilterDialog(){
 
-		} else {
-			return dialogParser.GetInfos ();
+		if (dialogParser is DialogParser) {
+		} else if (dialogParser is DialogParserCharFertigkeiten) {
+			
 		}
+		
 	}
 
 }

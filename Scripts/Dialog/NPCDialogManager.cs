@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPCDialogManager : ArtifactDialogManager {
 
 	private NPC npcDialogs;
-	private DialogParser dialogParser;
+	private DialogParserCharFertigkeiten dialogParser;
 	private bool wasInformand;
 
 
@@ -34,7 +34,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 	/// Initializes the dialog parser with the first Mission. There is always min 1 Mission
 	/// </summary>
 	private void InitializeDialogParser(){
-		dialogParser = new DialogParser ();
+		dialogParser = new DialogParserCharFertigkeiten ();
 		dialogParser.StartNode = new DialogNode<object> ();
 		Mission mission = npcDialogs.missionen [0];
 		dialogParser.StartNode.nodeElement = mission;
