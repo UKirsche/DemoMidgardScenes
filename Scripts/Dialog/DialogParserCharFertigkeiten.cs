@@ -5,9 +5,14 @@ using UnityEngine;
 public class DialogParserCharFertigkeiten : DialogParser {
 
 	MidgardCharakter mChar;
-
-
-
+	MidgardCharakter MChar { 
+		get { 
+			return mChar;
+		}
+		set {
+			mChar = value;
+		}
+	}
 
 	/// <summary>
 	/// Gets the leaves: Holt zu jedem Startknoten die entsprechenden Kinder ab.
