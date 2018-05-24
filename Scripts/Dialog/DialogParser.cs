@@ -88,7 +88,7 @@ public class DialogParser {
 	/// Sets the type of the next node parent, abhängig vom aktuellen Startknoten
 	/// </summary>
 	/// <param name="nextNode">Next node.</param>
-	private void SetNextNodeParentType(DialogNode<object> nextNode){
+	protected void SetNextNodeParentType(DialogNode<object> nextNode){
 		if (startNode.typeNodeElement == typeof(Option)) {
 			nextNode.typeParentNodeElement = typeof(Option);
 		} else if(startNode.typeNodeElement==typeof(Mission)) {
@@ -101,7 +101,7 @@ public class DialogParser {
 	/// </summary>
 	/// <param name="infopaket">Infopaket.</param>
 	/// <param name="newNode">New node.</param>
-	private void SetParent(Infopaket infopaket, DialogNode<object> newNode){
+	protected void SetParent(Infopaket infopaket, DialogNode<object> newNode){
 		newNode.nodeElement = infopaket;
 		newNode.parentNode = startNode;
 	}
@@ -127,7 +127,7 @@ public class DialogParser {
 	/// Sets the parent optional start node: 
 	/// Methode wird nur bei Optionspaketen gebraucht, welche die optionalen Punkte in einer Liste festlegt
 	/// </summary>
-	private void SetParentOptionalStartNodes(){
+	protected void SetParentOptionalStartNodes(){
 		optionalStartNodes.Clear(); //leere die alte Liste;
 		Optionspaket opaket = startNode.nodeElement as Optionspaket;
 		List<Option> optionen = opaket.optionen;
@@ -188,7 +188,7 @@ public class DialogParser {
 	/// </summary>
 	/// <returns><c>true</c> if this instance has more info pakete on level the specified nextNode; otherwise, <c>false</c>.</returns>
 	/// <param name="nextNode">Next node.</param>
-	private bool HasMoreInfoPaketeOnLevel(DialogNode<object> nextNode){
+	protected bool HasMoreInfoPaketeOnLevel(DialogNode<object> nextNode){
 		if(nextNode.typeParentNodeElement == typeof(Option)){
 			Option optionParent = (nextNode.parentNode.nodeElement as Option);
 			return optionParent.infopakete.Count > 1;
@@ -203,7 +203,7 @@ public class DialogParser {
 	/// Removes the last infopaket.
 	/// </summary>
 	/// <param name="nextNode">Next node.</param>
-	private void  RemoveLastInfopaket(DialogNode<object> nextNode){
+	protected void  RemoveLastInfopaket(DialogNode<object> nextNode){
 		List<Infopaket> infopakete=null;
 		if(nextNode.typeParentNodeElement == typeof(Option)){
 			Option optionParent = (nextNode.parentNode.nodeElement as Option);
@@ -222,7 +222,7 @@ public class DialogParser {
 	/// <summary>
 	/// Moves the tree upward.
 	/// </summary>
-	private void MoveUpward(){
+	protected void MoveUpward(){
 		DialogNode<object> tmpNodeParent =  startNode.parentNode;
 		DialogNode<object> tmpNode = startNode;
 		List<Infopaket> infopakete= new List<Infopaket>();
