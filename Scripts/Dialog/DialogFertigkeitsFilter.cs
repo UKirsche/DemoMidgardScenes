@@ -4,24 +4,36 @@ using UnityEngine;
 
 
 /// <summary>
-/// Filtert die Dialog gemäß den Fertigkeiten
+/// Schaltet Fertigkeitsfilter für Dialog an und aus
 /// </summary>
-public class DialogFertigkeitsFilter {
+public class DialogFertigkeitsFilter : MonoBehaviour
+{
 
 	private DialogParser dialogParser;
+	private bool isFertigkeitsFilter;
 
+	public bool IsFertigkeitsFilter {
+		get;
+		set { 
+			if (value == false) {
+				dialogParser = new DialogParser ();	
 
-	public DialogFertigkeitsFilter(DialogParser _dialogParser){
-
-		dialogParser = _dialogParser;
+			} else {
+				dialogParser = new DialogParserCharFertigkeiten ();
+			}
+			isFertigkeitsFilter = value;
+		}
 	}
 
 
-	public void FilterDialog(){
-
-		if (dialogParser is DialogParser) {
-		} else if (dialogParser is DialogParserCharFertigkeiten) {
+	public List<string> FilterDialog ()
+	{
+		if (IsFertigkeitsFilter) {
+			DialogParserCharFertigkeiten dialogParserFertigkeiten = dialogParser as DialogParserCharFertigkeiten;
+			return dialogParserFertigkeiten.GetInfosByFertigkeit ();
 			
+		} else {
+			return dialogParser.GetInfos();
 		}
 		
 	}
