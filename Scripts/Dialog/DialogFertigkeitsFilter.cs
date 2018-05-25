@@ -13,7 +13,7 @@ public class DialogFertigkeitsFilter : MonoBehaviour
 	private bool isFertigkeitsFilter;
 
 	public bool IsFertigkeitsFilter {
-		get;
+		get { return isFertigkeitsFilter;}
 		set { 
 			if (value == false) {
 				dialogParser = new DialogParser ();	
@@ -26,7 +26,7 @@ public class DialogFertigkeitsFilter : MonoBehaviour
 	}
 
 
-	public List<string> FilterDialog ()
+	public List<Info> FilterDialog ()
 	{
 		if (IsFertigkeitsFilter) {
 			DialogParserCharFertigkeiten dialogParserFertigkeiten = dialogParser as DialogParserCharFertigkeiten;

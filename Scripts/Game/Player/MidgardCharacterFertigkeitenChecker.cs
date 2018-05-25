@@ -46,7 +46,7 @@ public class MidgardCharacterFertigkeitenChecker  {
 	public bool CheckFertigkeitEW(InventoryItem item, string modifierString){
 		int modifier = Convert.ToInt32(modifierString);
 		int diceRoll = UnityEngine.Random.Range (1, SUCCESS_VAL20+1);
-		int diceRollModified = diceRoll + item.val + modifier;
+		int diceRollModified = diceRoll + Convert.ToInt32(item.val) + modifier;
 		if (diceRollModified >= SUCCESS_VAL20) {
 			return true;
 		}
@@ -63,7 +63,7 @@ public class MidgardCharacterFertigkeitenChecker  {
 		int modifier = Convert.ToInt32(modifierString);
 		int diceRoll = UnityEngine.Random.Range (1, SUCCESS_VAL100+1);
 		int diceRollModified = diceRoll + modifier;
-		if (diceRollModified<= item.val) {
+		if (diceRollModified<= Convert.ToInt32(item.val)) {
 			return true;
 		}
 		return false;
