@@ -4,13 +4,29 @@ using UnityEngine;
 
 
 /// <summary>
-/// Schaltet Fertigkeitsfilter für Dialog an und aus
+/// Schaltet Fertigkeitsfilter für Dialog an und aus und kapselt die DialogParser für NPCs
 /// </summary>
 public class DialogFertigkeitsFilter 
 {
 
 	private DialogParser dialogParser;
+	public DialogParser DialogParser {get 
+		{ return dialogParser;}
+	}
+
+
+	/// <summary>
+	/// Fertigkeitsfilter-Schalter
+	/// </summary>
 	private bool isFertigkeitsFilter;
+	public bool IsFertigkeitsFilter {
+		get { return isFertigkeitsFilter;}
+		set {isFertigkeitsFilter = value;}
+	}
+
+	/// <summary>
+	/// Referenz auf Dialog zum Filter
+	/// </summary>
 	private NPC npcDialogs;
 
 	/// <summary>
@@ -35,18 +51,16 @@ public class DialogFertigkeitsFilter
 		dialogParser.StartNode.parentNode = null;
 	}
 
-	public bool IsFertigkeitsFilter {
-		get { return isFertigkeitsFilter;}
-		set {isFertigkeitsFilter = value;}
-	}
-
-
+	/// <summary>
+	/// Gets the next dialog.
+	/// </summary>
+	/// <returns>The next dialog.</returns>
 	public List<string> GetNextDialog(){
 		List<string> returnList = null;
 		bool isOption = dialogParser.IsOption;
 		returnList = GetNextInfos ();
 		if (isOption) {
-			returnList = FormatOptions ();
+			returnList = DialogOptionManager.FormatOptions (dialogParser);
 		}
 		return returnList;
 	}
@@ -56,7 +70,7 @@ public class DialogFertigkeitsFilter
 	/// Liefert die nächsten NPC-Infos als Liste von strings
 	/// </summary>
 	/// <returns>The next infos.</returns>
-	public List<string> GetNextInfos(){
+	private List<string> GetNextInfos(){
 		List<string> infoStrings = new List<string> ();
 		List<Info> infos = dialogParser.GetInfos ();
 		if (infos != null) {
@@ -67,36 +81,7 @@ public class DialogFertigkeitsFilter
 
 		return infoStrings;
 	}
-
-	/// <summary>
-	/// Sets the index of the chosen option.
-	/// </summary>
-	/// <param name="index">Index.</param>
-	public void SetChosenOptionIndex(int index){
-		if (index >= 0) {
-			dialogParser.SetParentOptionalStartNodeIndex (index);
-		}
-	}
-
-
-	public bool NextDialogOption(){
-		return dialogParser.IsOption;
-	}
-
-	/// <summary>
-	/// Liefert die Optionen (Auswahlmöglichkeiten) als Liste von strings
-	/// </summary>
-	/// <returns>The next options.</returns>
-	private List<string> FormatOptions(){
-		List<string> optionStrings = new List<string> ();
-		List<DialogNode<object>> optionNodes = dialogParser.optionalStartNodes;
-		foreach (var optionNode in optionNodes) {
-			Option nodeElement = optionNode.nodeElement as Option;
-			optionStrings.Add (nodeElement.Beschreibung);
-		}
-
-		return optionStrings;
-	}
+		
 
 	public List<Info> FilterDialog ()
 	{

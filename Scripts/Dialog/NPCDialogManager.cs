@@ -6,6 +6,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 
 	private NPC npcDialogs;
 	private DialogFertigkeitsFilter dialogFilter;
+
 	private bool wasInformand;
 
 
@@ -56,7 +57,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 	/// </summary>
 	/// <param name="index">Index.</param>
 	public void SetChosenOptionIndex(int index){
-		dialogFilter.SetChosenOptionIndex (index);
+		DialogOptionManager.SetChosenOptionIndex (index, dialogFilter.DialogParser);
 	}
 
 	/// <summary>
@@ -64,10 +65,8 @@ public class NPCDialogManager : ArtifactDialogManager {
 	/// </summary>
 	/// <returns><c>true</c>, if dialog option was nexted, <c>false</c> otherwise.</returns>
 	public bool NextDialogOption(){
-		return dialogFilter.NextDialogOption ();
+		return DialogOptionManager.NextDialogOption(dialogFilter.DialogParser);
 	}
-
-	#region private hilfsmethoden
 
 
 	/// <summary>
@@ -83,7 +82,5 @@ public class NPCDialogManager : ArtifactDialogManager {
 			return standardInfos.StandardInfoName;
 		}
 	}
-
-	#endregion
 
 }
