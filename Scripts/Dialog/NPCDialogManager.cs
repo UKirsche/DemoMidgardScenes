@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPCDialogManager : ArtifactDialogManager {
 
 	private NPC npcDialogs;
-	private DialogParserCharFertigkeiten dialogParser;
+	private DialogFertigkeitsFilter dialogFilter;
 	private bool wasInformand;
 
 
@@ -13,8 +13,8 @@ public class NPCDialogManager : ArtifactDialogManager {
 	public override void Start () {
 		artifactName = gameObject.name;
 		LoadDialog ();
+		LoadDialogFilter (true);
 		artifactDialog = npcDialogs; //upcast
-		InitializeDialogParser();
 		wasInformand = HasMissions() || HasInfos();
 		
 	}
@@ -29,37 +29,26 @@ public class NPCDialogManager : ArtifactDialogManager {
 		npcDialogs = dialogLoader.GetDialog<NPC> (artifactName) as NPC;
 	}
 
-
 	/// <summary>
-	/// Initializes the dialog parser with the first Mission. There is always min 1 Mission
+	/// Loads the dialog filter. Responsible für Filtering and returning dialogs
 	/// </summary>
-	private void InitializeDialogParser(){
-		dialogParser = new DialogParserCharFertigkeiten ();
-		dialogParser.StartNode = new DialogNode<object> ();
-		Mission mission = npcDialogs.missionen [0];
-		dialogParser.StartNode.nodeElement = mission;
-		dialogParser.StartNode.typeNodeElement = typeof(Mission);
-		dialogParser.StartNode.typeParentNodeElement = null;
-		dialogParser.StartNode.parentNode = null;
+	/// <param name="isFilterOn">If set to <c>true</c> is filter on.</param>
+	private void LoadDialogFilter(bool isFilterOn){
+		dialogFilter = new DialogFertigkeitsFilter (npcDialogs);
+		dialogFilter.IsFertigkeitsFilter = isFilterOn;
 	}
+
 
 	protected bool HasMissions(){
 		bool retVal = (npcDialogs != null && npcDialogs.missionen.Count > 0) ? true : false;
 		return retVal;
 	}
 
-
 	/// <summary>
 	/// Gets the next info package from Dialogpack for NPC and removes it from the list
 	/// </summary>
 	public List<string> GetNextDialog(){
-		List<string> returnList = null;
-		bool isOption = dialogParser.IsOption;
-		returnList = GetNextInfos ();
-		if (isOption) {
-			returnList = FormatOptions ();
-		}
-		return returnList;
+		return dialogFilter.GetNextDialog ();
 	}
 
 	/// <summary>
@@ -67,9 +56,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 	/// </summary>
 	/// <param name="index">Index.</param>
 	public void SetChosenOptionIndex(int index){
-		if (index >= 0) {
-			dialogParser.SetParentOptionalStartNodeIndex (index);
-		}
+		dialogFilter.SetChosenOptionIndex (index);
 	}
 
 	/// <summary>
@@ -77,26 +64,11 @@ public class NPCDialogManager : ArtifactDialogManager {
 	/// </summary>
 	/// <returns><c>true</c>, if dialog option was nexted, <c>false</c> otherwise.</returns>
 	public bool NextDialogOption(){
-		return dialogParser.IsOption;
+		return dialogFilter.NextDialogOption ();
 	}
 
 	#region private hilfsmethoden
-	/// <summary>
-	/// Gets the next infos: 
-	/// Liefert die nächsten NPC-Infos als Liste von strings
-	/// </summary>
-	/// <returns>The next infos.</returns>
-	public override List<string> GetNextInfos(){
-		List<string> infoStrings = new List<string> ();
-		List<Info> infos = dialogParser.GetInfos ();
-		if (infos != null) {
-			foreach (var info in infos) {
-				infoStrings.Add (info.content);
-			}
-		}
 
-		return infoStrings;
-	}
 
 	/// <summary>
 	/// Get Standard Info for a Character
@@ -110,23 +82,6 @@ public class NPCDialogManager : ArtifactDialogManager {
 			}
 			return standardInfos.StandardInfoName;
 		}
-	}
-
-
-
-	/// <summary>
-	/// Liefert die Optionen (Auswahlmöglichkeiten) als Liste von strings
-	/// </summary>
-	/// <returns>The next options.</returns>
-	private List<string> FormatOptions(){
-		List<string> optionStrings = new List<string> ();
-		List<DialogNode<object>> optionNodes = dialogParser.optionalStartNodes;
-		foreach (var optionNode in optionNodes) {
-			Option nodeElement = optionNode.nodeElement as Option;
-			optionStrings.Add (nodeElement.Beschreibung);
-		}
-
-		return optionStrings;
 	}
 
 	#endregion
