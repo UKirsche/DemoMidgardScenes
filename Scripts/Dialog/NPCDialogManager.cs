@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPCDialogManager : ArtifactDialogManager {
 
 	private NPC npcDialogs;
-	private DialogFertigkeitsFilter dialogFilter;
+	private DialogFilter dialogFilter;
 
 	private bool wasInformand;
 
@@ -35,7 +35,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 	/// </summary>
 	/// <param name="isFilterOn">If set to <c>true</c> is filter on.</param>
 	private void LoadDialogFilter(bool isFilterOn){
-		dialogFilter = new DialogFertigkeitsFilter (npcDialogs);
+		dialogFilter = new DialogFilter (npcDialogs);
 		dialogFilter.IsFertigkeitsFilter = isFilterOn;
 	}
 
