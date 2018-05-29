@@ -60,7 +60,7 @@ public class DialogFertigkeitsFilter
 	public List<string> GetNextDialog(){
 		List<string> returnList = null;
 		bool isOption = dialogParser.IsOption;
-		returnList = GetNextInfosString ();
+		returnList = GetNextInfosAsString ();
 		if (isOption) {
 			returnList = DialogOptionManager.FormatOptions (dialogParser);
 		}
@@ -90,7 +90,7 @@ public class DialogFertigkeitsFilter
 	/// Liefert die nächsten NPC-Infos als Liste von strings
 	/// </summary>
 	/// <returns>The next infos.</returns>
-	private List<string> GetNextInfosString(){
+	private List<string> GetNextInfosAsString(){
 		List<Info> infos = dialogParser.GetInfos ();
 		return FormatInfosToString (infos);
 	}
