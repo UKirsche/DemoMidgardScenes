@@ -10,8 +10,10 @@ public class DialogFertigkeitsFilter
 {
 
 	private DialogParser dialogParser;
-	public DialogParser DialogParser {get 
-		{ return dialogParser;}
+	public DialogParser DialogParser {
+		get { 
+			return dialogParser;
+		}
 	}
 
 
@@ -58,21 +60,21 @@ public class DialogFertigkeitsFilter
 	public List<string> GetNextDialog(){
 		List<string> returnList = null;
 		bool isOption = dialogParser.IsOption;
-		returnList = GetNextInfos ();
+		returnList = GetNextInfosString ();
 		if (isOption) {
 			returnList = DialogOptionManager.FormatOptions (dialogParser);
 		}
 		return returnList;
 	}
 
+
 	/// <summary>
-	/// Gets the next infos: 
-	/// Liefert die nächsten NPC-Infos als Liste von strings
+	/// Formats the list of infos to list of string.
 	/// </summary>
-	/// <returns>The next infos.</returns>
-	private List<string> GetNextInfos(){
+	/// <returns>The infos to string.</returns>
+	/// <param name="infos">Infos.</param>
+	private List<string> FormatInfosToString(List<Info> infos){
 		List<string> infoStrings = new List<string> ();
-		List<Info> infos = dialogParser.GetInfos ();
 		if (infos != null) {
 			foreach (var info in infos) {
 				infoStrings.Add (info.content);
@@ -80,6 +82,17 @@ public class DialogFertigkeitsFilter
 		}
 
 		return infoStrings;
+	}
+
+
+	/// <summary>
+	/// Gets the next infos: 
+	/// Liefert die nächsten NPC-Infos als Liste von strings
+	/// </summary>
+	/// <returns>The next infos.</returns>
+	private List<string> GetNextInfosString(){
+		List<Info> infos = dialogParser.GetInfos ();
+		return FormatInfosToString (infos);
 	}
 		
 
