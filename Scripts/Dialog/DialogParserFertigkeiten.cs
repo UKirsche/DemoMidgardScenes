@@ -15,7 +15,7 @@ public class DialogParserFertigkeiten : DialogParser {
 	public List<Info> GetInfosByFertigkeit(){
 		List<Info> returnList=null;	
 		if(StartNode!=null && StartNode.nodeElement!=null){
-			//Hier wird der tmpNode nicht direkt neu gesetzt, sondern eine Liste möglicher tmpNodes ermittelt
+			
 			if (StartNode.typeNodeElement == typeof(Optionspaket)) {
 				SetParentOptionalStartNodes (); //OptionsListe gesetzt, kein Rückgabe
 
@@ -32,6 +32,4 @@ public class DialogParserFertigkeiten : DialogParser {
 
 		return returnList;
 	}
-
-
 }

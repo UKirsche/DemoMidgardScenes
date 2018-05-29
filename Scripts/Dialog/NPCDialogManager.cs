@@ -14,7 +14,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 	public override void Start () {
 		artifactName = gameObject.name;
 		LoadDialog ();
-		LoadDialogFilter (true);
+		InitializeDialogFilter (true);
 		artifactDialog = npcDialogs; //upcast
 		wasInformand = HasMissions() || HasInfos();
 		
@@ -34,7 +34,7 @@ public class NPCDialogManager : ArtifactDialogManager {
 	/// Loads the dialog filter. Responsible für Filtering and returning dialogs
 	/// </summary>
 	/// <param name="isFilterOn">If set to <c>true</c> is filter on.</param>
-	private void LoadDialogFilter(bool isFilterOn){
+	private void InitializeDialogFilter(bool isFilterOn){
 		dialogFilter = new DialogFilter (npcDialogs);
 		dialogFilter.IsFertigkeitsFilter = isFilterOn;
 	}

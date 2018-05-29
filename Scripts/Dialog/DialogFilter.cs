@@ -95,7 +95,11 @@ public class DialogFilter
 		return FormatInfosToString (infos);
 	}
 		
-
+	/// <summary>
+	/// Späterer Aufruf zum Dialogabruf. 
+	/// Unterscheidet Filtermeachnismen
+	/// </summary>
+	/// <returns>The dialog.</returns>
 	public List<Info> FilterDialog ()
 	{
 		if (IsFertigkeitsFilter) {
