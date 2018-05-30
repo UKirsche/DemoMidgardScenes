@@ -48,16 +48,37 @@ public class DialogParserFertigkeiten : DialogParser {
 	protected void CheckFertigkeit(){
 		if(StartNode.typeNodeElement==typeof(Mission)) {
 			Mission mission = StartNode.nodeElement as Mission;
-			if (mission.id) {
+			if (mission.id > 0) {
 				InventoryItem itemFertigkeit = midgardCharacterChecker.GetFertigkeit (mission.id);
-				if (itemFertigkeit != null) {
-					midgardCharacterChecker.CheckFertigkeitEW (itemFertigkeit, 0); //check auf nullmodifier
-					
-				}
+				CheckItemFertigkeitCharacterEW (itemFertigkeit, mission.modifier);
 			}
 		} else if(StartNode.typeNodeElement==typeof(Optionspaket)) {
+			Optionspaket opaket = StartNode.nodeElement as Optionspaket;
+			if (opaket.id > 0) {
+				InventoryItem itemFertigkeit = midgardCharacterChecker.GetFertigkeit (opaket.id);
+				CheckItemFertigkeitCharacterEW (itemFertigkeit, opaket.modifier);
+			}
 		} else if(StartNode.typeNodeElement == typeof(Option)) {
+			Option opt = StartNode.nodeElement as Option;
+			if (opt.id > 0) {
+				InventoryItem itemFertigkeit = midgardCharacterChecker.GetFertigkeit (opt.id);
+				CheckItemFertigkeitCharacterEW (itemFertigkeit, opt.modifier);
+			}
 		}
+	}
+
+
+	/// <summary>
+	/// Checks the item fertigkeit.
+	/// </summary>
+	private bool CheckItemFertigkeitCharacterEW(InventoryItem item, int modifier=0) {
+		InventoryItem itemFertigkeit = midgardCharacterChecker.GetFertigkeit (item.id);
+		if (itemFertigkeit != null) {
+			bool retVal = midgardCharacterChecker.CheckFertigkeitEW (itemFertigkeit, modifier);
+			return retVal;
+		}
+
+		return false;
 	}
 
 }
