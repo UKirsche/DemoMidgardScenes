@@ -21,14 +21,22 @@ public class MidgardCharacterFertigkeitenChecker  {
 		}
 	}
 
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="MidgardCharacterFertigkeitenChecker"/> class.
+	/// Hier muss die Referenz zu mChar aufgefüllt werden.
+	/// </summary>
+	public MidgardCharacterFertigkeitenChecker(){
+		//TODO : hier muss Verweis auf das UMARPG-Objekt, bzw. Player erfolgen, der den Charakter ausliest 
+	}
+
 	/// <summary>
 	/// Determines whether this instance has fertigkeit the specified in idString.
 	/// </summary>
 	/// <returns><c>true</c> if this instance has fertigkeit the specified idString; otherwise, <c>false</c>.</returns>
 	/// <param name="idString">Identifier string.</param>
-	public InventoryItem HasFertigkeit(string idString){
+	public InventoryItem GetFertigkeit(int id){
 		InventoryItem returnItem = null;
-		int id =  Convert.ToInt32 (idString);
 		foreach (var item in MChar.fertigkeiten) {
 			if (item.id == id) {
 				return item;
@@ -43,8 +51,7 @@ public class MidgardCharacterFertigkeitenChecker  {
 	/// <returns><c>true</c>, if fertigkeit was checked, <c>false</c> otherwise.</returns>
 	/// <param name="item">Item.</param>
 	/// <param name="modifierString">Modifier string.</param>
-	public bool CheckFertigkeitEW(InventoryItem item, string modifierString){
-		int modifier = Convert.ToInt32(modifierString);
+	public bool CheckFertigkeitEW(InventoryItem item, int modifier){
 		int diceRoll = UnityEngine.Random.Range (1, SUCCESS_VAL20+1);
 		int diceRollModified = diceRoll + Convert.ToInt32(item.val) + modifier;
 		if (diceRollModified >= SUCCESS_VAL20) {
@@ -59,8 +66,7 @@ public class MidgardCharacterFertigkeitenChecker  {
 	/// <returns><c>true</c>, if fertigkeit was checked, <c>false</c> otherwise.</returns>
 	/// <param name="item">Item.</param>
 	/// <param name="modifierString">Modifier string.</param>
-	public bool CheckFertigkeitPW(InventoryItem item, string modifierString){
-		int modifier = Convert.ToInt32(modifierString);
+	public bool CheckFertigkeitPW(InventoryItem item, int modifier){
 		int diceRoll = UnityEngine.Random.Range (1, SUCCESS_VAL100+1);
 		int diceRollModified = diceRoll + modifier;
 		if (diceRollModified<= Convert.ToInt32(item.val)) {

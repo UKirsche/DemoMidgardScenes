@@ -5,6 +5,14 @@ using UnityEngine;
 public class DialogParserFertigkeiten : DialogParser {
 
 
+	private MidgardCharacterFertigkeitenChecker midgardCharacterChecker;
+
+
+
+	public DialogParserFertigkeiten(){
+		midgardCharacterChecker = new MidgardCharacterFertigkeitenChecker ();
+	}
+
 
 	/// <summary>
 	/// Gets the leaves: Holt zu jedem Startknoten die entsprechenden Kinder ab.
@@ -32,4 +40,24 @@ public class DialogParserFertigkeiten : DialogParser {
 
 		return returnList;
 	}
+
+
+	/// Chechkt, ob der aktuelle Startknoten eine Fertigkeitsabfrage macht
+	/// </summary>
+	/// <param name="nextNode">Next node.</param>
+	protected void CheckFertigkeit(){
+		if(StartNode.typeNodeElement==typeof(Mission)) {
+			Mission mission = StartNode.nodeElement as Mission;
+			if (mission.id) {
+				InventoryItem itemFertigkeit = midgardCharacterChecker.GetFertigkeit (mission.id);
+				if (itemFertigkeit != null) {
+					midgardCharacterChecker.CheckFertigkeitEW (itemFertigkeit, 0); //check auf nullmodifier
+					
+				}
+			}
+		} else if(StartNode.typeNodeElement==typeof(Optionspaket)) {
+		} else if(StartNode.typeNodeElement == typeof(Option)) {
+		}
+	}
+
 }
