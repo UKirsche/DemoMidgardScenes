@@ -6,19 +6,31 @@ using System.IO;
 
 #region NPC
 
+public interface IModifier{
+	int modifier { get; set; }
+}
+
+public interface ICheckType{
+	string checkType { get; set; }
+}
+
+public interface IFertigkeitsCheck: IID, IModifier, ICheckType
+{
+}
+
 public class Artifacts
 {
 	[XmlElement("Artifact")]
 	public List<Artifact> artifactListe = new List<Artifact>();
 }
 
-public class Artifact 
+public class Artifact : IFertigkeitsCheck
 {
 	[XmlAttribute("id")]
 	public int id { get; set; }
 
 	[XmlAttribute("check")]
-	public string check { get; set; }
+	public string checkType { get; set; }
 
 	[XmlAttribute("modifier")]
 	public int modifier { get; set; }
@@ -43,27 +55,27 @@ public class NPC : Artifact
 	public List<Mission> missionen = new List<Mission> ();
 }
 
-public class Mission
+public class Mission : IFertigkeitsCheck
 {
 	[XmlAttribute("id")]
 	public int id { get; set; }
 	[XmlAttribute("modifier")]
 	public int modifier { get; set; }
 	[XmlAttribute("check")]
-	public string check { get; set; }
+	public string checkType { get; set; }
 	[XmlElement("Infopaket")]
 	public List<Infopaket> infopakete = new List<Infopaket> ();
 }
 
 
-public class Infopaket
+public class Infopaket : IFertigkeitsCheck
 {
 	[XmlAttribute("id")]
 	public int id { get; set; }
 	[XmlAttribute("modifier")]
 	public int modifier { get; set; }
 	[XmlAttribute("check")]
-	public string check { get; set; }
+	public string checkType { get; set; }
 	[XmlElement("Info")]
 	public List<Info> infos = new List<Info>();
 	[XmlElement("Optionspaket")]
@@ -71,26 +83,26 @@ public class Infopaket
 }
 
 
-public class Optionspaket
+public class Optionspaket :IFertigkeitsCheck
 {
 	[XmlAttribute("id")]
 	public int id { get; set; }
 	[XmlAttribute("modifier")]
 	public int modifier { get; set; }
 	[XmlAttribute("check")]
-	public string check { get; set; }
+	public string checkType { get; set; }
 	[XmlElement("Option")]
 	public List<Option> optionen = new List<Option> ();
 }
 
-public class Option
+public class Option : IFertigkeitsCheck
 {
 	[XmlAttribute("id")]
 	public int id { get; set; }
 	[XmlAttribute("modifier")]
 	public int modifier { get; set; }
 	[XmlAttribute("check")]
-	public string check { get; set; }
+	public string checkType { get; set; }
 	[XmlElement("Beschreibung")]
 	public string Beschreibung{ get; set;}
 	[XmlElement("Infopaket")]
@@ -98,14 +110,14 @@ public class Option
 }
 
 
-public class Info
+public class Info : IFertigkeitsCheck
 {
 	[XmlAttribute("id")]
 	public int id { get; set; }
 	[XmlAttribute("modifier")]
 	public int modifier { get; set; }
 	[XmlAttribute("check")]
-	public string check { get; set; }
+	public string checkType { get; set; }
 	[XmlText]
 	public string content { get; set;}
 }
