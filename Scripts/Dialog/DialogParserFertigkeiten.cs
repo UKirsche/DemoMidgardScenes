@@ -1,14 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogParserFertigkeiten : DialogParser {
 
+	const string CHECK_PW = "PW";
+	const string CHECK_EW = "EW";
 
 	private MidgardCharacterFertigkeitenChecker midgardCharacterChecker;
 
 
-
+	/// <summary>
+	/// Initializes a new instance of the <see cref="DialogParserFertigkeiten"/> class.
+	/// </summary>
 	public DialogParserFertigkeiten(){
 		midgardCharacterChecker = new MidgardCharacterFertigkeitenChecker ();
 	}
@@ -23,7 +28,6 @@ public class DialogParserFertigkeiten : DialogParser {
 	public List<Info> GetInfosByFertigkeit(){
 		List<Info> returnList=null;	
 		if(StartNode!=null && StartNode.nodeElement!=null){
-			
 			if (StartNode.typeNodeElement == typeof(Optionspaket)) {
 				SetParentOptionalStartNodes (); //OptionsListe gesetzt, kein Rückgabe
 
