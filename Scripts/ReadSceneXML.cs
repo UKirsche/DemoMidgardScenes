@@ -17,8 +17,11 @@ public class Artifact
 	[XmlAttribute("id")]
 	public int id { get; set; }
 
+	[XmlAttribute("check")]
+	public string check { get; set; }
+
 	[XmlAttribute("modifier")]
-	public string modifier { get; set; }
+	public int modifier { get; set; }
 
 	[XmlAttribute("name")]
 	public string name { get; set; }
@@ -45,7 +48,9 @@ public class Mission
 	[XmlAttribute("id")]
 	public int id { get; set; }
 	[XmlAttribute("modifier")]
-	public string modifier { get; set; }
+	public int modifier { get; set; }
+	[XmlAttribute("check")]
+	public string check { get; set; }
 	[XmlElement("Infopaket")]
 	public List<Infopaket> infopakete = new List<Infopaket> ();
 }
@@ -56,7 +61,9 @@ public class Infopaket
 	[XmlAttribute("id")]
 	public int id { get; set; }
 	[XmlAttribute("modifier")]
-	public string modifier { get; set; }
+	public int modifier { get; set; }
+	[XmlAttribute("check")]
+	public string check { get; set; }
 	[XmlElement("Info")]
 	public List<Info> infos = new List<Info>();
 	[XmlElement("Optionspaket")]
@@ -69,7 +76,9 @@ public class Optionspaket
 	[XmlAttribute("id")]
 	public int id { get; set; }
 	[XmlAttribute("modifier")]
-	public string modifier { get; set; }
+	public int modifier { get; set; }
+	[XmlAttribute("check")]
+	public string check { get; set; }
 	[XmlElement("Option")]
 	public List<Option> optionen = new List<Option> ();
 }
@@ -79,7 +88,9 @@ public class Option
 	[XmlAttribute("id")]
 	public int id { get; set; }
 	[XmlAttribute("modifier")]
-	public string modifier { get; set; }
+	public int modifier { get; set; }
+	[XmlAttribute("check")]
+	public string check { get; set; }
 	[XmlElement("Beschreibung")]
 	public string Beschreibung{ get; set;}
 	[XmlElement("Infopaket")]
@@ -92,7 +103,9 @@ public class Info
 	[XmlAttribute("id")]
 	public int id { get; set; }
 	[XmlAttribute("modifier")]
-	public string modifier { get; set; }
+	public int modifier { get; set; }
+	[XmlAttribute("check")]
+	public string check { get; set; }
 	[XmlText]
 	public string content { get; set;}
 }
