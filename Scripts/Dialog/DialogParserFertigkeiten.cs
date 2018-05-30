@@ -47,7 +47,43 @@ public class DialogParserFertigkeiten : DialogParser {
 
 
 
+	/// Chechkt, ob der aktuelle Startknoten eine Fertigkeitsabfrage macht
+	/// </summary>
+	/// <param name="nextNode">Next node.</param>
+	protected bool HasNodeFertigkeit() {
+		bool retVal = false;
+		if (StartNode.typeNodeElement == typeof(Mission)) {
+			Mission node = StartNode.nodeElement as Mission;
+			retVal = HasNodeTypeFertigkeit<Mission> (node);
+		} else if (StartNode.typeNodeElement == typeof(Optionspaket)) {
+			Optionspaket node = StartNode.nodeElement as Optionspaket;
+			retVal = HasNodeTypeFertigkeit<Optionspaket> (node);
+		} else if (StartNode.typeNodeElement == typeof(Option)) {
+			Option node = StartNode.nodeElement as Option;
+			retVal = HasNodeTypeFertigkeit<Option> (node);
+		}  else if (StartNode.typeNodeElement == typeof(Infopaket)) {
+			Infopaket node = StartNode.nodeElement as Infopaket;
+			retVal = HasNodeTypeFertigkeit<Infopaket> (node);
+		} else if (StartNode.typeNodeElement == typeof(Info)) {
+			Info node = StartNode.nodeElement as Info;
+			retVal = HasNodeTypeFertigkeit<Info> (node);
+		}
 
+		return retVal;
+	}
+
+
+
+	/// <summary>
+	/// Checks the item fertigkeit.
+	/// </summary>
+	private bool HasNodeTypeFertigkeit<T>(T startNodeElement) where T:IID {
+		bool retVal=false;
+		if (startNodeElement.id > 0) {
+			retVal = true;
+		}
+		return retVal;
+	}
 
 	/// Chechkt, ob der aktuelle Startknoten eine Fertigkeitsabfrage macht
 	/// </summary>
