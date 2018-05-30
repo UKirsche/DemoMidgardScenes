@@ -46,39 +46,64 @@ public class DialogParserFertigkeiten : DialogParser {
 	}
 
 
+
+
+
 	/// Chechkt, ob der aktuelle Startknoten eine Fertigkeitsabfrage macht
 	/// </summary>
 	/// <param name="nextNode">Next node.</param>
-	protected void CheckFertigkeit(){
-		if(StartNode.typeNodeElement==typeof(Mission)) {
-			Mission mission = StartNode.nodeElement as Mission;
-			if (mission.id > 0) {
-				InventoryItem itemFertigkeit = midgardCharacterChecker.GetFertigkeit (mission.id);
-				CheckItemFertigkeitCharacterEW (itemFertigkeit, mission.modifier);
-			}
-		} else if(StartNode.typeNodeElement==typeof(Optionspaket)) {
-			Optionspaket opaket = StartNode.nodeElement as Optionspaket;
-			if (opaket.id > 0) {
-				InventoryItem itemFertigkeit = midgardCharacterChecker.GetFertigkeit (opaket.id);
-				CheckItemFertigkeitCharacterEW (itemFertigkeit, opaket.modifier);
-			}
-		} else if(StartNode.typeNodeElement == typeof(Option)) {
-			Option opt = StartNode.nodeElement as Option;
-			if (opt.id > 0) {
-				InventoryItem itemFertigkeit = midgardCharacterChecker.GetFertigkeit (opt.id);
-				CheckItemFertigkeitCharacterEW (itemFertigkeit, opt.modifier);
-			}
+	protected bool CheckFertigkeit() {
+		bool retVal = false;
+		if (StartNode.typeNodeElement == typeof(Mission)) {
+			Mission node = StartNode.nodeElement as Mission;
+			retVal =  CheckItemFertigkeitCharacter<Mission> (node);
+		} else if (StartNode.typeNodeElement == typeof(Optionspaket)) {
+			Optionspaket node = StartNode.nodeElement as Optionspaket;
+			retVal =  CheckItemFertigkeitCharacter<Optionspaket> (node);
+		} else if (StartNode.typeNodeElement == typeof(Option)) {
+			Option node = StartNode.nodeElement as Option;
+			retVal =  CheckItemFertigkeitCharacter<Option> (node);
+		}  else if (StartNode.typeNodeElement == typeof(Infopaket)) {
+			Infopaket node = StartNode.nodeElement as Infopaket;
+			retVal =  CheckItemFertigkeitCharacter<Infopaket> (node);
+		} else if (StartNode.typeNodeElement == typeof(Info)) {
+			Info node = StartNode.nodeElement as Info;
+			retVal =  CheckItemFertigkeitCharacter<Info> (node);
 		}
+
+		return retVal;
 	}
 
 
 	/// <summary>
 	/// Checks the item fertigkeit.
 	/// </summary>
-	private bool CheckItemFertigkeitCharacterEW(InventoryItem item, int modifier=0) {
-		InventoryItem itemFertigkeit = midgardCharacterChecker.GetFertigkeit (item.id);
-		if (itemFertigkeit != null) {
-			bool retVal = midgardCharacterChecker.CheckFertigkeitEW (itemFertigkeit, modifier);
+	private bool CheckItemFertigkeitCharacter<T>(T startNodeElement) where T:IFertigkeitsCheck {
+		bool retVal=false;
+		if (startNodeElement.id > 0) {
+			InventoryItem itemFertigkeitCharacter = midgardCharacterChecker.GetFertigkeit (startNodeElement.id);
+			retVal = CheckFertigkeitByMidgardCharacter (itemFertigkeitCharacter, startNodeElement.modifier, startNodeElement.checkType);
+		}
+		return retVal;
+	}
+
+	/// <summary>
+	/// Checks the fertigkeit by MidgardCharacter character.
+	/// </summary>
+	/// <returns><c>true</c>, if fertigkeit by middle character was checked, <c>false</c> otherwise.</returns>
+	/// <param name="itemFertigkeitCharacter">Item fertigkeit character.</param>
+	/// <param name="modifier">Modifier.</param>
+	/// <param name="checkType">Check type.</param>
+	private bool CheckFertigkeitByMidgardCharacter(InventoryItem itemFertigkeitCharacter, int modifier, string checkType){
+		bool retVal = false;
+		if (itemFertigkeitCharacter != null) {
+			if (checkType.Equals (CHECK_EW)) {
+				retVal = midgardCharacterChecker.CheckFertigkeitEW (itemFertigkeitCharacter, modifier);
+			}
+			else if (checkType.Equals (CHECK_PW)) {
+				retVal = midgardCharacterChecker.CheckFertigkeitPW (itemFertigkeitCharacter, modifier);
+			}
+
 			return retVal;
 		}
 
