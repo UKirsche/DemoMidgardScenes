@@ -41,10 +41,7 @@ public class DialogParserFertigkeiten : DialogParser {
 							
 						}
 					}
-					DialogNode<object> nextNode = new DialogNode<object> ();
-					Infopaket infopaket = GetNextInfoPaket();
-					MoveNextForInfoPaket (nextNode, infopaket);
-					returnList = infopaket.infos;
+					return MoveNextForInfoPaket ();
 				}
 			}
 		}
