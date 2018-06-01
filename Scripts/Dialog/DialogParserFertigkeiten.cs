@@ -43,10 +43,16 @@ public class DialogParserFertigkeiten : DialogParser {
 							MoveNextForMission ();
 						}
 					}
-					return ManageInfopaket ();
+					if (ManageInfopaket () == null) {
+						MoveUpward ();
+						returnList = GetInfosByFertigkeit (); //Hole nächsten Knoten ab
+					}
 				}
 				else if(StartNode.typeNodeElement==typeof(Option)) { //Falls Startknoten Mission oder Option (einzige weiteren Knoten mit Lauf nach unten
-					return ManageInfopaket ();
+					if (ManageInfopaket () == null) {
+						MoveUpward ();
+						returnList = GetInfosByFertigkeit (); //Hole nächsten Knoten ab
+					}
 				}
 			}
 		}
