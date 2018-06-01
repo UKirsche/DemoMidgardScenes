@@ -68,10 +68,8 @@ public class DialogParser {
 			//Hier wird der tmpNode nicht direkt neu gesetzt, sondern eine Liste möglicher tmpNodes ermittelt
 			if (startNode.typeNodeElement == typeof(Optionspaket)) {
 				SetParentOptionalStartNodes (); //OptionsListe gesetzt, kein Rückgabe
-
 			} else if(startNode.typeNodeElement==typeof(Mission)|| startNode.typeNodeElement==typeof(Option)) { //Falls Startknoten Mission oder Option (einzige weiteren Knoten mit Lauf nach unten
-				
-				return MoveNextForInfoPaket ();
+				return ManageInfopaket ();
 			}
 		}
 
@@ -84,10 +82,10 @@ public class DialogParser {
 	/// </summary>
 	/// <param name="nextNode">Next node.</param>
 	/// <param name="infopaket">Infopaket.</param>
-	protected List<Info> MoveNextForInfoPaket ()
+	protected List<Info> ManageInfopaket ()
 	{
 		DialogNode<object> nextNode = new DialogNode<object> ();
-		Infopaket infopaket = GetNextInfoPaket();
+		Infopaket infopaket = GetInfopaket();
 		SetNextNodeParentType (nextNode);
 		nextNode.typeNodeElement = typeof(Infopaket);
 		SetParent (infopaket, nextNode);
