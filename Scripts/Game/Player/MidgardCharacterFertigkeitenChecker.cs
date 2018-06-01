@@ -45,13 +45,50 @@ public class MidgardCharacterFertigkeitenChecker  {
 		return returnItem;
 	}
 
+
+	/// <summary>
+	/// Checks the item fertigkeit.
+	/// </summary>
+	public  bool CheckFertigkeit<T>(T startNodeElement) where T:IFertigkeitsCheck {
+		bool retVal=false;
+		if (startNodeElement.id > 0) {
+			InventoryItem itemFertigkeitCharacter = GetFertigkeit (startNodeElement.id);
+			retVal = CheckFertigkeitByMidgardCharacter (itemFertigkeitCharacter, startNodeElement.modifier, startNodeElement.checkType);
+		}
+		return retVal;
+	}
+
+	/// <summary>
+	/// Checks the fertigkeit by MidgardCharacter character.
+	/// </summary>
+	/// <returns><c>true</c>, if fertigkeit by middle character was checked, <c>false</c> otherwise.</returns>
+	/// <param name="itemFertigkeitCharacter">Item fertigkeit character.</param>
+	/// <param name="modifier">Modifier.</param>
+	/// <param name="checkType">Check type.</param>
+	private bool CheckFertigkeitByMidgardCharacter(InventoryItem itemFertigkeitCharacter, int modifier, string checkType){
+		bool retVal = false;
+		if (itemFertigkeitCharacter != null) {
+			if (checkType.Equals (CHECK_EW)) {
+				retVal = CheckFertigkeitEW (itemFertigkeitCharacter, modifier);
+			}
+			else if (checkType.Equals (CHECK_PW)) {
+				retVal = CheckFertigkeitPW (itemFertigkeitCharacter, modifier);
+			}
+
+			return retVal;
+		}
+
+		return false;
+	}
+
+
 	/// <summary>
 	/// Checks the fertigkeit.
 	/// </summary>
 	/// <returns><c>true</c>, if fertigkeit was checked, <c>false</c> otherwise.</returns>
 	/// <param name="item">Item.</param>
 	/// <param name="modifierString">Modifier string.</param>
-	public bool CheckFertigkeitEW(InventoryItem item, int modifier){
+	private bool CheckFertigkeitEW(InventoryItem item, int modifier){
 		int diceRoll = UnityEngine.Random.Range (1, SUCCESS_VAL20+1);
 		int diceRollModified = diceRoll + Convert.ToInt32(item.val) + modifier;
 		if (diceRollModified >= SUCCESS_VAL20) {
