@@ -123,7 +123,7 @@ public class DialogParser {
 	/// Für jeden Startknoten muss das nächste Infopaket geholt werden (bis auf Optionspaket, das Optionen hat)
 	/// </summary>
 	/// <returns>The next info paket.</returns>
-	protected Infopaket GetNextInfoPaket(){
+	protected Infopaket GetInfopaket(){
 		Infopaket returnPaket = null;
 		if(startNode.typeNodeElement == typeof(Option)){
 			returnPaket = (startNode.nodeElement as Option).infopakete[0];
