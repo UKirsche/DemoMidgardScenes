@@ -11,6 +11,10 @@ public class MidgardCharacterFertigkeitenChecker  {
 	const int SUCCESS_VAL20=20;
 	const int SUCCESS_VAL100=100;
 
+	const string CHECK_PW = "PW";
+	const string CHECK_EW = "EW";
+
+
 	MidgardCharakter mChar;
 	MidgardCharakter MChar { 
 		get { 
@@ -103,7 +107,7 @@ public class MidgardCharacterFertigkeitenChecker  {
 	/// <returns><c>true</c>, if fertigkeit was checked, <c>false</c> otherwise.</returns>
 	/// <param name="item">Item.</param>
 	/// <param name="modifierString">Modifier string.</param>
-	public bool CheckFertigkeitPW(InventoryItem item, int modifier){
+	private bool CheckFertigkeitPW(InventoryItem item, int modifier){
 		int diceRoll = UnityEngine.Random.Range (1, SUCCESS_VAL100+1);
 		int diceRollModified = diceRoll + modifier;
 		if (diceRollModified<= Convert.ToInt32(item.val)) {

@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class DialogParserFertigkeiten : DialogParser {
 
-	const string CHECK_PW = "PW";
-	const string CHECK_EW = "EW";
-
 	private MidgardCharacterFertigkeitenChecker midgardCharacterChecker;
 
 
@@ -71,7 +68,6 @@ public class DialogParserFertigkeiten : DialogParser {
 
 		return retVal;
 	}
-
 
 
 	/// <summary>
