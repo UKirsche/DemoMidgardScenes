@@ -31,7 +31,7 @@ public class DialogParserFertigkeiten : DialogParser {
 						SetParentOptionalStartNodes (); //OptionsListe gesetzt, kein Rückgabe
 					} else {
 						MoveUpward ();
-						GetInfosByFertigkeit (); //Hole nächsten Knoten ab
+						returnList = GetInfosByFertigkeit (); //Hole nächsten Knoten ab
 					}
 				}
 			} else {
