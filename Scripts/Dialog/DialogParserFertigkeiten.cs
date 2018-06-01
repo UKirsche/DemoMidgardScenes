@@ -30,8 +30,7 @@ public class DialogParserFertigkeiten : DialogParser {
 					if (CheckFertigkeit (StartNode)) {
 						SetParentOptionalStartNodes (); //OptionsListe gesetzt, kein Rückgabe
 					} else {
-						//TODO: Hier muss weiter gesprungen werden!
-
+						MoveUpward ();
 					}
 				}
 			} else if(StartNode.typeNodeElement==typeof(Mission)|| StartNode.typeNodeElement==typeof(Option)) { //Falls Startknoten Mission oder Option (einzige weiteren Knoten mit Lauf nach unten
