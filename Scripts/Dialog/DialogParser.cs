@@ -138,7 +138,7 @@ public class DialogParser {
 	/// Sets the parent optional start node: 
 	/// Methode wird nur bei Optionspaketen gebraucht, welche die optionalen Punkte in einer Liste festlegt
 	/// </summary>
-	protected void SetParentOptionalStartNodes(){
+	protected virtual void SetParentOptionalStartNodes(){
 		optionalStartNodes.Clear(); //leere die alte Liste;
 		Optionspaket opaket = startNode.nodeElement as Optionspaket;
 		List<Option> optionen = opaket.optionen;
