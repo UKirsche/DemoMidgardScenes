@@ -26,49 +26,32 @@ public class DialogParserFertigkeiten : DialogParser {
 		List<Info> returnList=null;	
 		if(StartNode!=null && StartNode.nodeElement!=null){
 			if (StartNode.typeNodeElement == typeof(Optionspaket)) {
-				if(HasNodeFertigkeit()){
-					if (CheckFertigkeit (StartNode)) {
+				if (HasNodeTypeFertigkeit<Optionspaket> (StartNode.nodeElement as Optionspaket)) {
+					if (midgardCharacterChecker.CheckFertigkeit<Optionspaket> (StartNode.nodeElement as Optionspaket)) {
 						SetParentOptionalStartNodes (); //OptionsListe gesetzt, kein Rückgabe
 					} else {
 						MoveUpward ();
+						GetInfosByFertigkeit (); //Hole nächsten Knoten ab
 					}
 				}
-			} else if(StartNode.typeNodeElement==typeof(Mission)|| StartNode.typeNodeElement==typeof(Option)) { //Falls Startknoten Mission oder Option (einzige weiteren Knoten mit Lauf nach unten
-				DialogNode<object> nextNode = new DialogNode<object> ();
-				Infopaket infopaket = GetNextInfoPaket();
-				MoveNextForInfoPaket (nextNode, infopaket);
-				returnList = infopaket.infos;
+			} else {
+				if(StartNode.typeNodeElement==typeof(Mission)) { //Falls Startknoten Mission oder Option (einzige weiteren Knoten mit Lauf nach unten
+					if (HasNodeTypeFertigkeit<Mission> (StartNode.nodeElement as Mission)) {
+						if (midgardCharacterChecker.CheckFertigkeit<Mission> (StartNode.nodeElement as Mission)) {
+							
+						}
+					}
+					DialogNode<object> nextNode = new DialogNode<object> ();
+					Infopaket infopaket = GetNextInfoPaket();
+					MoveNextForInfoPaket (nextNode, infopaket);
+					returnList = infopaket.infos;
+				}
 			}
 		}
 
 		return returnList;
 	}
 		
-
-	/// Chechkt, ob der aktuelle Startknoten eine Fertigkeitsabfrage macht
-	/// </summary>
-	/// <param name="nextNode">Next node.</param>
-	protected bool HasNodeFertigkeit() {
-		bool retVal = false;
-		if (StartNode.typeNodeElement == typeof(Mission)) {
-			Mission node = StartNode.nodeElement as Mission;
-			retVal = HasNodeTypeFertigkeit<Mission> (node);
-		} else if (StartNode.typeNodeElement == typeof(Optionspaket)) {
-			Optionspaket node = StartNode.nodeElement as Optionspaket;
-			retVal = HasNodeTypeFertigkeit<Optionspaket> (node);
-		} else if (StartNode.typeNodeElement == typeof(Option)) {
-			Option node = StartNode.nodeElement as Option;
-			retVal = HasNodeTypeFertigkeit<Option> (node);
-		}  else if (StartNode.typeNodeElement == typeof(Infopaket)) {
-			Infopaket node = StartNode.nodeElement as Infopaket;
-			retVal = HasNodeTypeFertigkeit<Infopaket> (node);
-		} else if (StartNode.typeNodeElement == typeof(Info)) {
-			Info node = StartNode.nodeElement as Info;
-			retVal = HasNodeTypeFertigkeit<Info> (node);
-		}
-
-		return retVal;
-	}
 
 
 	/// <summary>
@@ -79,31 +62,6 @@ public class DialogParserFertigkeiten : DialogParser {
 		if (startNodeElement.id > 0) {
 			retVal = true;
 		}
-		return retVal;
-	}
-
-	/// Chechkt, ob der aktuelle Knoten eine Fertigkeitsabfrage macht
-	/// </summary>
-	/// <param name="nextNode">Next node.</param>
-	protected bool CheckFertigkeit(DialogNode<object> actNode) {
-		bool retVal = false;
-		if (actNode.typeNodeElement == typeof(Mission)) {
-			Mission node = actNode.nodeElement as Mission;
-			retVal =  midgardCharacterChecker.CheckFertigkeit<Mission> (node);
-		} else if (actNode.typeNodeElement == typeof(Optionspaket)) {
-			Optionspaket node = actNode.nodeElement as Optionspaket;
-			retVal =  midgardCharacterChecker.CheckFertigkeit<Optionspaket> (node);
-		} else if (actNode.typeNodeElement == typeof(Option)) {
-			Option node = actNode.nodeElement as Option;
-			retVal =  midgardCharacterChecker.CheckFertigkeit<Option> (node);
-		}  else if (actNode.typeNodeElement == typeof(Infopaket)) {
-			Infopaket node = actNode.nodeElement as Infopaket;
-			retVal =  midgardCharacterChecker.CheckFertigkeit<Infopaket> (node);
-		} else if (actNode.typeNodeElement == typeof(Info)) {
-			Info node = actNode.nodeElement as Info;
-			retVal =  midgardCharacterChecker.CheckFertigkeit<Info> (node);
-		}
-
 		return retVal;
 	}
 
