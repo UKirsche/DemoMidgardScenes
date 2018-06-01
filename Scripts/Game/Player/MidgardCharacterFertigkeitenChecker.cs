@@ -56,18 +56,6 @@ public class MidgardCharacterFertigkeitenChecker  {
 
 
 	/// <summary>
-	/// Checks the item fertigkeit.
-	/// </summary>
-	public  bool CheckFertigkeit<T>(T startNodeElement) where T:IFertigkeitsCheck {
-		bool retVal=false;
-		if (startNodeElement.id > 0) {
-			InventoryItem itemFertigkeitCharacter = GetFertigkeit (startNodeElement.id);
-			retVal = CheckFertigkeitByMidgardCharacter (itemFertigkeitCharacter, startNodeElement.modifier, startNodeElement.checkType);
-		}
-		return retVal;
-	}
-
-	/// <summary>
 	/// Checks the fertigkeit by MidgardCharacter character.
 	/// </summary>
 	/// <returns><c>true</c>, if fertigkeit by middle character was checked, <c>false</c> otherwise.</returns>
