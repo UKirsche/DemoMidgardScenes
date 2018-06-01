@@ -53,6 +53,8 @@ public class DialogFilter
 		dialogParser.StartNode.parentNode = null;
 	}
 
+	
+
 	/// <summary>
 	/// Gets the next dialog.
 	/// </summary>

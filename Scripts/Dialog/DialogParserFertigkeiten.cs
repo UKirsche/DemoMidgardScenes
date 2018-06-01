@@ -38,7 +38,9 @@ public class DialogParserFertigkeiten : DialogParser {
 				if(StartNode.typeNodeElement==typeof(Mission)) { //Falls Startknoten Mission oder Option (einzige weiteren Knoten mit Lauf nach unten
 					if (HasNodeTypeFertigkeit<Mission> (StartNode.nodeElement as Mission)) {
 						if (midgardCharacterChecker.CheckFertigkeit<Mission> (StartNode.nodeElement as Mission)) {
-							
+							return MoveNextForInfoPaket ();
+						} else {
+							MoveNextForMission ();
 						}
 					}
 					return MoveNextForInfoPaket ();
@@ -49,6 +51,10 @@ public class DialogParserFertigkeiten : DialogParser {
 		return returnList;
 	}
 		
+
+
+	private void MoveNextForMission(){
+	}
 
 
 	/// <summary>
