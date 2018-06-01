@@ -71,17 +71,29 @@ public class DialogParser {
 
 			} else if(startNode.typeNodeElement==typeof(Mission)|| startNode.typeNodeElement==typeof(Option)) { //Falls Startknoten Mission oder Option (einzige weiteren Knoten mit Lauf nach unten
 				DialogNode<object> nextNode = new DialogNode<object> ();
-				SetNextNodeParentType (nextNode);
-				nextNode.typeNodeElement = typeof(Infopaket);
 				Infopaket infopaket = GetNextInfoPaket();
-				SetParent (infopaket, nextNode);
-				SetStartNode(nextNode);
+				MoveNextForInfoPaket (nextNode, infopaket);
 				returnList = infopaket.infos;
 			}
 		}
 
 		return returnList;
 	}
+
+
+	/// <summary>
+	/// Moves to the next possible Node
+	/// </summary>
+	/// <param name="nextNode">Next node.</param>
+	/// <param name="infopaket">Infopaket.</param>
+	protected void MoveNextForInfoPaket (DialogNode<object> nextNode, Infopaket infopaket)
+	{
+		SetNextNodeParentType (nextNode);
+		nextNode.typeNodeElement = typeof(Infopaket);
+		SetParent (infopaket, nextNode);
+		SetStartNode (nextNode);
+	}
+
 
 
 	/// <summary>

@@ -26,23 +26,25 @@ public class DialogParserFertigkeiten : DialogParser {
 		List<Info> returnList=null;	
 		if(StartNode!=null && StartNode.nodeElement!=null){
 			if (StartNode.typeNodeElement == typeof(Optionspaket)) {
-				SetParentOptionalStartNodes (); //OptionsListe gesetzt, kein Rückgabe
+				if(HasNodeFertigkeit()){
+					if (CheckFertigkeit (StartNode)) {
+						SetParentOptionalStartNodes (); //OptionsListe gesetzt, kein Rückgabe
+					} else {
+						//TODO: Hier muss weiter gesprungen werden!
 
+					}
+				}
 			} else if(StartNode.typeNodeElement==typeof(Mission)|| StartNode.typeNodeElement==typeof(Option)) { //Falls Startknoten Mission oder Option (einzige weiteren Knoten mit Lauf nach unten
 				DialogNode<object> nextNode = new DialogNode<object> ();
-				SetNextNodeParentType (nextNode);
-				nextNode.typeNodeElement = typeof(Infopaket);
 				Infopaket infopaket = GetNextInfoPaket();
-				SetParent (infopaket, nextNode);
-				SetStartNode(nextNode);
+				MoveNextForInfoPaket (nextNode, infopaket);
 				returnList = infopaket.infos;
 			}
 		}
 
 		return returnList;
 	}
-
-
+		
 
 	/// Chechkt, ob der aktuelle Startknoten eine Fertigkeitsabfrage macht
 	/// </summary>
