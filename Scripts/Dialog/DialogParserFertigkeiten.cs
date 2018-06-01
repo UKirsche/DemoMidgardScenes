@@ -38,24 +38,52 @@ public class DialogParserFertigkeiten : DialogParser {
 				if(StartNode.typeNodeElement==typeof(Mission)) { //Falls Startknoten Mission oder Option (einzige weiteren Knoten mit Lauf nach unten
 					if (HasNodeTypeFertigkeit<Mission> (StartNode.nodeElement as Mission)) {
 						if (midgardCharacterChecker.CheckFertigkeit<Mission> (StartNode.nodeElement as Mission)) {
-							return MoveNextForInfoPaket ();
+							return ManageInfopaket ();
 						} else {
 							MoveNextForMission ();
 						}
 					}
-					return MoveNextForInfoPaket ();
+					return ManageInfopaket ();
+				}
+				else if(StartNode.typeNodeElement==typeof(Option)) { //Falls Startknoten Mission oder Option (einzige weiteren Knoten mit Lauf nach unten
+					return ManageInfopaket ();
 				}
 			}
 		}
 
 		return returnList;
 	}
-		
 
 
-	private void MoveNextForMission(){
+	/// <summary>
+	/// Sets the parent optional start node: 
+	/// Methode wird nur bei Optionspaketen gebraucht, welche die optionalen Punkte in einer Liste festlegt
+	/// </summary>
+	protected override void SetParentOptionalStartNodes(){
+		base.SetParentOptionalStartNodes ();
+		FilterOptionalStartNodes ();
 	}
 
+	/// <summary>
+	/// Filters the optional start nodes
+	/// Falls der Knoten einen Fertigkeitsverweise hat
+	/// </summary>
+	private void FilterOptionalStartNodes ()
+	{
+		foreach (var option in optionalStartNodes) {
+			Option optionElement = option.nodeElement as Option;
+			if (HasNodeTypeFertigkeit<Option> (optionElement)) {
+				if (!midgardCharacterChecker.CheckFertigkeit<Option> (StartNode.nodeElement as Option)) {
+					optionalStartNodes.Remove (option);
+				}
+			}
+		}
+	}
+
+	private void MoveNextForMission(){
+		//TODO Implementation MissionCurator
+	}
+		
 
 	/// <summary>
 	/// Checks the item fertigkeit.
