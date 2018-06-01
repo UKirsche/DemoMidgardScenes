@@ -70,10 +70,8 @@ public class DialogParser {
 				SetParentOptionalStartNodes (); //OptionsListe gesetzt, kein Rückgabe
 
 			} else if(startNode.typeNodeElement==typeof(Mission)|| startNode.typeNodeElement==typeof(Option)) { //Falls Startknoten Mission oder Option (einzige weiteren Knoten mit Lauf nach unten
-				DialogNode<object> nextNode = new DialogNode<object> ();
-				Infopaket infopaket = GetNextInfoPaket();
-				MoveNextForInfoPaket (nextNode, infopaket);
-				returnList = infopaket.infos;
+				
+				return MoveNextForInfoPaket ();
 			}
 		}
 
@@ -86,12 +84,15 @@ public class DialogParser {
 	/// </summary>
 	/// <param name="nextNode">Next node.</param>
 	/// <param name="infopaket">Infopaket.</param>
-	protected void MoveNextForInfoPaket (DialogNode<object> nextNode, Infopaket infopaket)
+	protected List<Info> MoveNextForInfoPaket ()
 	{
+		DialogNode<object> nextNode = new DialogNode<object> ();
+		Infopaket infopaket = GetNextInfoPaket();
 		SetNextNodeParentType (nextNode);
 		nextNode.typeNodeElement = typeof(Infopaket);
 		SetParent (infopaket, nextNode);
 		SetStartNode (nextNode);
+		return infopaket.infos;
 	}
 
 
