@@ -84,13 +84,18 @@ public class DialogParser {
 	/// <param name="infopaket">Infopaket.</param>
 	protected List<Info> ManageInfopaket ()
 	{
+		List<Info> returnInfos = null;
 		DialogNode<object> nextNode = new DialogNode<object> ();
 		Infopaket infopaket = GetInfopaket();
-		SetNextNodeParentType (nextNode);
-		nextNode.typeNodeElement = typeof(Infopaket);
-		SetParent (infopaket, nextNode);
-		SetStartNode (nextNode);
-		return infopaket.infos;
+		if (infopaket != null) {
+			SetNextNodeParentType (nextNode);
+			nextNode.typeNodeElement = typeof(Infopaket);
+			SetParent (infopaket, nextNode);
+			SetStartNode (nextNode);
+			returnInfos = infopaket.infos;
+		}
+
+		return returnInfos;
 	}
 
 
