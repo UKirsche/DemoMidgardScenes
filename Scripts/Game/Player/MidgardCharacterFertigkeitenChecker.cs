@@ -27,19 +27,24 @@ public class MidgardCharacterFertigkeitenChecker  {
 
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="MidgardCharacterFertigkeitenChecker"/> class.
-	/// Hier muss die Referenz zu mChar aufgefüllt werden.
+	/// Checks the item fertigkeit.
 	/// </summary>
-	public MidgardCharacterFertigkeitenChecker(){
-		//TODO : hier muss Verweis auf das UMARPG-Objekt, bzw. Player erfolgen, der den Charakter ausliest 
+	public  bool CheckFertigkeit<T>(T startNodeElement) where T:IFertigkeitsCheck {
+		bool retVal=false;
+		if (startNodeElement.id > 0) {
+			InventoryItem itemFertigkeitCharacter = GetFertigkeitFromCharacter (startNodeElement.id);
+			retVal = MakeSuccessRole (itemFertigkeitCharacter, startNodeElement.modifier, startNodeElement.checkType);
+		}
+		return retVal;
 	}
+
 
 	/// <summary>
 	/// Determines whether this instance has fertigkeit the specified in idString.
 	/// </summary>
 	/// <returns><c>true</c> if this instance has fertigkeit the specified idString; otherwise, <c>false</c>.</returns>
 	/// <param name="idString">Identifier string.</param>
-	public InventoryItem GetFertigkeit(int id){
+	private InventoryItem GetFertigkeitFromCharacter(int id){
 		InventoryItem returnItem = null;
 		foreach (var item in MChar.fertigkeiten) {
 			if (item.id == id) {
@@ -92,7 +97,7 @@ public class MidgardCharacterFertigkeitenChecker  {
 	/// <returns><c>true</c>, if fertigkeit was checked, <c>false</c> otherwise.</returns>
 	/// <param name="item">Item.</param>
 	/// <param name="modifierString">Modifier string.</param>
-	private bool CheckFertigkeitEW(InventoryItem item, int modifier){
+	private bool RollEW(InventoryItem item, int modifier){
 		int diceRoll = UnityEngine.Random.Range (1, SUCCESS_VAL20+1);
 		int diceRollModified = diceRoll + Convert.ToInt32(item.val) + modifier;
 		if (diceRollModified >= SUCCESS_VAL20) {
@@ -107,7 +112,7 @@ public class MidgardCharacterFertigkeitenChecker  {
 	/// <returns><c>true</c>, if fertigkeit was checked, <c>false</c> otherwise.</returns>
 	/// <param name="item">Item.</param>
 	/// <param name="modifierString">Modifier string.</param>
-	private bool CheckFertigkeitPW(InventoryItem item, int modifier){
+	private bool RollPW(InventoryItem item, int modifier){
 		int diceRoll = UnityEngine.Random.Range (1, SUCCESS_VAL100+1);
 		int diceRollModified = diceRoll + modifier;
 		if (diceRollModified<= Convert.ToInt32(item.val)) {
