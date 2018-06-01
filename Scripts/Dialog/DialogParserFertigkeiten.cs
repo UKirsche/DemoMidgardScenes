@@ -80,6 +80,44 @@ public class DialogParserFertigkeiten : DialogParser {
 		}
 	}
 
+
+	/// <summary>
+	/// Gets the next info paket:
+	/// Für jeden Startknoten muss das nächste Infopaket geholt werden (bis auf Optionspaket, das Optionen hat)
+	/// </summary>
+	/// <returns>The next info paket.</returns>
+	protected override Infopaket GetInfopaket(){
+		Infopaket returnPaket = base.GetInfopaket ();
+		return FilterInfopaket (returnPaket);
+
+	}
+
+	/// <summary>
+	/// Filters the optional start nodes
+	/// Falls der Knoten einen Fertigkeitsverweise hat
+	/// </summary>
+	private Infopaket FilterInfopaket (Infopaket infpaket)
+	{
+		Infopaket retPaket = infpaket;
+		if (HasNodeTypeFertigkeit<Infopaket> (infpaket)) {
+			if (!midgardCharacterChecker.CheckFertigkeit<Infopaket> (infpaket)) {
+				List<Infopaket> infopakete = null;
+				if(StartNode.typeNodeElement == typeof(Option)){
+					infopakete = (StartNode.nodeElement as Option).infopakete;
+				} else if(StartNode.typeNodeElement== typeof(Mission)){
+					infopakete = (StartNode.nodeElement as Mission).infopakete;
+				}
+				infopakete.Remove (infpaket);
+				if (infopakete != null && infopakete.Count > 0) {
+					retPaket = infopakete [0];
+				} else {
+					retPaket = null;
+				}
+			}
+		}
+		return retPaket;
+	}
+
 	private void MoveNextForMission(){
 		//TODO Implementation MissionCurator
 	}
