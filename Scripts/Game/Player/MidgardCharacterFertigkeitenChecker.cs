@@ -74,14 +74,14 @@ public class MidgardCharacterFertigkeitenChecker  {
 	/// <param name="itemFertigkeitCharacter">Item fertigkeit character.</param>
 	/// <param name="modifier">Modifier.</param>
 	/// <param name="checkType">Check type.</param>
-	private bool CheckFertigkeitByMidgardCharacter(InventoryItem itemFertigkeitCharacter, int modifier, string checkType){
+	private bool MakeSuccessRole(InventoryItem fertigkeitCharacter, int modifier, string checkType){
 		bool retVal = false;
-		if (itemFertigkeitCharacter != null) {
+		if (fertigkeitCharacter != null) {
 			if (checkType.Equals (CHECK_EW)) {
-				retVal = CheckFertigkeitEW (itemFertigkeitCharacter, modifier);
+				retVal = RollEW (fertigkeitCharacter, modifier);
 			}
 			else if (checkType.Equals (CHECK_PW)) {
-				retVal = CheckFertigkeitPW (itemFertigkeitCharacter, modifier);
+				retVal = RollPW (fertigkeitCharacter, modifier);
 			}
 
 			return retVal;
