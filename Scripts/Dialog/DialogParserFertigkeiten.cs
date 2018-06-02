@@ -56,7 +56,12 @@ public class DialogParserFertigkeiten : DialogParser {
 				}
 			}
 		}
+		returnList=FilterInfos(returnList);
 
+		if (returnList.Count == 0) {
+			MoveUpward ();
+			returnList = GetInfosByFertigkeit ();
+		}
 		return returnList;
 	}
 
@@ -127,7 +132,22 @@ public class DialogParserFertigkeiten : DialogParser {
 	private void MoveNextForMission(){
 		//TODO Implementation MissionCurator
 	}
-		
+
+	/// <summary>
+	/// Filters the infos
+	/// </summary>
+	/// <returns>The infos.</returns>
+	/// <param name="infos">Infos.</param>
+	private List<Info> FilterInfos(List<Info> infos){
+		foreach (var info in infos) {
+			if (HasNodeTypeFertigkeit<Info> (info)) {
+				if (!midgardCharacterChecker.CheckFertigkeit<Info> (info)) {
+					infos.Remove (info);
+				}
+			}
+		}
+		return infos;
+	}
 
 	/// <summary>
 	/// Checks the item fertigkeit.
