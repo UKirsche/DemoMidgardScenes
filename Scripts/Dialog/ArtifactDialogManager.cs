@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Lädt die Informationen zu einem NPC bzw. Artifact mit dem passenden Namen aus dem übergeordneten GO (Capsule bzw. NPC).
+/// Der <see cref="artifactName"/> wird aus dem GO ausgelesen und muss mit der Bezeichnung in der xml-Ressource übereinstimmen.
+/// </summary>
 public class ArtifactDialogManager : MonoBehaviour {
 
 	//Artifact Name to search for in XML
@@ -10,7 +14,9 @@ public class ArtifactDialogManager : MonoBehaviour {
 	protected StandardNPCInfos standardInfos;
 
 
-	// Use this for initialization
+	/// <summary>
+    /// 
+    /// </summary>
 	public virtual void Start () {
 		artifactName = gameObject.name;
 		standardInfos = new StandardNPCInfos (artifactName);

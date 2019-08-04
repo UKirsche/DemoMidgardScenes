@@ -123,7 +123,14 @@ public class Info : IFertigkeitsCheck
 }
 #endregion
 
-
+/// <summary>
+/// Liest die Resourcen-Dateien aus für
+/// 1. NPCs
+/// 2. Artifacts
+/// 3. Tests
+///
+/// Vorsicht: beim Erstellen des Projekts für einen Release muss der Pfad für den StreamReader angepasst werden
+/// </summary>
 public class SceneResourceReader
 {
 	public static string MidgardNPC = "npc.xml";

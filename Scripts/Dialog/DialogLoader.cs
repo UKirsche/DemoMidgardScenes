@@ -5,7 +5,11 @@ using UnityEngine;
 
 
 /// <summary>
-/// Dialog loader: Allows loading Dialogs for NPC and Artifacts
+/// Dialog loader: Lädt die Dialog für die NPCs und die Artifacts (statistische Info-Lieferanten).
+/// Zu diesem Zweck werden die gesamten Dialog zu Beginn der Scene in zwei Dictionaries geladen
+/// - <see cref="artifactByName"/>
+/// - <see cref="npcByName"/>
+/// 
 /// </summary>
 public class DialogLoader : MonoBehaviour {
 

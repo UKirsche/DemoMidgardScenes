@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Die an die Capsule gebundene ColliderInfo ist das Bindegleid zur der statischen DialogView <see cref="dialogView"/>
-/// 
+/// Die an die Capsule (Infoobjekt für Spieler) gebundene ColliderInfo ist das Bindegleid zur der statischen DialogView <see cref="dialogView"/>
 /// </summary>
 [RequireComponent(typeof(CapsuleCollider))]
 public class CapsuleColiderInfo : MonoBehaviour {
