@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Die Capsule Collider Info ist das Bindegleid zum Collider des statischen Info-Objekts
+/// </summary>
 [RequireComponent(typeof(CapsuleCollider))]
 public class CapsuleColiderInfo : MonoBehaviour {
 	public GameObject dialogView;
