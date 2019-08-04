@@ -14,10 +14,11 @@ public class DialogButtonWrapper : MonoBehaviour {
 	}
 
 
-	/// <summary>
-	/// Gets the next dialog für den PC vom NPC.
-	/// </summary>
-	public void GetNextDialog(){
+    /// <summary>
+    /// Gets the next dialog für den PC vom NPC.
+    /// </summary>
+    public void GetNextDialog()
+    {
 		GameObject scripts = GameObject.Find ("Scripts");
 		DialogDisplayManager dialogDisplay = scripts.GetComponent<DialogDisplayManager> ();
 		dialogDisplay.DisplayNextDialog (populateDialog as PopulateVerticalToggle);

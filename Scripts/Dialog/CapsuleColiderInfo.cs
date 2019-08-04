@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Die Capsule Collider Info ist das Bindegleid zum Collider des statischen Info-Objekts
+/// Die an die Capsule gebundene ColliderInfo ist das Bindegleid zur der statischen DialogView <see cref="dialogView"/>
+/// 
 /// </summary>
 [RequireComponent(typeof(CapsuleCollider))]
 public class CapsuleColiderInfo : MonoBehaviour {
@@ -44,17 +45,22 @@ public class CapsuleColiderInfo : MonoBehaviour {
 
 
 
-	/// <summary>
-	/// Raises the trigger enter event. Only valid for Gameobjects with Rigidbody and that include a trigger type.
-	/// </summary>
-	/// <param name="other">Other.</param>
-	void OnTriggerEnter( Collider other )
+    /// <summary>
+    /// Raises the trigger enter event. Only valid for Gameobjects with Rigidbody and that include a trigger type.
+    /// Ruft <see cref="SetActiveDialogView"/> wenn ein "Player" den Trigger auslöst.
+    /// </summary> 
+    /// <param name="other">Other.</param>
+    void OnTriggerEnter(Collider other)
 	{
 		if (other.attachedRigidbody.gameObject.tag == "Player") {
 			SetActiveDialogView ();
 		}
 	}
 
+    /// <summary>
+    /// Sobald der Trigger-Bereich verlassen wird, wird das Fenster wieder geschlossen.
+    /// </summary>
+    /// <param name="other"></param>
 	void OnTriggerExit(Collider other)
 	{
 		if (other.attachedRigidbody.gameObject.tag == "Player") {
