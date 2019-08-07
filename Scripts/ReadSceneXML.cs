@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.IO;
 
+
+
 #region NPC
 
 public interface IModifier{
